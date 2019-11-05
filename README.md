@@ -1,10 +1,12 @@
-**A Java library for easy generation of Minecraft worlds**
+**A C# library for easy generation of Minecraft worlds**
 
-J2Blocks aims to provide a simple library for custom map generation. In order to use this library it is not necessary to deal with things like regions, chunks and block data. However it aims to implement all map features that Minecraft offers. Please keep in mind that this is still beta.
+GemBlocks aims to provide a simple library for custom map generation. In order to use this library it is not necessary to deal with things like regions, chunks and block data. However it aims to implement all map features that Minecraft offers.
 
-[→ J2Blocks Documentation](https://morbz.github.io/J2Blocks/index.html)
+This library was forked from MorbZ/J2Blocks and converted to C# for use of .NET Minecraft implementations (Clients, World Editors, Servers, etc.)
 
-Example
+[→ GemBlocks Documentation] COMING SOON!
+
+Example (TO BE UPDATED WITH REDONE C# CODE)
 ------
 In this example we want to create a Minecraft world that is paved with melon-blocks. We want to create a huge structure of glass and want to set door on top of it. From the [Example.java](https://github.com/MorbZ/J2Blocks/blob/master/doc/Example.java):
 
