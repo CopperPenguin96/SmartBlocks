@@ -8,19 +8,19 @@ namespace GemBlocks.Levels
 {
     public class Level
     {
-        public string LevelName { get; }
+        public string LevelName { get; set; }
 
         /// <summary>
         /// If cheats are allowed. The default value is 'false'
         /// </summary>
-        public bool AllowCommands { get; } = false;
+        public bool AllowCommands { get; set; } = false;
 
         /// <summary>
         /// Structures
         /// </summary>
-        public bool MapFeatures { get; } = true;
+        public bool MapFeatures { get; set; } = true;
 
-        public GameMode GameMode { get; } = GameMode.Creative;
+        public GameMode GameMode { get; set; } = GameMode.Creative;
 
         private int _spawnX, _spawnY, _spawnZ;
 
