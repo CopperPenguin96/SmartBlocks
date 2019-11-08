@@ -4,6 +4,8 @@ GemBlocks aims to provide a simple library for custom map generation. In order t
 
 This library was forked from MorbZ/J2Blocks and converted to C# for use of .NET Minecraft implementations (Clients, World Editors, Servers, etc.)
 
+Any assistance is welcomed! Please do a pull request if you see something that needs changed.
+Also changed was the naming conventions. Java conventions don't look right in C#! :D
 [→ GemBlocks Documentation] COMING SOON!
 
 Example (TO BE UPDATED WITH REDONE C# CODE)
@@ -14,8 +16,8 @@ In this example we want to create a Minecraft world that is paved with melon-blo
 	// We set the bottom layer of the world to be bedrock and the 20 layers above to be melon 
 	// blocks.
 	DefaultLayers layers = new DefaultLayers();
-	layers.setLayer(0, Material.BEDROCK);
-	layers.setLayers(1, 20, Material.MELON_BLOCK);
+	layers.SetLayer(0, BlockRegistry.Bedrock);
+	layers.SetLayers(1, 20, BlockRegistry.MelonBlock);
 
 	// Create the internal Minecraft world generator.
 	// We use a flat generator. We do this to make sure that the whole world will be paved 
@@ -26,8 +28,8 @@ In this example we want to create a Minecraft world that is paved with melon-blo
 	// We set the mode to creative creative mode and name our world. We also set the spawn point
 	// in the middle of our glass structure.
 	Level level = new Level("MelonWorld", generator);
-	level.setGameType(GameType.CREATIVE);
-	level.setSpawnPoint(50, 0, 50);
+	level.SetGameType(GameType.CREATIVE);
+	level.SetSpawnPoint(50, 0, 50);
 
 	// Now we create the world. This is where we can set our own blocks.
 	World world = new World(level, layers);
@@ -38,17 +40,17 @@ In this example we want to create a Minecraft world that is paved with melon-blo
 		for(int z = 0; z < 100; z++) {
 			// Set glass
 			for(int y = 0; y < 50; y++) {
-				world.setBlock(x, y, z, SimpleBlock.GLASS);
+				world.SetBlock(x, y, z, SimpleBlock.GLASS);
 			}
 		
 			// Set grass
-			world.setBlock(x, 50, z, SimpleBlock.GRASS);
+			world.SetBlock(x, 50, z, SimpleBlock.GRASS);
 		}
 	}
 
 	// Now we create the door. It consists of 2 blocks, that's why we can't use a SimpleBlock 
 	// here.
-	world.setBlock(50, 51, 50, DoorBlock.makeLower(DoorMaterial.OAK, Facing4State.EAST, false));
+	world.SetBlock(50, 51, 50, DoorBlock.MakeLower(DoorMaterial.OAK, Facing4State.EAST, false));
 	world.setBlock(50, 52, 50, DoorBlock.makeUpper(DoorMaterial.OAK, HingeSide.LEFT));
 
 	// Everything's set up so we're going to save the world.
@@ -60,5 +62,5 @@ The world has been saved to the /world/ directory in our execution directory. We
 
 Known Issues
 ------
-- Not all blocks are implemented yet. See in the [Material.java](https://github.com/MorbZ/J2Blocks/blob/master/src/net/morbz/minecraft/blocks/Material.java) the blocks that have a check mark  
+(https://github.com/MorbZ/J2Blocks/blob/master/src/net/morbz/minecraft/blocks/Material.java) the blocks that have a check mark  
 **Feel free to help and fix the issues by submitting a pull request.**
