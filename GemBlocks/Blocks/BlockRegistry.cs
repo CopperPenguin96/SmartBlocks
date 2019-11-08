@@ -7,7 +7,7 @@ namespace GemBlocks.Blocks
     {
         public static List<Block> Blocks;
 
-        internal static void Load()
+        public static void Load()
         {
             Console.WriteLine("Load the Block Registry...");
 
