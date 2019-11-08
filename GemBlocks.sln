@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GemBlocks", "GemBlocks\GemBlocks.csproj", "{6B735B54-518B-485C-A118-AF841B71283B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GB", "GB\GB.csproj", "{6B735B54-518B-485C-A118-AF841B71283B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GemBlocks", "GemBlocks\GemBlocks.csproj", "{8BF5C68F-14C6-4AD6-B907-9C0C5522FE8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6B735B54-518B-485C-A118-AF841B71283B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B735B54-518B-485C-A118-AF841B71283B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B735B54-518B-485C-A118-AF841B71283B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BF5C68F-14C6-4AD6-B907-9C0C5522FE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BF5C68F-14C6-4AD6-B907-9C0C5522FE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BF5C68F-14C6-4AD6-B907-9C0C5522FE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BF5C68F-14C6-4AD6-B907-9C0C5522FE8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

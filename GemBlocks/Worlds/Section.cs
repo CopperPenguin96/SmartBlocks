@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
-using fNbt;
+﻿using fNbt;
+using GemBlocks.Blocks;
 
 namespace GemBlocks.Worlds
 {
@@ -21,13 +16,13 @@ namespace GemBlocks.Worlds
         public const int BlocksPerSection =
             Chunk.BlocksPerChunkSide * Chunk.BlocksPerChunkSide * SectionHeight;
 
-        private byte[] _blockIds = new byte[BlocksPerSection];
-        private byte[] _transparency = new byte[BlocksPerSection];
-        private NibbleArray _blockData = new NibbleArray(BlocksPerSection);
-        private NibbleArray _skyLight = new NibbleArray(BlocksPerSection);
+        private readonly byte[] _blockIds = new byte[BlocksPerSection];
+        private readonly byte[] _transparency = new byte[BlocksPerSection];
+        private readonly NibbleArray _blockData = new NibbleArray(BlocksPerSection);
+        private readonly NibbleArray _skyLight = new NibbleArray(BlocksPerSection);
         public int BlockCount { get; private set; } = 0;
         public int Y { get; }
-        private IBlockContainer _parent;
+        private readonly IBlockContainer _parent;
 
         public Section(IBlockContainer parent, int y)
         {
@@ -72,7 +67,7 @@ namespace GemBlocks.Worlds
             {
                 _blockIds[index] = 0;
                 _blockData.Set(index, 0);
-                _transparency[index] = Worlds.DefaultTransparency;
+                _transparency[index] = World.DefaultTransparency;
             }
         }
 
@@ -151,14 +146,14 @@ namespace GemBlocks.Worlds
             }
         }
 
-        private bool IsInBounds(int x, int y, int z)
+        private static bool IsInBounds(int x, int y, int z)
         {
             if (x < 0 || x > Chunk.BlocksPerChunkSide - 1) return false;
             if (y < 0 || y > SectionHeight - 1) return false;
             return z >= 0 && z <= Chunk.BlocksPerChunkSide - 1;
         }
 
-        private int GetBlockIndex(int x, int y, int z)
+        private static int GetBlockIndex(int x, int y, int z)
         {
             int index = 0;
             index += y * Chunk.BlocksPerChunkSide * Chunk.BlocksPerChunkSide;

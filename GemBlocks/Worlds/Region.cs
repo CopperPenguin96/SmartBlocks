@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using fNbt;
+﻿using fNbt;
+using GemBlocks.Blocks;
 
 namespace GemBlocks.Worlds
 {
@@ -12,12 +8,12 @@ namespace GemBlocks.Worlds
         public const int ChunksPerRegionSize = 32;
         public const int BlocksPerRegionSide = ChunksPerRegionSize * Chunk.BlocksPerChunkSide;
         
-        private Chunk[,] _chunks = new Chunk[ChunksPerRegionSize, ChunksPerRegionSize];
-        private DefaultLayers _layers;
+        private readonly Chunk[,] _chunks = new Chunk[ChunksPerRegionSize, ChunksPerRegionSize];
+        private readonly DefaultLayers _layers;
 
-        private int XPos { get; }
-        private int ZPos { get; }
-        private IBlockContainer _parent;
+        public int XPos { get; }
+        public int ZPos { get; }
+        private readonly IBlockContainer _parent;
 
         public Region(IBlockContainer parent, int xPos, int zPos, DefaultLayers layers)
         {
@@ -42,15 +38,15 @@ namespace GemBlocks.Worlds
             if (chunk == null) return World.DefaultSkyLight;
             int blockX = x % Chunk.BlocksPerChunkSide;
             int blockZ = z % Chunk.BlocksPerChunkSide;
-            byte light = chunk.GetSkyLIght(blockX, y, blockZ);
+            byte light = chunk.GetSkyLight(blockX, y, blockZ);
             return light;
         }
 
         public byte GetSkyLightFromParent(IBlockContainer child,
             int childX, int childY, int childZ)
         {
-            int x = ((Chunk) child).X * Chunk.BlocksPerChunkSide + childX;
-            int z = ((Chunk) child).Z * Chunk.BlocksPerChunkSide + childZ;
+            int x = ((Chunk) child).XPos * Chunk.BlocksPerChunkSide + childX;
+            int z = ((Chunk) child).ZPos * Chunk.BlocksPerChunkSide + childZ;
 
             // Same region?
             if (x >= 0 && x < BlocksPerRegionSide && z >= 0 && z < BlocksPerRegionSide)
@@ -71,10 +67,7 @@ namespace GemBlocks.Worlds
                 for (int z = 0; z < ChunksPerRegionSize; z++)
                 {
                     Chunk chunk = _chunks[x, z];
-                    if (chunk != null)
-                    {
-                        chunk.SpreadSkyLight(light);
-                    }
+                    chunk?.SpreadSkyLight(light);
                 }
             }
         }
@@ -86,10 +79,7 @@ namespace GemBlocks.Worlds
                 for (int z = 0; z < ChunksPerRegionSize; z++)
                 {
                     Chunk chunk = _chunks[x, z];
-                    if (chunk != null)
-                    {
-                        chunk.AddSkyLight();
-                    }
+                    chunk?.AddSkyLight();
                 }
             }
         }
@@ -129,10 +119,7 @@ namespace GemBlocks.Worlds
                 for (int z = 0; z < ChunksPerRegionSize; z++)
                 {
                     Chunk chunk = _chunks[x, z];
-                    if (chunk != null)
-                    {
-                        chunk.CalculateHeightMap();
-                    }
+                    chunk?.CalculateHeightMap();
                 }
             }
         }
@@ -148,16 +135,22 @@ namespace GemBlocks.Worlds
                     for (int z = 0; z < ChunksPerRegionSize; z++)
                     {
                         Chunk chunk = _chunks[x, z];
-                        if (chunk != null && chunk.HasBlocks())
+                        if (chunk == null || !chunk.HasBlocks()) continue;
+                        NbtWriter outer = new NbtWriter(regionFile.GetChunkDataOutputStream(x, z).BaseStream, "");
+                        try
                         {
-                            new NbtWriter()
+                            outer.WriteTag(_chunks[x, z].GetTag());
+                        }
+                        finally
+                        {
+                            outer.BaseStream.Close();
                         }
                     }
                 }
             }
             finally
             {
-
+                regionFile.Close();
             }
         }
     }

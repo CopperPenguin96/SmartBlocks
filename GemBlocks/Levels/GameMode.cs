@@ -1,4 +1,4 @@
-﻿namespace GemBlocks.Level
+﻿namespace GemBlocks.Levels
 {
     public enum GameMode: byte
     {
