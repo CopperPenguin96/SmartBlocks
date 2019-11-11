@@ -5,7 +5,7 @@ namespace GemBlocks.Blocks
 {
     public class BlockRegistry
     {
-        public static List<Block> Blocks;
+        public static List<Block> Blocks = new List<Block>();
 
         public static void Load()
         {
