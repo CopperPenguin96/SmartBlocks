@@ -13,8 +13,8 @@ namespace GemBlocks.Worlds
     {
         public const int SectionsPerChunk = 16;
         public const int BlocksPerChunkSide = 16;
-        private readonly Section[] _sections = new Section[SectionsPerChunk];
-        private readonly int[,] _heightMap = new int[BlocksPerChunkSide, BlocksPerChunkSide];
+        public readonly Section[] Sections = new Section[SectionsPerChunk];
+        public readonly int[,] HeightMap = new int[BlocksPerChunkSide, BlocksPerChunkSide];
         public int XPos { get; }
         public int ZPos { get; }
         private readonly IBlockContainer _parent;
@@ -100,7 +100,7 @@ namespace GemBlocks.Worlds
 
         public void SpreadSkyLight(byte light)
         {
-            foreach (Section section in _sections)
+            foreach (Section section in Sections)
             {
                 section?.SpreadSkyLight(light);
             }
@@ -123,31 +123,31 @@ namespace GemBlocks.Worlds
 
         public int GetHighestBlock(int x, int z)
         {
-            return _heightMap[x, z];
+            return HeightMap[x, z];
         }
 
         private Section GetSection(int y, bool create)
         {
             int sectionY = y / Section.SectionHeight;
-            Section section = _sections[sectionY];
+            Section section = Sections[sectionY];
 
             if (section != null || !create) return section;
             section = new Section(this, sectionY);
-            _sections[sectionY] = section;
+            Sections[sectionY] = section;
 
             return section;
         }
 
         public bool HasBlocks()
         {
-            return _sections.Any(section => section != null & section.BlockCount > 0);
+            return Sections.Any(section => section != null & section.BlockCount > 0);
         }
 
         public void CalculateHeightMap()
         {
             for (int y = SectionsPerChunk - 1; y >= 0; y--)
             {
-                Section section = _sections[y];
+                Section section = Sections[y];
                 if (section == null) continue;
                 // Iterate x/z-columns
                 for (int x = 0; x < BlocksPerChunkSide; x++)
@@ -155,11 +155,11 @@ namespace GemBlocks.Worlds
                     for (int z = 0; z < BlocksPerChunkSide; z++)
                     {
                         // Update height
-                        if (_heightMap[x, z] != 0) continue;
+                        if (HeightMap[x, z] != 0) continue;
                         int height = section.GetHighestBlock(x, z);
                         if (height != -1)
                         {
-                            _heightMap[x, z] = y * Section.SectionHeight + height + 1;
+                            HeightMap[x, z] = y * Section.SectionHeight + height + 1;
                         }
                     }
                 }
@@ -170,7 +170,7 @@ namespace GemBlocks.Worlds
         {
             NbtList factory = new NbtList("Sections");
 
-            foreach (Section section in _sections)
+            foreach (Section section in Sections)
             {
                 if (section != null && section.BlockCount > 0)
                 {
@@ -198,7 +198,7 @@ namespace GemBlocks.Worlds
             {
                 for (int x = 0; x < BlocksPerChunkSide; x++)
                 {
-                    heightMapAry[i] = _heightMap[x, z];
+                    heightMapAry[i] = HeightMap[x, z];
                     i++;
                 }
             }

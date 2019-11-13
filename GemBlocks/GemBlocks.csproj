@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.2</Version>
+    <Version>1.0.2.2</Version>
     <Authors>apotter96</Authors>
     <Description>A .NET standard library for easy saving/loading/generating of minecraft worlds. Currently only has one pre-built generator (Flatgrass)</Description>
     <Copyright>Copyright (c) 2019 by apotter96</Copyright>
