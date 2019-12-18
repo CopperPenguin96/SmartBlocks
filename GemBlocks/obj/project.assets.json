@@ -48,7 +48,7 @@
   },
   "libraries": {
     "fNbt/0.6.4": {
-      "sha512": "ApHeYBciy/XixfMdHjknJ4ct4bCrg/rWCOgiI/YyHRp5JMtldEWnQFc23y+S7MOZbL7rG2L+cD8r9P2U1ardqQ==",
+      "sha512": "CN+1gkZGykM1WRbvkuVNlhnKyvwrGRShQ1cRjBo632e0L68jnrBNKE+xdyxphYynEVzh606+KAZPO+iWT3xbQg==",
       "type": "package",
       "path": "fnbt/0.6.4",
       "files": [
@@ -61,7 +61,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -204,7 +204,7 @@
       ]
     },
     "SharpZipLib/1.2.0": {
-      "sha512": "zvWa/L02JHNatdtjya6Swpudb2YEHaOLHL1eRrqpjm71iGRNUNONO5adUF/9CHbSJbzhELW1UoH4NGy7n7+3bQ==",
+      "sha512": "h2nY8FjSsc8YRQmucUYS+uTDrMSNOH7Y3JVVxjJeWUrk9TkgnYXoD5Fys+elUIPGCOtIJqM6czDxjEukefWwGA==",
       "type": "package",
       "path": "sharpziplib/1.2.0",
       "files": [
@@ -233,7 +233,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.2.2",
+    "version": "1.0.2.3",
     "restore": {
       "projectUniqueName": "F:\\Documents\\Programming\\GemsCraft\\GemBlocks\\GemBlocks\\GemBlocks\\GemBlocks.csproj",
       "projectName": "GemBlocks",

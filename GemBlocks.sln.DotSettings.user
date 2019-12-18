@@ -4,4 +4,6 @@
   &lt;Assembly Path="F:\Documents\Programming\GemsCraft\GemBlocks\GemBlocks\packages\apotter96extmethods.1.0.0\lib\net471\Extension Methods.dll" /&gt;&#xD;
   &lt;Assembly Path="F:\Documents\Programming\Projects\Extension-Methods\Extension Methods\Extension Methods\bin\Release\Extension Methods.dll" /&gt;&#xD;
   &lt;Assembly Path="F:\Documents\Programming\GemsCraft\GemBlocks\GemBlocks\packages\Oracle.ManagedDataAccess.19.5.0\lib\net40\Oracle.ManagedDataAccess.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.1\Microsoft.CSharp.dll" /&gt;&#xD;
+  &lt;Assembly Path="F:\Documents\Programming\ikvm-7.2.4630.5\bin\J2blocks.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

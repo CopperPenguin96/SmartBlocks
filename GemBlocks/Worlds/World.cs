@@ -1,11 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
-using fNbt;
+using System.Linq;
 using GemBlocks.Blocks;
 using GemBlocks.Levels;
-
+using java.io;
+using org.jnbt;
+using static GemBlocks.Utils.JavaSystem;
+/*
+* The MIT License (MIT)
+* 
+* Copyright (c) 2014-2015 Merten Peetz
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
+/*
+ * Modified License
+* The MIT License (MIT)
+* 
+* Copyright (c) 2019 by apotter96
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
 namespace GemBlocks.Worlds
 {
     public class World: IBlockContainer
@@ -18,7 +65,6 @@ namespace GemBlocks.Worlds
         private readonly Level _level;
         private readonly DefaultLayers _layers;
 
-
         public World(Level level)
         {
             _level = level;
@@ -30,33 +76,36 @@ namespace GemBlocks.Worlds
             _layers = layers;
         }
 
-        public void SetBlock(int x, int y, int z, Block block)
+        public void SetBlock(Position pos, Block block)
         {
             // Check for valid height
-            if (y > MaxHeight - 1 || y < 0)
+            if (pos.Y > MaxHeight - 1 || pos.Y < 0)
             {
-                // Fail silently... this sounds depressing
+                // Fail silently
                 return;
             }
 
-            Region region = GetRegion(x, z, true);
+            // Get region
+            Region region = GetRegion(pos.X, pos.Z, true);
 
             // Set block
-            int blockX = GetRegionCoord(x);
-            int blockZ = GetRegionCoord(z);
-            region.SetBlock(blockX, y, blockZ, block);
+            int blockX = GetRegionCoord(pos.X);
+            int blockZ = GetRegionCoord(pos.Z);
+            region.SetBlock(new Position(blockX, pos.Y, blockZ), block);
         }
 
-        private Region GetRegion(int x, int z, bool create)
+        public Region GetRegion(int x, int z, bool create)
         {
-            int regionX = x / Region.BlocksPerRegionSide;
+            // Get region point
+            int regionX = x / Region.BlocksPerRegionSize;
             if (x < 0) regionX--;
 
-            int regionZ = z / Region.BlocksPerRegionSide;
+            int regionZ = z / Region.BlocksPerRegionSize;
             if (z < 0) regionZ--;
 
             Point point = new Point(regionX, regionZ);
 
+            // Create region
             Region region = _regions[point];
             if (region != null || !create) return region;
             region = new Region(this, regionX, regionZ, _layers);
@@ -67,31 +116,32 @@ namespace GemBlocks.Worlds
 
         private static int GetRegionCoord(int coord)
         {
-            int regionCoord = coord % Region.BlocksPerRegionSide;
+            int regionCoord = coord % Region.BlocksPerRegionSize;
             if (regionCoord < 0)
             {
-                regionCoord += Region.BlocksPerRegionSide;
+                regionCoord += Region.BlocksPerRegionSize;
             }
 
             return regionCoord;
         }
 
-        public byte GetSkyLight(int x, int y, int z)
+        public byte GetSkyLight(Position pos)
         {
-            Region region = GetRegion(x, z, false);
+            // Get region
+            Region region = GetRegion(pos.X, pos.Z, false);
 
+            // Get light
             if (region == null) return DefaultSkyLight;
-            int blockX = GetRegionCoord(x);
-            int blockZ = GetRegionCoord(z);
-            return region.GetSkyLight(blockX, y, blockZ);
+            int blockX = GetRegionCoord(pos.X);
+            int blockZ = GetRegionCoord(pos.Z);
+            return region.GetSkyLight(new Position(blockX, pos.Y, blockZ));
         }
 
-        public byte GetSkyLightFromParent(IBlockContainer child,
-            int childX, int childY, int childZ)
+        public byte GetSkyLightFromParent(IBlockContainer blockChild, Position child)
         {
-            int x = Region.BlocksPerRegionSide * ((Region) child).XPos + childX;
-            int z = Region.BlocksPerRegionSide * ((Region) child).ZPos + childZ;
-            return GetSkyLight(x, childY, z);
+            int x = Region.BlocksPerRegionSize * ((Region) blockChild).X + child.X;
+            int z = Region.BlocksPerRegionSize * ((Region) blockChild).Z + child.Z;
+            return GetSkyLight(new Position(x, child.Y, z));
         }
 
         public void SpreadSkyLight(byte light)
@@ -102,126 +152,86 @@ namespace GemBlocks.Worlds
             }
         }
 
-        private static byte[] BytesToLong(long value)
+        public File Save()
         {
-            ulong bValue = (ulong) value;
-            return new[]
+            // Creates worlds directory
+            File worldDir = new File("worlds");
+            if (!DirExists(worldDir))
             {
-                (byte)((bValue & 0xFF00000000000000) >> 56),
-
-                (byte)((bValue & 0xFF000000000000) >> 48),
-
-                (byte)((bValue & 0xFF0000000000) >> 40),
-
-                (byte)((bValue & 0xFF00000000) >> 32),
-
-                (byte)((bValue & 0xFF000000) >> 24),
-
-                (byte)((bValue & 0xFF0000) >> 16),
-
-                (byte)((bValue & 0xFF00) >> 8),
-
-                (byte)(bValue & 0xFF)
-            };
-        }
-
-        public string Save(string worldsDir)
-        {
-            if (!Directory.Exists(worldsDir))
-            {
-                Directory.CreateDirectory(worldsDir);
+                worldDir.mkdir();
             }
 
-            string levelName = _level.LevelName + "/";
-            string levelDir = "";
-            if (Directory.Exists(worldsDir + levelName))
+            // Get level directory
+            string levelName = _level.Name;
+            File levelDir = new File(worldDir, levelName);
+            if (DirExists(levelDir))
             {
                 int dirPostFix = 0;
                 do
                 {
                     dirPostFix++;
-                    levelDir = levelName + dirPostFix;
-                } while (Directory.Exists(levelDir));
+                    levelDir = new File(worldDir, levelName + dirPostFix);
+                } while (DirExists(levelDir));
             }
 
-            Directory.CreateDirectory(levelDir);
-            string regionDir = levelDir + "/" + "region";
-            Directory.CreateDirectory(regionDir);
+            // Create directories
+            levelDir.mkdir();
 
-            // write session.lock
-            string sessionLockFile = levelDir + "/session.lock";
-            Console.WriteLine("Writing file: " + sessionLockFile);
-            FileStream dos = new FileStream(sessionLockFile, FileMode.CreateNew);
+            File regionDir = new File(levelDir, "region");
+            regionDir.mkdir();
+
+            // Write session.lock
+            File sessionLockFile = new File(levelDir, "session.lock");
+            DataOutputStream dos = new DataOutputStream(new FileOutputStream(sessionLockFile));
             try
             {
-                byte[] bts = BytesToLong(DateTime.Now.Millisecond);
-                dos.Write(bts, 0, bts.Length);
+                dos.writeLong(CurrentTimeMillis());
             }
             finally
             {
-                dos.Close();
+                dos.close();
             }
 
             // Write level.dat
-            string levelFile = levelDir + "/level.dat";
-            Console.WriteLine("Writing file: " + levelFile);
-            FileStream fos = new FileStream(levelFile, FileMode.CreateNew);
-            NbtTag levelTag = _level.Tag;
-            NbtWriter nbtOut = new NbtWriter(fos, levelTag.Name);
+            File levelFile = new File(levelDir, "level.dat");
+            FileOutputStream fos = new FileOutputStream(levelFile);
+            NBTOutputStream nbtOut = new NBTOutputStream(fos, true);
             try
             {
-                nbtOut.WriteTag(_level.Tag);
+                nbtOut.writeTag(_level.Tag);
             }
-            catch (Exception )
+            finally
             {
-                nbtOut.BaseStream.Close();
+                nbtOut.close();
             }
 
             // Calculate height maps
-            Console.WriteLine("Calculate height maps");
             foreach (Region region in _regions.Values)
             {
                 region.CalculateHeightMap();
             }
 
             // Set sky light
-            Console.WriteLine("Adding sky light");
             AddSkyLight();
 
             // Spread sky light
-            Console.WriteLine("Spreading sky light");
             for (int i = DefaultSkyLight; i > 1; i--)
             {
-                SpreadSkyLight(1);
+                SpreadSkyLight((byte) i);
             }
 
-            Console.WriteLine();
-
             // Iterate regions
-            for (int item = 0; item <= _regions.Count; item++)
+            for (int index = 0; index <= _regions.Count - 1; index++)
             {
-                Point key = Point.Empty;
-
-                int itemKey = 0;
-                foreach (var k in _regions.Keys)
-                {
-                    if (itemKey == item)
-                    {
-                        key = k;
-                    }
-
-                    itemKey++;
-                }
-
-                _regions.TryGetValue(key, out Region region);
+                Point point = _regions.Keys.ToList()[index];
+                Region region = _regions.Values.ToList()[index];
 
                 // Save region
-                string regionFile = regionDir + $"r.{key.X}.{key.Y}.mca";
-                Console.WriteLine("Writing file: " + regionFile);
+                File regionFile = new File(regionDir,
+                    "r." + point.X + "." + point.Y + ".mca");
                 region.WriteToFile(regionFile);
             }
 
-            Console.WriteLine("Done");
             return levelDir;
         }
 
@@ -231,6 +241,11 @@ namespace GemBlocks.Worlds
             {
                 region.AddSkyLight();
             }
+        }
+
+        private static bool DirExists(File f)
+        {
+            return (f.exists() && f.isDirectory());
         }
     }
 }

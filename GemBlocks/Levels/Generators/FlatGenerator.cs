@@ -1,51 +1,73 @@
 ﻿using System.Collections.Generic;
 using GemBlocks.Blocks;
+using GemBlocks.Levels.Generators;
+using GemBlocks.Utils;
 using GemBlocks.Worlds;
-
-namespace GemBlocks.Levels.Generators
+/*
+* The MIT License (MIT)
+* 
+* Copyright (c) 2014-2015 Merten Peetz
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
+/*
+ * Modified License
+* The MIT License (MIT)
+* 
+* Copyright (c) 2019 by apotter96
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
+namespace GemBlocks.Levels
 {
-    public class FlatGenerator : IGenerator
+    public class FlatGenerator: IGenerator
     {
-        public static void Start()
+        private readonly DefaultLayers _layers;
+
+        public FlatGenerator()
         {
-            /*
-             * Create the base layers of the generated world.
-             * We set the bottom layer of the world to be bedrock
-             * and the 20 layers above to be melon
-             * blocks.
-             */
-            DefaultLayers layers = new DefaultLayers();
-            layers.SetLayer(0, BlockRegistry.Bedrock);
-            layers.SetLayers(1, 20, BlockRegistry.MelonBlock);
-
-            /*
-             * Create the internal Minecraft world generator
-             * We use a flat generator. We do this to make sure that the
-             * whole world will be paved
-             * with melons and not just the part we generated.
-             */
-            IGenerator gen = new FlatGenerator(layers);
-
-            /*
-             * Create the level config
-             * We set the mode to creative mode and name our world.
-             * We also set the spawn point in the middle of our
-             * structure
-             */
-            Level level = new Level("MelonWorld", gen) {GameMode = GameMode.Creative};
-            level.SetSpawnPoint(50, 0, 50);
         }
 
-        private readonly DefaultLayers _layers;
         public FlatGenerator(DefaultLayers layers)
         {
             _layers = layers;
         }
 
+        public string Name => "flat";
 
-        public GeneratorName GeneratorName { get; } = (GeneratorName)3;
-
-        public string GeneratorOptions
+        public string Options
         {
             get
             {
@@ -56,23 +78,23 @@ namespace GemBlocks.Levels.Generators
                 int lastBlockId = 0;
                 int count = 0;
                 List<string> parts = new List<string>();
-                for (int y = 0; y <= World.MaxHeight; y++)
+                for (int y = 0; y < World.MaxHeight; y++)
                 {
                     bool isLast = y == World.MaxHeight;
 
+                    // Get block id
                     int blockId = 0;
                     if (!isLast)
                     {
                         Block material = _layers.GetLayer(y);
                         if (material != null)
                         {
-                            blockId = material.Meta;
+                            blockId = (int) material.Type;
                         }
                     }
 
                     if (y == 0 && !isLast)
                     {
-                        // First pass
                         lastBlockId = blockId;
                     }
                     else
@@ -80,7 +102,7 @@ namespace GemBlocks.Levels.Generators
                         // Further passes
                         if (blockId != lastBlockId || isLast)
                         {
-                            // Different block, add to string
+                            // Dif. block, add to string
                             string part = "";
                             if (count != 1)
                             {
@@ -89,7 +111,7 @@ namespace GemBlocks.Levels.Generators
 
                             part += lastBlockId;
 
-                            // Don't add the last part if it's air
+                            // Dont' add the last part if it's air
                             if (!isLast || lastBlockId != 0)
                             {
                                 parts.Add(part);
@@ -103,11 +125,12 @@ namespace GemBlocks.Levels.Generators
                     count++;
                 }
 
-                // create option string
-                string layerOptions = string.Join(",", parts);
+                // Create options string
+                string layerOptions = StringUtils.Join(parts.ToArray(), ",");
                 string options = "3;" + layerOptions;
                 return options;
             }
         }
+
     }
 }

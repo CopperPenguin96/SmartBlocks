@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.2.2</Version>
+    <Version>1.0.2.3</Version>
     <Authors>apotter96</Authors>
     <Description>A .NET standard library for easy saving/loading/generating of minecraft worlds. Currently only has one pre-built generator (Flatgrass)</Description>
     <Copyright>Copyright (c) 2019 by apotter96</Copyright>
@@ -32,6 +32,21 @@
   <ItemGroup>
     <Reference Include="Extension Methods">
       <HintPath>..\..\..\..\Projects\Extension-Methods\Extension Methods\Extension Methods\bin\Release\Extension Methods.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>..\..\..\..\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util">
+      <HintPath>..\..\..\..\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection">
+      <HintPath>..\..\..\..\ikvm-7.2.4630.5\bin\IKVM.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime">
+      <HintPath>..\..\..\..\ikvm-7.2.4630.5\bin\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="jnbt">
+      <HintPath>..\..\..\Libraries\jnbt.dll</HintPath>
     </Reference>
   </ItemGroup>
 
