@@ -3,16 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.2.3</Version>
+    <Version>1.1</Version>
     <Authors>apotter96</Authors>
-    <Description>A .NET standard library for easy saving/loading/generating of minecraft worlds. Currently only has one pre-built generator (Flatgrass)</Description>
+    <Description>A .NET standard library for easy saving/loading/generating of minecraft worlds.</Description>
     <Copyright>Copyright (c) 2019 by apotter96</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/apotter96/GemBlocks/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/apotter96/GemBlocks/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/apotter96/GemBlocks/</RepositoryUrl>
-    <PackageTags>minecraft, world, generation, server, software, blocks, flatgrass, standard, default, dirt</PackageTags>
+    <PackageTags>minecraft, world, generation, server, software, blocks, flatgrass, standard, default, dirt, amplified, largebiomes</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>Overhauled, fixed issues, adding the other world types</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
