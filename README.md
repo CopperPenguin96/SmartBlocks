@@ -8,11 +8,11 @@ Any assistance is welcomed! Please do a pull request if you see something that n
 Also changed was the naming conventions. Java conventions don't look right in C#! :D
 [→ GemBlocks Documentation] COMING SOON!
 
-Example (TO BE UPDATED WITH REDONE C# CODE)
+Example (:D)
 ------
 In this example, we generate a simple default world.
 
-			try
+	try
             {
                 /*
                  * Determine the type of generator
@@ -43,11 +43,8 @@ In this example, we generate a simple default world.
                 Console.WriteLine("Finished!");
             }
 
-The world has been saved to the /world/ directory in our execution directory. We can move it to the Minecraft /saves/ directory and enjoy all the melons.
+The world has been saved to the /world/ directory in our execution directory. We can move it to the Minecraft /saves/ directory and enjoy all the fun!
 
-![The generated melon world](https://raw.githubusercontent.com/MorbZ/J2Blocks/master/doc/example.jpg)
 
 Known Issues
 ------
-(https://github.com/MorbZ/J2Blocks/blob/master/src/net/morbz/minecraft/blocks/Material.java) the blocks that have a check mark  
-**Feel free to help and fix the issues by submitting a pull request.**
