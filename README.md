@@ -12,7 +12,7 @@ Example (:D)
 ------
 In this example, we generate a simple default world.
 
-	try
+		try
             {
                 /*
                  * Determine the type of generator
