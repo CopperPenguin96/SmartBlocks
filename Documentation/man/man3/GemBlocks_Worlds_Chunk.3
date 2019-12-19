@@ -1,0 +1,233 @@
+.TH "GemBlocks.Worlds.Chunk" 3 "Thu Dec 19 2019" "GemBlocks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GemBlocks.Worlds.Chunk \- Defines a chunk\&. It consists of 16x16 blocks in XZ-dimension and up to 16 sections for the height\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBGemBlocks\&.Tags\&.ITagProvider\fP, and \fBGemBlocks\&.Worlds\&.IBlockContainer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChunk\fP (\fBIBlockContainer\fP parent, int xpos, int zpos, \fBDefaultLayers\fP layers)"
+.br
+.RI "Creates a new instance\&. "
+.ti -1c
+.RI "void \fBSetBlock\fP (\fBPosition\fP pos, \fBBlock\fP block)"
+.br
+.RI "Sets a block at the given position "
+.ti -1c
+.RI "byte \fBGetSkyLight\fP (\fBPosition\fP pos)"
+.br
+.RI "Returns the sky light level of the block at given positon\&. If there is no block \fBWorld\&.DefaultSkyLight\fP will be returned\&. "
+.ti -1c
+.RI "void \fBSetSkyLight\fP (\fBPosition\fP pos, byte light)"
+.br
+.ti -1c
+.RI "byte \fBGetSkyLightFromParent\fP (\fBIBlockContainer\fP block, \fBPosition\fP child)"
+.br
+.RI "Returns the sky light level of a block that is out of bounds of the child block container\&. "
+.ti -1c
+.RI "void \fBSpreadSkyLight\fP (byte light)"
+.br
+.RI "Spreads the sky light\&. For each block that has the given light level it's adjacent blocks will be lit if their current light level is lower\&. "
+.ti -1c
+.RI "void \fBAddSkyLight\fP ()"
+.br
+.RI "Adds the sky light\&. Starts from the top of each column and sets the sky light to full, up to the first non-transparent block\&. "
+.ti -1c
+.RI "int \fBGetHighestBlock\fP (int x, int z)"
+.br
+.RI "Returns the highest non transparent block\&. \fBCalculateHeightMap()\fP has to be invoked before calling this method to get actual results\&. "
+.ti -1c
+.RI "void \fBCalculateHeightMap\fP ()"
+.br
+.RI "Calculates the height map\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSection\fP[] \fBSections\fP = new \fBSection\fP[\fBSectionsPerChunk\fP]"
+.br
+.ti -1c
+.RI "int[][] \fBHeightMap\fP = new \fBRectArray\fP<int>(\fBBlocksPerChunkSide\fP, \fBBlocksPerChunkSide\fP)\&.ToArray()"
+.br
+.ti -1c
+.RI "\fBIBlockContainer\fP \fBParent\fP"
+.br
+.ti -1c
+.RI "int \fBX\fP => _xPos"
+.br
+.ti -1c
+.RI "int \fBZ\fP => _zPos"
+.br
+.ti -1c
+.RI "bool \fBHasBlocks\fP => Sections\&.Any(section => section != null && section\&.BlockCount > 0)"
+.br
+.RI "True if there is at least 1 block that is not air "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const int \fBSectionsPerChunk\fP = 16"
+.br
+.RI "Sections per chunk side "
+.ti -1c
+.RI "const int \fBBlocksPerChunkSide\fP = 16"
+.br
+.RI "\fBBlocks\fP per chunk side "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Tag \fBTag\fP\fC [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines a chunk\&. It consists of 16x16 blocks in XZ-dimension and up to 16 sections for the height\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GemBlocks\&.Worlds\&.Chunk\&.Chunk (\fBIBlockContainer\fP parent, int xpos, int zpos, \fBDefaultLayers\fP layers)"
+
+.PP
+Creates a new instance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIparent\fP The parent block container
+.br
+\fIxpos\fP The X-coordinate within the region
+.br
+\fIzpos\fP The Z-coordinate within the region
+.br
+\fIlayers\fP The default layers\&. Can be 'null'
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void GemBlocks\&.Worlds\&.Chunk\&.AddSkyLight ()"
+
+.PP
+Adds the sky light\&. Starts from the top of each column and sets the sky light to full, up to the first non-transparent block\&. 
+.SS "void GemBlocks\&.Worlds\&.Chunk\&.CalculateHeightMap ()"
+
+.PP
+Calculates the height map\&. 
+.SS "int GemBlocks\&.Worlds\&.Chunk\&.GetHighestBlock (int x, int z)"
+
+.PP
+Returns the highest non transparent block\&. \fBCalculateHeightMap()\fP has to be invoked before calling this method to get actual results\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The X-coordinate
+.br
+\fIz\fP The Z-coordinate
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The y coordinate of the highest block
+.RE
+.PP
+
+.SS "byte GemBlocks\&.Worlds\&.Chunk\&.GetSkyLight (\fBPosition\fP pos)"
+
+.PP
+Returns the sky light level of the block at given positon\&. If there is no block \fBWorld\&.DefaultSkyLight\fP will be returned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The local XYZ-coordinate
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The sky light level
+.RE
+.PP
+
+.PP
+Implements \fBGemBlocks\&.Worlds\&.IBlockContainer\fP\&.
+.SS "byte GemBlocks\&.Worlds\&.Chunk\&.GetSkyLightFromParent (\fBIBlockContainer\fP childBlock, \fBPosition\fP child)"
+
+.PP
+Returns the sky light level of a block that is out of bounds of the child block container\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIchildBlock\fP The child block container
+.br
+\fIchild\fP The local X,Y, & Z coordinate
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The sky light level
+.RE
+.PP
+
+.PP
+Implements \fBGemBlocks\&.Worlds\&.IBlockContainer\fP\&.
+.SS "void GemBlocks\&.Worlds\&.Chunk\&.SetBlock (\fBPosition\fP pos, \fBBlock\fP block)"
+
+.PP
+Sets a block at the given position 
+.SS "void GemBlocks\&.Worlds\&.Chunk\&.SetSkyLight (\fBPosition\fP pos, byte light)"
+
+.SS "void GemBlocks\&.Worlds\&.Chunk\&.SpreadSkyLight (byte light)"
+
+.PP
+Spreads the sky light\&. For each block that has the given light level it's adjacent blocks will be lit if their current light level is lower\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlight\fP The light level
+.RE
+.PP
+
+.PP
+Implements \fBGemBlocks\&.Worlds\&.IBlockContainer\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const int GemBlocks\&.Worlds\&.Chunk\&.BlocksPerChunkSide = 16\fC [static]\fP"
+
+.PP
+\fBBlocks\fP per chunk side 
+.SS "bool GemBlocks\&.Worlds\&.Chunk\&.HasBlocks => Sections\&.Any(section => section != null && section\&.BlockCount > 0)"
+
+.PP
+True if there is at least 1 block that is not air 
+.SS "int [][] GemBlocks\&.Worlds\&.Chunk\&.HeightMap = new \fBRectArray\fP<int>(\fBBlocksPerChunkSide\fP, \fBBlocksPerChunkSide\fP)\&.ToArray()"
+
+.SS "\fBIBlockContainer\fP GemBlocks\&.Worlds\&.Chunk\&.Parent"
+
+.SS "\fBSection\fP [] GemBlocks\&.Worlds\&.Chunk\&.Sections = new \fBSection\fP[\fBSectionsPerChunk\fP]"
+
+.SS "const int GemBlocks\&.Worlds\&.Chunk\&.SectionsPerChunk = 16\fC [static]\fP"
+
+.PP
+Sections per chunk side 
+.SS "int GemBlocks\&.Worlds\&.Chunk\&.X => _xPos"
+
+.SS "int GemBlocks\&.Worlds\&.Chunk\&.Z => _zPos"
+
+.SH "Property Documentation"
+.PP 
+.SS "Tag GemBlocks\&.Worlds\&.Chunk\&.Tag\fC [get]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GemBlocks from the source code\&.

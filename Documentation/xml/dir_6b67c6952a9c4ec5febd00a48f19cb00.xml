@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_6b67c6952a9c4ec5febd00a48f19cb00" kind="dir">
+    <compoundname>F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Blocks</compoundname>
+    <innerdir refid="dir_da480cb068d83ed7ecc885a199d1a86c">F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Blocks/States</innerdir>
+    <innerfile refid="_block_8cs">Block.cs</innerfile>
+    <innerfile refid="_block_registry_8cs">BlockRegistry.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Blocks/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_tags_1_1_compound_tag_factory" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::Tags::CompoundTagFactory</compoundname>
+    <basecompoundref refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider" prot="public" virt="non-virtual">GemBlocks.Tags.ITagProvider</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1a5c7f661da2a03c7ad49385d2693168c9" prot="private" static="no" mutable="no">
+        <type>readonly Dictionary&lt; string, <ref refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1a9e5e117028b9414b4173374ab6070ac7" kindref="member">Tag</ref> &gt;</type>
+        <definition>readonly Dictionary&lt;string, Tag&gt; GemBlocks.Tags.CompoundTagFactory._values</definition>
+        <argsstring></argsstring>
+        <name>_values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" line="56" column="37" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1a2032f20eb237cfa69ded517bb7d2e91d" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string GemBlocks.Tags.CompoundTagFactory._name</definition>
+        <argsstring></argsstring>
+        <name>_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" line="57" column="33" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1a9e5e117028b9414b4173374ab6070ac7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>Tag</type>
+        <definition>Tag GemBlocks.Tags.CompoundTagFactory.Tag</definition>
+        <argsstring></argsstring>
+        <name>Tag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" line="70" column="20" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" bodystart="71" bodyend="84"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1afbd4ffee7b2432335323800a3155864a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.Tags.CompoundTagFactory.CompoundTagFactory</definition>
+        <argsstring>(string name)</argsstring>
+        <name>CompoundTagFactory</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" line="59" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1aa0cbe3ea9952318c018447ff3957cbeb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Tags.CompoundTagFactory.Set</definition>
+        <argsstring>(Tag tag)</argsstring>
+        <name>Set</name>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1a9e5e117028b9414b4173374ab6070ac7" kindref="member">Tag</ref></type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" line="65" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" bodystart="65" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ITagProvider</label>
+        <link refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider"/>
+      </node>
+      <node id="1">
+        <label>GemBlocks.Tags.CompoundTagFactory</label>
+        <link refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ITagProvider</label>
+        <link refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider"/>
+      </node>
+      <node id="1">
+        <label>GemBlocks.Tags.CompoundTagFactory</label>
+        <link refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" line="55" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" bodystart="54" bodyend="85"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1a2032f20eb237cfa69ded517bb7d2e91d" prot="private" virt="non-virtual"><scope>GemBlocks::Tags::CompoundTagFactory</scope><name>_name</name></member>
+      <member refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1a5c7f661da2a03c7ad49385d2693168c9" prot="private" virt="non-virtual"><scope>GemBlocks::Tags::CompoundTagFactory</scope><name>_values</name></member>
+      <member refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1afbd4ffee7b2432335323800a3155864a" prot="public" virt="non-virtual"><scope>GemBlocks::Tags::CompoundTagFactory</scope><name>CompoundTagFactory</name></member>
+      <member refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1aa0cbe3ea9952318c018447ff3957cbeb" prot="public" virt="non-virtual"><scope>GemBlocks::Tags::CompoundTagFactory</scope><name>Set</name></member>
+      <member refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory_1a9e5e117028b9414b4173374ab6070ac7" prot="public" virt="non-virtual"><scope>GemBlocks::Tags::CompoundTagFactory</scope><name>Tag</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

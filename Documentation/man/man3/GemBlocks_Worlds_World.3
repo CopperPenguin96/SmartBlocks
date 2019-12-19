@@ -1,0 +1,131 @@
+.TH "GemBlocks.Worlds.World" 3 "Thu Dec 19 2019" "GemBlocks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GemBlocks.Worlds.World
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBGemBlocks\&.Worlds\&.IBlockContainer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWorld\fP (\fBLevel\fP level)"
+.br
+.ti -1c
+.RI "\fBWorld\fP (\fBLevel\fP level, \fBDefaultLayers\fP layers)"
+.br
+.ti -1c
+.RI "void \fBSetBlock\fP (\fBPosition\fP pos, \fBBlock\fP block)"
+.br
+.ti -1c
+.RI "\fBRegion\fP \fBGetRegion\fP (int x, int z, bool create)"
+.br
+.ti -1c
+.RI "byte \fBGetSkyLight\fP (\fBPosition\fP pos)"
+.br
+.RI "Returns the sky light level of the block at given positon\&. If there is no block \fBWorld\&.DefaultSkyLight\fP will be returned\&. "
+.ti -1c
+.RI "byte \fBGetSkyLightFromParent\fP (\fBIBlockContainer\fP blockChild, \fBPosition\fP child)"
+.br
+.RI "Returns the sky light level of a block that is out of bounds of the child block container\&. "
+.ti -1c
+.RI "void \fBSpreadSkyLight\fP (byte light)"
+.br
+.RI "Spreads the sky light\&. For each block that has the given light level it's adjacent blocks will be lit if their current light level is lower\&. "
+.ti -1c
+.RI "File \fBSave\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const int \fBMaxHeight\fP = 256"
+.br
+.ti -1c
+.RI "const byte \fBDefaultTransparency\fP = 1"
+.br
+.ti -1c
+.RI "const byte \fBDefaultSkyLight\fP = 0xF"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GemBlocks\&.Worlds\&.World\&.World (\fBLevel\fP level)"
+
+.SS "GemBlocks\&.Worlds\&.World\&.World (\fBLevel\fP level, \fBDefaultLayers\fP layers)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBRegion\fP GemBlocks\&.Worlds\&.World\&.GetRegion (int x, int z, bool create)"
+
+.SS "byte GemBlocks\&.Worlds\&.World\&.GetSkyLight (\fBPosition\fP pos)"
+
+.PP
+Returns the sky light level of the block at given positon\&. If there is no block \fBWorld\&.DefaultSkyLight\fP will be returned\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpos\fP The local XYZ-coordinate
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The sky light level
+.RE
+.PP
+
+.PP
+Implements \fBGemBlocks\&.Worlds\&.IBlockContainer\fP\&.
+.SS "byte GemBlocks\&.Worlds\&.World\&.GetSkyLightFromParent (\fBIBlockContainer\fP childBlock, \fBPosition\fP child)"
+
+.PP
+Returns the sky light level of a block that is out of bounds of the child block container\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIchildBlock\fP The child block container
+.br
+\fIchild\fP The local X,Y, & Z coordinate
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The sky light level
+.RE
+.PP
+
+.PP
+Implements \fBGemBlocks\&.Worlds\&.IBlockContainer\fP\&.
+.SS "File GemBlocks\&.Worlds\&.World\&.Save ()"
+
+.SS "void GemBlocks\&.Worlds\&.World\&.SetBlock (\fBPosition\fP pos, \fBBlock\fP block)"
+
+.SS "void GemBlocks\&.Worlds\&.World\&.SpreadSkyLight (byte light)"
+
+.PP
+Spreads the sky light\&. For each block that has the given light level it's adjacent blocks will be lit if their current light level is lower\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlight\fP The light level
+.RE
+.PP
+
+.PP
+Implements \fBGemBlocks\&.Worlds\&.IBlockContainer\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const byte GemBlocks\&.Worlds\&.World\&.DefaultSkyLight = 0xF\fC [static]\fP"
+
+.SS "const byte GemBlocks\&.Worlds\&.World\&.DefaultTransparency = 1\fC [static]\fP"
+
+.SS "const int GemBlocks\&.Worlds\&.World\&.MaxHeight = 256\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GemBlocks from the source code\&.

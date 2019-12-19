@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_levels_1_1_world_kinds" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::Levels::WorldKinds</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_levels_1_1_world_kinds_1a5415d22107634fbe3b33f85b475b65fe" prot="public" static="yes" mutable="no">
+        <type>const string</type>
+        <definition>const string GemBlocks.Levels.WorldKinds.Default</definition>
+        <argsstring></argsstring>
+        <name>Default</name>
+        <initializer>= &quot;default&quot;</initializer>
+        <briefdescription>
+<para>The mostly used default world with regular biomes </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/WorldKinds.cs" line="34" column="29" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/WorldKinds.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_levels_1_1_world_kinds_1a454747104e70b74eddffaa9fe2818a82" prot="public" static="yes" mutable="no">
+        <type>const string</type>
+        <definition>const string GemBlocks.Levels.WorldKinds.Amplified</definition>
+        <argsstring></argsstring>
+        <name>Amplified</name>
+        <initializer>= &quot;amplified&quot;</initializer>
+        <briefdescription>
+<para>Woah bro </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/WorldKinds.cs" line="39" column="29" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/WorldKinds.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_levels_1_1_world_kinds_1a099cf9ac75598fb87cd72fcd107d379a" prot="public" static="yes" mutable="no">
+        <type>const string</type>
+        <definition>const string GemBlocks.Levels.WorldKinds.LargeBiomes</definition>
+        <argsstring></argsstring>
+        <name>LargeBiomes</name>
+        <initializer>= &quot;largeBomes&quot;</initializer>
+        <briefdescription>
+<para>Big biomes, really big </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/WorldKinds.cs" line="44" column="29" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/WorldKinds.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The kind of normal world </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/WorldKinds.cs" line="30" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/WorldKinds.cs" bodystart="29" bodyend="45"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_levels_1_1_world_kinds_1a454747104e70b74eddffaa9fe2818a82" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::WorldKinds</scope><name>Amplified</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_world_kinds_1a5415d22107634fbe3b33f85b475b65fe" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::WorldKinds</scope><name>Default</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_world_kinds_1a099cf9ac75598fb87cd72fcd107d379a" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::WorldKinds</scope><name>LargeBiomes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

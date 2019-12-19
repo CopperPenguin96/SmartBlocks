@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_utils_1_1_rect_array" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::Utils::RectArray</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IEnumerable&lt; T &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_utils_1_1_rect_array_1a145eacae85e484c10aad6a9fdc9e9567" prot="public" static="no" mutable="no">
+        <type>T[][]</type>
+        <definition>T [][] GemBlocks.Utils.RectArray&lt; T &gt;.Array</definition>
+        <argsstring></argsstring>
+        <name>Array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="15" column="18" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1acf994723bca3d7836ca8916cb96b1ce5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T[][]</type>
+        <definition>T [][] GemBlocks.Utils.RectArray&lt; T &gt;.ToArray</definition>
+        <argsstring>()</argsstring>
+        <name>ToArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="17" column="18" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1acf1c6e3337cd604f1aa9320cbea31143" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Utils.RectArray&lt; T &gt;.Set</definition>
+        <argsstring>(int index, int index2, T value)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index2</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="27" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="27" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1a82b87e230c80713a8d97eb076a9ff34f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T GemBlocks.Utils.RectArray&lt; T &gt;.Get</definition>
+        <argsstring>(int index, int index2)</argsstring>
+        <name>Get</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="33" column="18" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1abc32610cb158765c26632946124e6ff9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Utils.RectArray&lt; T &gt;.Add</definition>
+        <argsstring>(T[] value)</argsstring>
+        <name>Add</name>
+        <param>
+          <type>T[]</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="38" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="38" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1a852310fbc77d820b1525720f10ca66ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T[][]</type>
+        <definition>T [][] GemBlocks.Utils.RectArray&lt; T &gt;.All</definition>
+        <argsstring>(int size1, int size2)</argsstring>
+        <name>All</name>
+        <param>
+          <type>int</type>
+          <declname>size1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="45" column="18" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="45" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1acda325021471ed40758fedb943bd2666" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator&lt; T &gt;</type>
+        <definition>IEnumerator&lt;T&gt; GemBlocks.Utils.RectArray&lt; T &gt;.GetEnumerator</definition>
+        <argsstring>()</argsstring>
+        <name>GetEnumerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="56" column="28" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1a96c93df60e90a34edc5df62f25335007" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.Utils.RectArray&lt; T &gt;.RectArray</definition>
+        <argsstring>()</argsstring>
+        <name>RectArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="66" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="66" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1a0e77a7ea767dafffe97ad935028c9613" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.Utils.RectArray&lt; T &gt;.RectArray</definition>
+        <argsstring>(T[][] arr)</argsstring>
+        <name>RectArray</name>
+        <param>
+          <type>T</type>
+          <declname>arr</declname>
+          <array>[][]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="71" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1a2af7ff4985c75ba6ce567742046b335e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.Utils.RectArray&lt; T &gt;.RectArray</definition>
+        <argsstring>(int size1, int size2)</argsstring>
+        <name>RectArray</name>
+        <param>
+          <type>int</type>
+          <declname>size1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="76" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="76" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1af50280e738bc708e1428cf16daaf0a61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T[,]</type>
+        <definition>T [,] GemBlocks.Utils.RectArray&lt; T &gt;.ToMultiDimArray</definition>
+        <argsstring>()</argsstring>
+        <name>ToMultiDimArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="87" column="18" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="87" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1a5b494edd1945bc11a487bbc87ad39724" prot="public" static="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>static</type>
+        <definition>static GemBlocks.Utils.RectArray&lt; T &gt;.operator RectArray&lt; T &gt;</definition>
+        <argsstring>(T[][] tVal)</argsstring>
+        <name>operator RectArray&lt; T &gt;</name>
+        <param>
+          <type>T</type>
+          <declname>tVal</declname>
+          <array>[][]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="22" column="32" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="22" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_rect_array_1a91bc114528880115c65a9fef38c403c3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator IEnumerable.</type>
+        <definition>IEnumerator IEnumerable. GemBlocks.Utils.RectArray&lt; T &gt;.GetEnumerator</definition>
+        <argsstring>()</argsstring>
+        <name>GetEnumerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="61" column="32" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="61" bodyend="64"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class to work around T[][] </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GemBlocks.Utils.RectArray&lt; T &gt;</label>
+        <link refid="class_gem_blocks_1_1_utils_1_1_rect_array"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IEnumerable&lt; T &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>GemBlocks.Utils.RectArray&lt; T &gt;</label>
+        <link refid="class_gem_blocks_1_1_utils_1_1_rect_array"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IEnumerable&lt; T &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" line="14" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/RectArray.cs" bodystart="13" bodyend="108"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1abc32610cb158765c26632946124e6ff9" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>Add</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1a852310fbc77d820b1525720f10ca66ad" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>All</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1a145eacae85e484c10aad6a9fdc9e9567" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>Array</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1a82b87e230c80713a8d97eb076a9ff34f" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>Get</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1acda325021471ed40758fedb943bd2666" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>GetEnumerator</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1a91bc114528880115c65a9fef38c403c3" prot="private" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>GetEnumerator</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1a5b494edd1945bc11a487bbc87ad39724" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>operator RectArray&lt; T &gt;</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1a96c93df60e90a34edc5df62f25335007" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>RectArray</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1a0e77a7ea767dafffe97ad935028c9613" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>RectArray</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1a2af7ff4985c75ba6ce567742046b335e" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>RectArray</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1acf1c6e3337cd604f1aa9320cbea31143" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>Set</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1acf994723bca3d7836ca8916cb96b1ce5" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>ToArray</name></member>
+      <member refid="class_gem_blocks_1_1_utils_1_1_rect_array_1af50280e738bc708e1428cf16daaf0a61" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::RectArray</scope><name>ToMultiDimArray</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

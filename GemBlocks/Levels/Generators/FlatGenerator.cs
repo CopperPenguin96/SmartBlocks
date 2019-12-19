@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using GemBlocks.Blocks;
-using GemBlocks.Levels.Generators;
 using GemBlocks.Utils;
 using GemBlocks.Worlds;
+
 /*
 * The MIT License (MIT)
 * 
@@ -50,23 +50,45 @@ using GemBlocks.Worlds;
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
-namespace GemBlocks.Levels
+namespace GemBlocks.Levels.Generators
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// Generates a super-flat world
+    /// </summary>
     public class FlatGenerator: IGenerator
     {
+        /// <summary>
+        /// The default layers of this flat world
+        /// </summary>
         private readonly DefaultLayers _layers;
 
+        /// <summary>
+        /// Unused?
+        /// </summary>
         public FlatGenerator()
         {
         }
 
+        /// <summary>
+        /// Loads this instance with the desired layers
+        /// </summary>
+        /// <param name="layers"></param>
         public FlatGenerator(DefaultLayers layers)
         {
             _layers = layers;
         }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Used by the world generator
+        /// </summary>
         public string Name => "flat";
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Used by the world generator
+        /// </summary>
         public string Options
         {
             get

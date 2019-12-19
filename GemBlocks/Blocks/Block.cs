@@ -23,6 +23,10 @@
 */
 namespace GemBlocks.Blocks
 {
+    /// <summary>
+    /// Defines a block type.
+    /// Also contains a set of all types in Minecraft
+    /// </summary>
     public class Block
     {
         /// <summary>
@@ -35,15 +39,27 @@ namespace GemBlocks.Blocks
         /// </summary>
         public uint Meta { get; }
         
+        /// <summary>
+        /// The name of the block ("Dirt", "Air", etc.)
+        /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// Not implemented yet
+        /// </summary>
         public uint Transparency { get; set; }
 
         /// <summary>
-        /// The full identifier
+        /// The full identifier (i.e. minecraft:air)
         /// </summary>
         public string TypeText { get; set; }
 
+        /// <summary>
+        /// Loads the instance
+        /// </summary>
+        /// <param name="type">The type of block</param>
+        /// <param name="meta">The meta of the block</param>
+        /// <param name="trans">Not implented</param>
         public Block(uint type, uint meta, uint trans)
         {
             Type = type;
@@ -51,11 +67,18 @@ namespace GemBlocks.Blocks
             Transparency = trans;
         }
 
+        /// <summary>
+        /// Loads the instance
+        /// </summary>
+        /// <param name="type">The type of block</param>
+        /// <param name="meta">The meta of the block</param>
+        /// <param name="name">The name of the block</param>
+        /// <param name="typetext">THe identifier of the block</param>
         public Block(uint type, uint meta, string name, string typetext)
         {
             Type = type;
             Meta = meta;
-            Name = Name;
+            Name = name;
             TypeText = typetext;
         }
 

@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="interface_gem_blocks_1_1_worlds_1_1_i_block_container" kind="interface" language="C#" prot="public">
+    <compoundname>GemBlocks::Worlds::IBlockContainer</compoundname>
+    <derivedcompoundref refid="class_gem_blocks_1_1_worlds_1_1_chunk" prot="public" virt="non-virtual">GemBlocks.Worlds.Chunk</derivedcompoundref>
+    <derivedcompoundref refid="class_gem_blocks_1_1_worlds_1_1_region" prot="public" virt="non-virtual">GemBlocks.Worlds.Region</derivedcompoundref>
+    <derivedcompoundref refid="class_gem_blocks_1_1_worlds_1_1_section" prot="public" virt="non-virtual">GemBlocks.Worlds.Section</derivedcompoundref>
+    <derivedcompoundref refid="class_gem_blocks_1_1_worlds_1_1_world" prot="public" virt="non-virtual">GemBlocks.Worlds.World</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1a633a48bf7ae0fe210c5592d017d82efc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte GemBlocks.Worlds.IBlockContainer.GetSkyLight</definition>
+        <argsstring>(Position pos)</argsstring>
+        <name>GetSkyLight</name>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_region_1aaa4c0026054dce6d1a770411e1e90e73">GetSkyLight</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_world_1a2266126f1b23e31f0fcde40a8b7b2c5c">GetSkyLight</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a1b38947e25943ae4071d742a67cf0861">GetSkyLight</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_section_1a6cc14ad3b33d02e70abc1a1284daad07">GetSkyLight</reimplementedby>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_worlds_1_1_position" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Returns the sky light level of the block at given positon. If there is no block <ref refid="class_gem_blocks_1_1_worlds_1_1_world_1aa64dccf7ca6dbb07976cac22be346f0f" kindref="member">World.DefaultSkyLight</ref> will be returned. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The local XYZ-coordinate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sky light level</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/IBlockContainer.cs" line="61" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1a3f3115bad982b3a33b1bd80cffd49355" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte GemBlocks.Worlds.IBlockContainer.GetSkyLightFromParent</definition>
+        <argsstring>(IBlockContainer childBlock, Position child)</argsstring>
+        <name>GetSkyLightFromParent</name>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a6caeef905f537b4948f79487fa12fcac">GetSkyLightFromParent</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_region_1a1a0e073af63bde09a9de847c77425fe9">GetSkyLightFromParent</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_world_1a6799de7cbdac14c73b6686d5eabfc0d3">GetSkyLightFromParent</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_section_1accf47c461c167f71c0f50a08edf6ce83">GetSkyLightFromParent</reimplementedby>
+        <param>
+          <type><ref refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container" kindref="compound">IBlockContainer</ref></type>
+          <declname>childBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_worlds_1_1_position" kindref="compound">Position</ref></type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+<para>Returns the sky light level of a block that is out of bounds of the child block container. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>childBlock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child block container</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The local X,Y, &amp; Z coordinate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sky light level</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/IBlockContainer.cs" line="70" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1ab8fae9852f29d730f41726d2bf4cacff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Worlds.IBlockContainer.SpreadSkyLight</definition>
+        <argsstring>(byte light)</argsstring>
+        <name>SpreadSkyLight</name>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_region_1aa2bfbb0e0bc1ac09344b461b913191bc">SpreadSkyLight</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_world_1a0226b50b9f3ecee70e7d754bb5710f93">SpreadSkyLight</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_section_1a8315f63f5ff0492cdffbd4f5ee853acf">SpreadSkyLight</reimplementedby>
+        <reimplementedby refid="class_gem_blocks_1_1_worlds_1_1_chunk_1ab9fba486ff0847524cd1cfb15c9009d5">SpreadSkyLight</reimplementedby>
+        <param>
+          <type>byte</type>
+          <declname>light</declname>
+        </param>
+        <briefdescription>
+<para>Spreads the sky light. For each block that has the given light level it&apos;s adjacent blocks will be lit if their current light level is lower. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>light</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The light level</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/IBlockContainer.cs" line="81" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GemBlocks.Worlds.IBlockContainer</label>
+        <link refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container"/>
+      </node>
+      <node id="5">
+        <label>GemBlocks.Worlds.World</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_world"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>GemBlocks.Worlds.Section</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_section"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>GemBlocks.Worlds.Region</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_region"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GemBlocks.Worlds.Chunk</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_chunk"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/IBlockContainer.cs" line="54" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/IBlockContainer.cs" bodystart="53" bodyend="82"/>
+    <listofallmembers>
+      <member refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1a633a48bf7ae0fe210c5592d017d82efc" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::IBlockContainer</scope><name>GetSkyLight</name></member>
+      <member refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1a3f3115bad982b3a33b1bd80cffd49355" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::IBlockContainer</scope><name>GetSkyLightFromParent</name></member>
+      <member refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1ab8fae9852f29d730f41726d2bf4cacff" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::IBlockContainer</scope><name>SpreadSkyLight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,89 @@
+.TH "GemBlocks.Worlds.DefaultLayers" 3 "Thu Dec 19 2019" "GemBlocks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GemBlocks.Worlds.DefaultLayers \- Can be used to define the default block layers of the part of the world that was created by \fBGemBlocks\fP\&. This results in a flat world where the blocks of each Y-coordinate are the same until they get overwritten\&. It is recommended to combine the \fBDefaultLayers\fP with the FlatGenerator to get a consitent world\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetLayer\fP (int y, \fBBlock\fP material)"
+.br
+.RI "Sets the layer at the given Y-coordinate with the given material\&. "
+.ti -1c
+.RI "void \fBSetLayers\fP (int y1, int y2, \fBBlock\fP material)"
+.br
+.RI "Sets the layers of the given range of Y-coordinates (including y1 and y2) with the given material\&. "
+.ti -1c
+.RI "\fBBlock\fP \fBGetLayer\fP (int y)"
+.br
+.RI "Gets the material at the given Y-coordinate "
+.ti -1c
+.RI "bool \fBValidLayer\fP (int y)"
+.br
+.RI "Checks whether the Y-coordinate is valid\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Can be used to define the default block layers of the part of the world that was created by \fBGemBlocks\fP\&. This results in a flat world where the blocks of each Y-coordinate are the same until they get overwritten\&. It is recommended to combine the \fBDefaultLayers\fP with the FlatGenerator to get a consitent world\&. 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBlock\fP GemBlocks\&.Worlds\&.DefaultLayers\&.GetLayer (int y)"
+
+.PP
+Gets the material at the given Y-coordinate 
+.PP
+\fBParameters\fP
+.RS 4
+\fIy\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.SS "void GemBlocks\&.Worlds\&.DefaultLayers\&.SetLayer (int y, \fBBlock\fP material)"
+
+.PP
+Sets the layer at the given Y-coordinate with the given material\&. gv 
+.SS "void GemBlocks\&.Worlds\&.DefaultLayers\&.SetLayers (int y1, int y2, \fBBlock\fP material)"
+
+.PP
+Sets the layers of the given range of Y-coordinates (including y1 and y2) with the given material\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIy1\fP The lower Y-coordiante
+.br
+\fIy2\fP The higher Y-coordinate
+.br
+\fImaterial\fP The block
+.RE
+.PP
+
+.SS "bool GemBlocks\&.Worlds\&.DefaultLayers\&.ValidLayer (int y)"
+
+.PP
+Checks whether the Y-coordinate is valid\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIy\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GemBlocks from the source code\&.

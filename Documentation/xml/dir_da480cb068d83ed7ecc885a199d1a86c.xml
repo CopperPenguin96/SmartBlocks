@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_da480cb068d83ed7ecc885a199d1a86c" kind="dir">
+    <compoundname>F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Blocks/States</compoundname>
+    <innerfile refid="_facing2_state_8cs">Facing2State.cs</innerfile>
+    <innerfile refid="_facing4_state_8cs">Facing4State.cs</innerfile>
+    <innerfile refid="_facing5_state_8cs">Facing5State.cs</innerfile>
+    <innerfile refid="_half_state_8cs">HalfState.cs</innerfile>
+    <innerfile refid="_wood_state_8cs">WoodState.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Blocks/States/"/>
+  </compounddef>
+</doxygen>

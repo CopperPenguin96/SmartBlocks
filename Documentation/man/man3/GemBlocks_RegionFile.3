@@ -1,0 +1,70 @@
+.TH "GemBlocks.RegionFile" 3 "Thu Dec 19 2019" "GemBlocks" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GemBlocks.RegionFile
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegionFile\fP (File path)"
+.br
+.ti -1c
+.RI "virtual DataInputStream \fBGetChunkDataInputStream\fP (int x, int z)"
+.br
+.ti -1c
+.RI "DataOutputStream \fBGetChunkDataOutputStream\fP (int x, int z)"
+.br
+.ti -1c
+.RI "bool \fBHasChunk\fP (int x, int z)"
+.br
+.ti -1c
+.RI "void \fBClose\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBWrite\fP (int x, int z, byte[] data, int length)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "long \fBLastModified\fP = 0\fC [get]\fP"
+.br
+.ti -1c
+.RI "virtual int \fBSizeDelta\fP\fC [get]\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GemBlocks\&.RegionFile\&.RegionFile (File path)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void GemBlocks\&.RegionFile\&.Close ()"
+
+.SS "virtual DataInputStream GemBlocks\&.RegionFile\&.GetChunkDataInputStream (int x, int z)\fC [virtual]\fP"
+
+.SS "DataOutputStream GemBlocks\&.RegionFile\&.GetChunkDataOutputStream (int x, int z)"
+
+.SS "bool GemBlocks\&.RegionFile\&.HasChunk (int x, int z)"
+
+.SS "virtual void GemBlocks\&.RegionFile\&.Write (int x, int z, byte[] data, int length)\fC [protected]\fP, \fC [virtual]\fP"
+
+.SH "Property Documentation"
+.PP 
+.SS "long GemBlocks\&.RegionFile\&.LastModified = 0\fC [get]\fP"
+
+.SS "virtual int GemBlocks\&.RegionFile\&.SizeDelta\fC [get]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for GemBlocks from the source code\&.

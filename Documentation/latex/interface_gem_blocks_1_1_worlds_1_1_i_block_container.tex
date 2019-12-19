@@ -1,0 +1,90 @@
+\hypertarget{interface_gem_blocks_1_1_worlds_1_1_i_block_container}{}\doxysection{Gem\+Blocks.\+Worlds.\+I\+Block\+Container Interface Reference}
+\label{interface_gem_blocks_1_1_worlds_1_1_i_block_container}\index{GemBlocks.Worlds.IBlockContainer@{GemBlocks.Worlds.IBlockContainer}}
+Inheritance diagram for Gem\+Blocks.\+Worlds.\+I\+Block\+Container\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.284404cm]{interface_gem_blocks_1_1_worlds_1_1_i_block_container}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container_a633a48bf7ae0fe210c5592d017d82efc}{Get\+Sky\+Light}} (\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}} pos)
+\begin{DoxyCompactList}\small\item\em Returns the sky light level of the block at given positon. If there is no block \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_world_aa64dccf7ca6dbb07976cac22be346f0f}{World.\+Default\+Sky\+Light}} will be returned. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container_a3f3115bad982b3a33b1bd80cffd49355}{Get\+Sky\+Light\+From\+Parent}} (\mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container}{I\+Block\+Container}} child\+Block, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}} child)
+\begin{DoxyCompactList}\small\item\em Returns the sky light level of a block that is out of bounds of the child block container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container_ab8fae9852f29d730f41726d2bf4cacff}{Spread\+Sky\+Light}} (byte light)
+\begin{DoxyCompactList}\small\item\em Spreads the sky light. For each block that has the given light level it\textquotesingle{}s adjacent blocks will be lit if their current light level is lower. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_gem_blocks_1_1_worlds_1_1_i_block_container_a633a48bf7ae0fe210c5592d017d82efc}\label{interface_gem_blocks_1_1_worlds_1_1_i_block_container_a633a48bf7ae0fe210c5592d017d82efc}} 
+\index{GemBlocks.Worlds.IBlockContainer@{GemBlocks.Worlds.IBlockContainer}!GetSkyLight@{GetSkyLight}}
+\index{GetSkyLight@{GetSkyLight}!GemBlocks.Worlds.IBlockContainer@{GemBlocks.Worlds.IBlockContainer}}
+\doxysubsubsection{\texorpdfstring{GetSkyLight()}{GetSkyLight()}}
+{\footnotesize\ttfamily byte Gem\+Blocks.\+Worlds.\+I\+Block\+Container.\+Get\+Sky\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Returns the sky light level of the block at given positon. If there is no block \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_world_aa64dccf7ca6dbb07976cac22be346f0f}{World.\+Default\+Sky\+Light}} will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The local X\+Y\+Z-\/coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sky light level
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_section_a6cc14ad3b33d02e70abc1a1284daad07}{Gem\+Blocks.\+Worlds.\+Section}}, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_chunk_a1b38947e25943ae4071d742a67cf0861}{Gem\+Blocks.\+Worlds.\+Chunk}}, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_world_a2266126f1b23e31f0fcde40a8b7b2c5c}{Gem\+Blocks.\+Worlds.\+World}}, and \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_aaa4c0026054dce6d1a770411e1e90e73}{Gem\+Blocks.\+Worlds.\+Region}}.
+
+\mbox{\Hypertarget{interface_gem_blocks_1_1_worlds_1_1_i_block_container_a3f3115bad982b3a33b1bd80cffd49355}\label{interface_gem_blocks_1_1_worlds_1_1_i_block_container_a3f3115bad982b3a33b1bd80cffd49355}} 
+\index{GemBlocks.Worlds.IBlockContainer@{GemBlocks.Worlds.IBlockContainer}!GetSkyLightFromParent@{GetSkyLightFromParent}}
+\index{GetSkyLightFromParent@{GetSkyLightFromParent}!GemBlocks.Worlds.IBlockContainer@{GemBlocks.Worlds.IBlockContainer}}
+\doxysubsubsection{\texorpdfstring{GetSkyLightFromParent()}{GetSkyLightFromParent()}}
+{\footnotesize\ttfamily byte Gem\+Blocks.\+Worlds.\+I\+Block\+Container.\+Get\+Sky\+Light\+From\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container}{I\+Block\+Container}}}]{child\+Block,  }\item[{\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}}}]{child }\end{DoxyParamCaption})}
+
+
+
+Returns the sky light level of a block that is out of bounds of the child block container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child\+Block} & The child block container\\
+\hline
+{\em child} & The local X,Y, \& Z coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sky light level
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_section_accf47c461c167f71c0f50a08edf6ce83}{Gem\+Blocks.\+Worlds.\+Section}}, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_world_a6799de7cbdac14c73b6686d5eabfc0d3}{Gem\+Blocks.\+Worlds.\+World}}, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_a1a0e073af63bde09a9de847c77425fe9}{Gem\+Blocks.\+Worlds.\+Region}}, and \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_chunk_a6caeef905f537b4948f79487fa12fcac}{Gem\+Blocks.\+Worlds.\+Chunk}}.
+
+\mbox{\Hypertarget{interface_gem_blocks_1_1_worlds_1_1_i_block_container_ab8fae9852f29d730f41726d2bf4cacff}\label{interface_gem_blocks_1_1_worlds_1_1_i_block_container_ab8fae9852f29d730f41726d2bf4cacff}} 
+\index{GemBlocks.Worlds.IBlockContainer@{GemBlocks.Worlds.IBlockContainer}!SpreadSkyLight@{SpreadSkyLight}}
+\index{SpreadSkyLight@{SpreadSkyLight}!GemBlocks.Worlds.IBlockContainer@{GemBlocks.Worlds.IBlockContainer}}
+\doxysubsubsection{\texorpdfstring{SpreadSkyLight()}{SpreadSkyLight()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Worlds.\+I\+Block\+Container.\+Spread\+Sky\+Light (\begin{DoxyParamCaption}\item[{byte}]{light }\end{DoxyParamCaption})}
+
+
+
+Spreads the sky light. For each block that has the given light level it\textquotesingle{}s adjacent blocks will be lit if their current light level is lower. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light level\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_chunk_ab9fba486ff0847524cd1cfb15c9009d5}{Gem\+Blocks.\+Worlds.\+Chunk}}, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_section_a8315f63f5ff0492cdffbd4f5ee853acf}{Gem\+Blocks.\+Worlds.\+Section}}, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_world_a0226b50b9f3ecee70e7d754bb5710f93}{Gem\+Blocks.\+Worlds.\+World}}, and \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_aa2bfbb0e0bc1ac09344b461b913191bc}{Gem\+Blocks.\+Worlds.\+Region}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Documents/\+Programming/\+Gems\+Craft/\+Gem\+Blocks/\+Gem\+Blocks/\+Gem\+Blocks/\+Worlds/\mbox{\hyperlink{_i_block_container_8cs}{I\+Block\+Container.\+cs}}\end{DoxyCompactItemize}

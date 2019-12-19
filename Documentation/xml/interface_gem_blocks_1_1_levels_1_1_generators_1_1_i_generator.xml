@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator" kind="interface" language="C#" prot="public">
+    <compoundname>GemBlocks::Levels::Generators::IGenerator</compoundname>
+    <derivedcompoundref refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator" prot="public" virt="non-virtual">GemBlocks.Levels.Generators.FlatGenerator</derivedcompoundref>
+    <derivedcompoundref refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator" prot="public" virt="non-virtual">GemBlocks.Levels.Generators.SimpleGenerator</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator_1a81c10df744e9bf05c7784e8c9650a054" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string GemBlocks.Levels.Generators.IGenerator.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>The generator name as it is used in the level file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/IGenerator.cs" line="58" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/IGenerator.cs" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="property" id="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator_1a7e3fd9dc7ec41acab7b9b5bb3ec04fda" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string GemBlocks.Levels.Generators.IGenerator.Options</definition>
+        <argsstring></argsstring>
+        <name>Options</name>
+        <briefdescription>
+<para>The generator options as they are used in the level file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/IGenerator.cs" line="63" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/IGenerator.cs" bodystart="63" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Inteface for world generators. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GemBlocks.Levels.Generators.IGenerator</label>
+        <link refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator"/>
+      </node>
+      <node id="3">
+        <label>GemBlocks.Levels.Generators.SimpleGenerator</label>
+        <link refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>GemBlocks.Levels.Generators.FlatGenerator</label>
+        <link refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/IGenerator.cs" line="54" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/IGenerator.cs" bodystart="53" bodyend="64"/>
+    <listofallmembers>
+      <member refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator_1a81c10df744e9bf05c7784e8c9650a054" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::IGenerator</scope><name>Name</name></member>
+      <member refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator_1a7e3fd9dc7ec41acab7b9b5bb3ec04fda" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::IGenerator</scope><name>Options</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

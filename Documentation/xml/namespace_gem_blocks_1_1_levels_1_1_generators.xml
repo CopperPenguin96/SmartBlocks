@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="namespace_gem_blocks_1_1_levels_1_1_generators" kind="namespace" language="C#">
+    <compoundname>GemBlocks::Levels::Generators</compoundname>
+    <innerclass refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator" prot="public">GemBlocks::Levels::Generators::FlatGenerator</innerclass>
+    <innerclass refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator" prot="public">GemBlocks::Levels::Generators::IGenerator</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator" prot="public">GemBlocks::Levels::Generators::SimpleGenerator</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" line="54" column="1"/>
+  </compounddef>
+</doxygen>

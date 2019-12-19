@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::Levels::Generators::FlatGenerator</compoundname>
+    <basecompoundref refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator" prot="public" virt="non-virtual">GemBlocks.Levels.Generators.IGenerator</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1a132c8f739ab792153f38b88729026761" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="class_gem_blocks_1_1_worlds_1_1_default_layers" kindref="compound">DefaultLayers</ref></type>
+        <definition>readonly DefaultLayers GemBlocks.Levels.Generators.FlatGenerator._layers</definition>
+        <argsstring></argsstring>
+        <name>_layers</name>
+        <briefdescription>
+<para>The default layers of this flat world </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" line="64" column="40" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1af5a1b47c3452d5b820cc13b387af0fd3" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string GemBlocks.Levels.Generators.FlatGenerator.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <initializer>=&gt; &quot;flat&quot;</initializer>
+        <briefdescription>
+<para>Used by the world generator </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" line="86" column="23" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1afcedf09e00bffb9a7d68104ff4e46585" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string GemBlocks.Levels.Generators.FlatGenerator.Options</definition>
+        <argsstring></argsstring>
+        <name>Options</name>
+        <briefdescription>
+<para>Used by the world generator </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" line="92" column="23" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" bodystart="93" bodyend="155"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1ac5f604afd1fd4450ee7b4f584b72124c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.Levels.Generators.FlatGenerator.FlatGenerator</definition>
+        <argsstring>()</argsstring>
+        <name>FlatGenerator</name>
+        <briefdescription>
+<para>Unused? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" line="69" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1aeb9aa72857b15d9b3575bb6974f7a5dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.Levels.Generators.FlatGenerator.FlatGenerator</definition>
+        <argsstring>(DefaultLayers layers)</argsstring>
+        <name>FlatGenerator</name>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_worlds_1_1_default_layers" kindref="compound">DefaultLayers</ref></type>
+          <declname>layers</declname>
+        </param>
+        <briefdescription>
+<para>Loads this instance with the desired layers </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>layers</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" line="77" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" bodystart="77" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Generates a super-flat world </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GemBlocks.Levels.Generators.FlatGenerator</label>
+        <link refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IGenerator</label>
+        <link refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>GemBlocks.Levels.Generators.FlatGenerator</label>
+        <link refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IGenerator</label>
+        <link refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator"/>
+      </node>
+    </collaborationgraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" line="60" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/FlatGenerator.cs" bodystart="59" bodyend="157"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1a132c8f739ab792153f38b88729026761" prot="private" virt="non-virtual"><scope>GemBlocks::Levels::Generators::FlatGenerator</scope><name>_layers</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1ac5f604afd1fd4450ee7b4f584b72124c" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::FlatGenerator</scope><name>FlatGenerator</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1aeb9aa72857b15d9b3575bb6974f7a5dd" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::FlatGenerator</scope><name>FlatGenerator</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1af5a1b47c3452d5b820cc13b387af0fd3" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::FlatGenerator</scope><name>Name</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_flat_generator_1afcedf09e00bffb9a7d68104ff4e46585" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::FlatGenerator</scope><name>Options</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

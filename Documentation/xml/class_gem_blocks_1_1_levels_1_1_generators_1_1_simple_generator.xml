@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::Levels::Generators::SimpleGenerator</compoundname>
+    <basecompoundref refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator" prot="public" virt="non-virtual">GemBlocks.Levels.Generators.IGenerator</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a9075d46aede231471605cf1ee08e88bf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="namespace_gem_blocks_1_1_levels_1a8a763fa2d6c85dace52cac246087bcfd" kindref="member">WorldType</ref></type>
+        <definition>WorldType GemBlocks.Levels.Generators.SimpleGenerator.WorldKind</definition>
+        <argsstring></argsstring>
+        <name>WorldKind</name>
+        <briefdescription>
+<para>The kind of world </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" line="60" column="26" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" bodystart="60" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a6c5aa8cf691e0ed531973f5f86f815d8" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string GemBlocks.Levels.Generators.SimpleGenerator.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <initializer>=&gt; GetWorldKindString()</initializer>
+        <briefdescription>
+<para>Tells the world generator what kind of world </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" line="82" column="23" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a7b2b513327198352a09d2bfce23e166f" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string GemBlocks.Levels.Generators.SimpleGenerator.Options</definition>
+        <argsstring></argsstring>
+        <name>Options</name>
+        <initializer>=&gt; null</initializer>
+        <briefdescription>
+<para>Options.... </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" line="88" column="23" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a811f31035485734517a58d0f965d9fe0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string GemBlocks.Levels.Generators.SimpleGenerator.GetWorldKindString</definition>
+        <argsstring>()</argsstring>
+        <name>GetWorldKindString</name>
+        <briefdescription>
+<para>Used to enumerate through the enum as if it was a string </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" line="66" column="24" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" bodystart="66" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a91d0eb106cb21fcb745ce12cb79a9911" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.Levels.Generators.SimpleGenerator.SimpleGenerator</definition>
+        <argsstring>(string value)</argsstring>
+        <name>SimpleGenerator</name>
+        <param>
+          <type>string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Initializes this instance with the specified world kind </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" line="94" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" bodystart="94" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Generates the normal world types (Default, Amplified, Large Biomes) </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GemBlocks.Levels.Generators.SimpleGenerator</label>
+        <link refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IGenerator</label>
+        <link refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>GemBlocks.Levels.Generators.SimpleGenerator</label>
+        <link refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IGenerator</label>
+        <link refid="interface_gem_blocks_1_1_levels_1_1_generators_1_1_i_generator"/>
+      </node>
+    </collaborationgraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" line="56" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators/SimpleGenerator.cs" bodystart="55" bodyend="111"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a811f31035485734517a58d0f965d9fe0" prot="private" virt="non-virtual"><scope>GemBlocks::Levels::Generators::SimpleGenerator</scope><name>GetWorldKindString</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a6c5aa8cf691e0ed531973f5f86f815d8" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::SimpleGenerator</scope><name>Name</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a7b2b513327198352a09d2bfce23e166f" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::SimpleGenerator</scope><name>Options</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a91d0eb106cb21fcb745ce12cb79a9911" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::SimpleGenerator</scope><name>SimpleGenerator</name></member>
+      <member refid="class_gem_blocks_1_1_levels_1_1_generators_1_1_simple_generator_1a9075d46aede231471605cf1ee08e88bf" prot="public" virt="non-virtual"><scope>GemBlocks::Levels::Generators::SimpleGenerator</scope><name>WorldKind</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

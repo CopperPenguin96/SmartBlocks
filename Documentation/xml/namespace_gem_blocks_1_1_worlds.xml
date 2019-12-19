@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="namespace_gem_blocks_1_1_worlds" kind="namespace" language="C#">
+    <compoundname>GemBlocks::Worlds</compoundname>
+    <innerclass refid="class_gem_blocks_1_1_worlds_1_1_chunk" prot="public">GemBlocks::Worlds::Chunk</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_worlds_1_1_default_layers" prot="public">GemBlocks::Worlds::DefaultLayers</innerclass>
+    <innerclass refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container" prot="public">GemBlocks::Worlds::IBlockContainer</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_worlds_1_1_nibble_array" prot="public">GemBlocks::Worlds::NibbleArray</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_worlds_1_1_position" prot="public">GemBlocks::Worlds::Position</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_worlds_1_1_region" prot="public">GemBlocks::Worlds::Region</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_worlds_1_1_section" prot="public">GemBlocks::Worlds::Section</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_worlds_1_1_world" prot="public">GemBlocks::Worlds::World</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="56" column="1"/>
+  </compounddef>
+</doxygen>

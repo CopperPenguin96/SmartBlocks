@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+
 /*
  * Modified License
 * The MIT License (MIT)
@@ -29,7 +28,14 @@ namespace GemBlocks.Blocks
 {
     public class BlockRegistry
     {
+        /// <summary>
+        /// A list of all the static blocks in Block.cs
+        /// </summary>
         public static List<Block> Blocks = new List<Block>();
+
+        /// <summary>
+        /// Loads all the blocks into the registry.
+        /// </summary>
         public static void Load()
         {
             Blocks.Add(Block.Air);

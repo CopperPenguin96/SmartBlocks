@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_utils_1_1_string_utils" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::Utils::StringUtils</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_utils_1_1_string_utils_1a34fda8d6eef1b3ddf27788b789dfd714" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string GemBlocks.Utils.StringUtils.Join</definition>
+        <argsstring>(string[] parts, string glue)</argsstring>
+        <name>Join</name>
+        <param>
+          <type>string[]</type>
+          <declname>parts</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>glue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/StringUtils.cs" line="52" column="30" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/StringUtils.cs" bodystart="52" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/StringUtils.cs" line="51" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Utils/StringUtils.cs" bodystart="50" bodyend="72"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_utils_1_1_string_utils_1a34fda8d6eef1b3ddf27788b789dfd714" prot="public" virt="non-virtual"><scope>GemBlocks::Utils::StringUtils</scope><name>Join</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

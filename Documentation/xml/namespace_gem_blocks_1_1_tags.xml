@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="namespace_gem_blocks_1_1_tags" kind="namespace" language="C#">
+    <compoundname>GemBlocks::Tags</compoundname>
+    <innerclass refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory" prot="public">GemBlocks::Tags::CompoundTagFactory</innerclass>
+    <innerclass refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider" prot="public">GemBlocks::Tags::ITagProvider</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_tags_1_1_list_tag_factory" prot="public">GemBlocks::Tags::ListTagFactory</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/CompoundTagFactory.cs" line="53" column="1"/>
+  </compounddef>
+</doxygen>

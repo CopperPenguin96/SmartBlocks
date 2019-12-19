@@ -1,0 +1,482 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_region_file" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::RegionFile</compoundname>
+    <innerclass refid="class_gem_blocks_1_1_region_file_1_1_chunk_buffer" prot="private">GemBlocks::RegionFile::ChunkBuffer</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a518950443c8f1717b016dec09b1a28db" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GemBlocks.RegionFile.VersionGzip</definition>
+        <argsstring></argsstring>
+        <name>VersionGzip</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="66" column="27" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1ae751577e868c2c67c65cf83f04fdc9bb" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GemBlocks.RegionFile.VersionDeflate</definition>
+        <argsstring></argsstring>
+        <name>VersionDeflate</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="67" column="27" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a6f04afa70b3d11fc4e0728d3864c0154" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GemBlocks.RegionFile.SectorBytes</definition>
+        <argsstring></argsstring>
+        <name>SectorBytes</name>
+        <initializer>= 4096</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="68" column="27" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a98aa29f4d99139801c8888400b580077" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GemBlocks.RegionFile.SectorInts</definition>
+        <argsstring></argsstring>
+        <name>SectorInts</name>
+        <initializer>= SectorBytes / 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="69" column="27" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a215b8afdc583851f0b37406cac7d32a5" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GemBlocks.RegionFile.ChunkHeaderSize</definition>
+        <argsstring></argsstring>
+        <name>ChunkHeaderSize</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="70" column="27" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1aa41e8b1313adbd791b20710b061a1467" prot="private" static="no" mutable="no">
+        <type>readonly byte[]</type>
+        <definition>readonly byte [] GemBlocks.RegionFile._emptySector</definition>
+        <argsstring></argsstring>
+        <name>_emptySector</name>
+        <initializer>= new byte[4096]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="71" column="31" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a7b73cca972ea9b1f75cbb5bb318059c2" prot="private" static="no" mutable="no">
+        <type>readonly File</type>
+        <definition>readonly File GemBlocks.RegionFile._fileName</definition>
+        <argsstring></argsstring>
+        <name>_fileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="72" column="31" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a30114e1bc5e077af1ffecb9bc9acbaaa" prot="private" static="no" mutable="no">
+        <type>readonly RandomAccessFile</type>
+        <definition>readonly RandomAccessFile GemBlocks.RegionFile._file</definition>
+        <argsstring></argsstring>
+        <name>_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="73" column="43" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a704c2c6ad363201c94afee2bc7209c19" prot="private" static="no" mutable="no">
+        <type>readonly int[]</type>
+        <definition>readonly int [] GemBlocks.RegionFile._offsets</definition>
+        <argsstring></argsstring>
+        <name>_offsets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="74" column="30" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1ab276909d5f54822f6e9e762d0e435884" prot="private" static="no" mutable="no">
+        <type>readonly int[]</type>
+        <definition>readonly int [] GemBlocks.RegionFile._chunkTimeStamps</definition>
+        <argsstring></argsstring>
+        <name>_chunkTimeStamps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="75" column="30" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a3972df6db37ff9877c8913cfe8bc4aa3" prot="private" static="no" mutable="no">
+        <type>readonly List&lt; bool &gt;</type>
+        <definition>readonly List&lt;bool&gt; GemBlocks.RegionFile._sectorFree</definition>
+        <argsstring></argsstring>
+        <name>_sectorFree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="76" column="31" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1a95727f6455bbfe25ed74b6b898bae4a2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GemBlocks.RegionFile._sizeDelta</definition>
+        <argsstring></argsstring>
+        <name>_sizeDelta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="77" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_gem_blocks_1_1_region_file_1a5c25db02954e1d274a6ade61c4c3880c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>long</type>
+        <definition>long GemBlocks.RegionFile.LastModified</definition>
+        <argsstring></argsstring>
+        <name>LastModified</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="158" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="158" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="property" id="class_gem_blocks_1_1_region_file_1a65243c3f4f39e0dee6e3d0b40a2b4474" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>virtual int GemBlocks.RegionFile.SizeDelta</definition>
+        <argsstring></argsstring>
+        <name>SizeDelta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="160" column="28" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="161" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1a50c824e4cef616429ae8352188ec04ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.RegionFile.RegionFile</definition>
+        <argsstring>(File path)</argsstring>
+        <name>RegionFile</name>
+        <param>
+          <type>File</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="79" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="79" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1ac5a7cc5473797dbc3e41412deab8dfaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>DataInputStream</type>
+        <definition>virtual DataInputStream GemBlocks.RegionFile.GetChunkDataInputStream</definition>
+        <argsstring>(int x, int z)</argsstring>
+        <name>GetChunkDataInputStream</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="170" column="40" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="170" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1a15fcf5195ce0dd045f345527ddcf91c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>DataOutputStream</type>
+        <definition>DataOutputStream GemBlocks.RegionFile.GetChunkDataOutputStream</definition>
+        <argsstring>(int x, int z)</argsstring>
+        <name>GetChunkDataOutputStream</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="211" column="33" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="211" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1a40623141fb2bde56721cfcaf6e22df80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GemBlocks.RegionFile.HasChunk</definition>
+        <argsstring>(int x, int z)</argsstring>
+        <name>HasChunk</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="346" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="346" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1a1d2ac24b59b6ddac01f36a2f2a8b2d41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.RegionFile.Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="367" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="367" bodyend="370"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1ad45845e70abd3aefcbd01cd23d0e36d5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void GemBlocks.RegionFile.Write</definition>
+        <argsstring>(int x, int z, byte[] data, int length)</argsstring>
+        <name>Write</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>byte[]</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="238" column="32" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="238" bodyend="323"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1a65d6cbb25e7e58abcfa6a993b05fe9ff" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.RegionFile.Write</definition>
+        <argsstring>(int sectorNumber, byte[] data, int length)</argsstring>
+        <name>Write</name>
+        <param>
+          <type>int</type>
+          <declname>sectorNumber</declname>
+        </param>
+        <param>
+          <type>byte[]</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="325" column="22" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="325" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1aeefdb5024cc568e21f836a13b14b1a97" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int GemBlocks.RegionFile.GetOffset</definition>
+        <argsstring>(int x, int z)</argsstring>
+        <name>GetOffset</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="341" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="341" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1a8296e760bfb3d4bf6bea89879b7a5695" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.RegionFile.SetOffset</definition>
+        <argsstring>(int x, int z, int offset)</argsstring>
+        <name>SetOffset</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="351" column="22" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="351" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1a15ef18285cfeee828b8cebaf2aeb654c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.RegionFile.SetTimestamp</definition>
+        <argsstring>(int x, int z, int value)</argsstring>
+        <name>SetTimestamp</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="359" column="22" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="359" bodyend="365"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1a417fe85c90518e0ee78aa219bf451a9a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool GemBlocks.RegionFile.OutOfBounds</definition>
+        <argsstring>(int x, int z)</argsstring>
+        <name>OutOfBounds</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Is this an invalid chunk coordinate? </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="336" column="29" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="336" bodyend="339"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="65" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="64" bodyend="371"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_region_file_1ab276909d5f54822f6e9e762d0e435884" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>_chunkTimeStamps</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1aa41e8b1313adbd791b20710b061a1467" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>_emptySector</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a30114e1bc5e077af1ffecb9bc9acbaaa" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>_file</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a7b73cca972ea9b1f75cbb5bb318059c2" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>_fileName</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a704c2c6ad363201c94afee2bc7209c19" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>_offsets</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a3972df6db37ff9877c8913cfe8bc4aa3" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>_sectorFree</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a95727f6455bbfe25ed74b6b898bae4a2" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>_sizeDelta</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a215b8afdc583851f0b37406cac7d32a5" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>ChunkHeaderSize</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a1d2ac24b59b6ddac01f36a2f2a8b2d41" prot="public" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>Close</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1ac5a7cc5473797dbc3e41412deab8dfaa" prot="public" virt="virtual"><scope>GemBlocks::RegionFile</scope><name>GetChunkDataInputStream</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a15fcf5195ce0dd045f345527ddcf91c6" prot="public" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>GetChunkDataOutputStream</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1aeefdb5024cc568e21f836a13b14b1a97" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>GetOffset</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a40623141fb2bde56721cfcaf6e22df80" prot="public" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>HasChunk</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a5c25db02954e1d274a6ade61c4c3880c" prot="public" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>LastModified</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a417fe85c90518e0ee78aa219bf451a9a" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>OutOfBounds</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a50c824e4cef616429ae8352188ec04ce" prot="public" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>RegionFile</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a6f04afa70b3d11fc4e0728d3864c0154" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>SectorBytes</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a98aa29f4d99139801c8888400b580077" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>SectorInts</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a8296e760bfb3d4bf6bea89879b7a5695" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>SetOffset</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a15ef18285cfeee828b8cebaf2aeb654c" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>SetTimestamp</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a65243c3f4f39e0dee6e3d0b40a2b4474" prot="public" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>SizeDelta</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1ae751577e868c2c67c65cf83f04fdc9bb" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>VersionDeflate</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a518950443c8f1717b016dec09b1a28db" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>VersionGzip</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1ad45845e70abd3aefcbd01cd23d0e36d5" prot="protected" virt="virtual"><scope>GemBlocks::RegionFile</scope><name>Write</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1a65d6cbb25e7e58abcfa6a993b05fe9ff" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile</scope><name>Write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

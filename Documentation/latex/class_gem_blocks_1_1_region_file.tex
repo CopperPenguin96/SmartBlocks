@@ -1,0 +1,89 @@
+\hypertarget{class_gem_blocks_1_1_region_file}{}\doxysection{Gem\+Blocks.\+Region\+File Class Reference}
+\label{class_gem_blocks_1_1_region_file}\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gem_blocks_1_1_region_file_a50c824e4cef616429ae8352188ec04ce}{Region\+File}} (File path)
+\item 
+virtual Data\+Input\+Stream \mbox{\hyperlink{class_gem_blocks_1_1_region_file_ac5a7cc5473797dbc3e41412deab8dfaa}{Get\+Chunk\+Data\+Input\+Stream}} (int x, int z)
+\item 
+Data\+Output\+Stream \mbox{\hyperlink{class_gem_blocks_1_1_region_file_a15fcf5195ce0dd045f345527ddcf91c6}{Get\+Chunk\+Data\+Output\+Stream}} (int x, int z)
+\item 
+bool \mbox{\hyperlink{class_gem_blocks_1_1_region_file_a40623141fb2bde56721cfcaf6e22df80}{Has\+Chunk}} (int x, int z)
+\item 
+void \mbox{\hyperlink{class_gem_blocks_1_1_region_file_a1d2ac24b59b6ddac01f36a2f2a8b2d41}{Close}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_gem_blocks_1_1_region_file_ad45845e70abd3aefcbd01cd23d0e36d5}{Write}} (int x, int z, byte\mbox{[}$\,$\mbox{]} data, int length)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{class_gem_blocks_1_1_region_file_a5c25db02954e1d274a6ade61c4c3880c}{Last\+Modified}} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+virtual int \mbox{\hyperlink{class_gem_blocks_1_1_region_file_a65243c3f4f39e0dee6e3d0b40a2b4474}{Size\+Delta}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gem_blocks_1_1_region_file_a50c824e4cef616429ae8352188ec04ce}\label{class_gem_blocks_1_1_region_file_a50c824e4cef616429ae8352188ec04ce}} 
+\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}!RegionFile@{RegionFile}}
+\index{RegionFile@{RegionFile}!GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsubsection{\texorpdfstring{RegionFile()}{RegionFile()}}
+{\footnotesize\ttfamily Gem\+Blocks.\+Region\+File.\+Region\+File (\begin{DoxyParamCaption}\item[{File}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gem_blocks_1_1_region_file_a1d2ac24b59b6ddac01f36a2f2a8b2d41}\label{class_gem_blocks_1_1_region_file_a1d2ac24b59b6ddac01f36a2f2a8b2d41}} 
+\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}!Close@{Close}}
+\index{Close@{Close}!GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Region\+File.\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_region_file_ac5a7cc5473797dbc3e41412deab8dfaa}\label{class_gem_blocks_1_1_region_file_ac5a7cc5473797dbc3e41412deab8dfaa}} 
+\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}!GetChunkDataInputStream@{GetChunkDataInputStream}}
+\index{GetChunkDataInputStream@{GetChunkDataInputStream}!GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsubsection{\texorpdfstring{GetChunkDataInputStream()}{GetChunkDataInputStream()}}
+{\footnotesize\ttfamily virtual Data\+Input\+Stream Gem\+Blocks.\+Region\+File.\+Get\+Chunk\+Data\+Input\+Stream (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_region_file_a15fcf5195ce0dd045f345527ddcf91c6}\label{class_gem_blocks_1_1_region_file_a15fcf5195ce0dd045f345527ddcf91c6}} 
+\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}!GetChunkDataOutputStream@{GetChunkDataOutputStream}}
+\index{GetChunkDataOutputStream@{GetChunkDataOutputStream}!GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsubsection{\texorpdfstring{GetChunkDataOutputStream()}{GetChunkDataOutputStream()}}
+{\footnotesize\ttfamily Data\+Output\+Stream Gem\+Blocks.\+Region\+File.\+Get\+Chunk\+Data\+Output\+Stream (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_region_file_a40623141fb2bde56721cfcaf6e22df80}\label{class_gem_blocks_1_1_region_file_a40623141fb2bde56721cfcaf6e22df80}} 
+\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}!HasChunk@{HasChunk}}
+\index{HasChunk@{HasChunk}!GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsubsection{\texorpdfstring{HasChunk()}{HasChunk()}}
+{\footnotesize\ttfamily bool Gem\+Blocks.\+Region\+File.\+Has\+Chunk (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_region_file_ad45845e70abd3aefcbd01cd23d0e36d5}\label{class_gem_blocks_1_1_region_file_ad45845e70abd3aefcbd01cd23d0e36d5}} 
+\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}!Write@{Write}}
+\index{Write@{Write}!GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily virtual void Gem\+Blocks.\+Region\+File.\+Write (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{z,  }\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_gem_blocks_1_1_region_file_a5c25db02954e1d274a6ade61c4c3880c}\label{class_gem_blocks_1_1_region_file_a5c25db02954e1d274a6ade61c4c3880c}} 
+\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}!LastModified@{LastModified}}
+\index{LastModified@{LastModified}!GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsubsection{\texorpdfstring{LastModified}{LastModified}}
+{\footnotesize\ttfamily long Gem\+Blocks.\+Region\+File.\+Last\+Modified = 0\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_region_file_a65243c3f4f39e0dee6e3d0b40a2b4474}\label{class_gem_blocks_1_1_region_file_a65243c3f4f39e0dee6e3d0b40a2b4474}} 
+\index{GemBlocks.RegionFile@{GemBlocks.RegionFile}!SizeDelta@{SizeDelta}}
+\index{SizeDelta@{SizeDelta}!GemBlocks.RegionFile@{GemBlocks.RegionFile}}
+\doxysubsubsection{\texorpdfstring{SizeDelta}{SizeDelta}}
+{\footnotesize\ttfamily virtual int Gem\+Blocks.\+Region\+File.\+Size\+Delta\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Documents/\+Programming/\+Gems\+Craft/\+Gem\+Blocks/\+Gem\+Blocks/\+Gem\+Blocks/\mbox{\hyperlink{_region_file_8cs}{Region\+File.\+cs}}\end{DoxyCompactItemize}

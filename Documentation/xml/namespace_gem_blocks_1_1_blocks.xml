@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="namespace_gem_blocks_1_1_blocks" kind="namespace" language="C#">
+    <compoundname>GemBlocks::Blocks</compoundname>
+    <innerclass refid="class_gem_blocks_1_1_blocks_1_1_block" prot="public">GemBlocks::Blocks::Block</innerclass>
+    <innerclass refid="class_gem_blocks_1_1_blocks_1_1_block_registry" prot="public">GemBlocks::Blocks::BlockRegistry</innerclass>
+    <innernamespace refid="namespace_gem_blocks_1_1_blocks_1_1_states">GemBlocks::Blocks::States</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Blocks/Block.cs" line="25" column="1"/>
+  </compounddef>
+</doxygen>

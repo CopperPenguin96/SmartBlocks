@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="dir_7332ac23a080a23c3a01db3984829ae4" kind="dir">
+    <compoundname>F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels</compoundname>
+    <innerdir refid="dir_fd68bb02ebd90a47e8d7ccacada338a8">F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/Generators</innerdir>
+    <innerfile refid="_game_mode_8cs">GameMode.cs</innerfile>
+    <innerfile refid="_level_8cs">Level.cs</innerfile>
+    <innerfile refid="_world_kinds_8cs">WorldKinds.cs</innerfile>
+    <innerfile refid="_world_type_8cs">WorldType.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Levels/"/>
+  </compounddef>
+</doxygen>

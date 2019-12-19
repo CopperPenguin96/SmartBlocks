@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-/*
+﻿/*
 * The MIT License (MIT)
 * 
 * Copyright (c) 2014-2015 Merten Peetz
@@ -50,6 +47,9 @@ using System.Text;
 */
 namespace GemBlocks.Levels
 {
+    /// <summary>
+    /// World kind?
+    /// </summary>
     public enum WorldType
     {
         Default,

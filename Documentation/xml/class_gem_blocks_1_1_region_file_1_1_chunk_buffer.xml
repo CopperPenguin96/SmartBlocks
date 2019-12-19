@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_region_file_1_1_chunk_buffer" kind="class" language="C#" prot="private">
+    <compoundname>GemBlocks::RegionFile::ChunkBuffer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ByteArrayOutputStream</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1a9d3d063520f71bfd5d95ed758d8a9753" prot="private" static="no" mutable="no">
+        <type>readonly int</type>
+        <definition>readonly int GemBlocks.RegionFile.ChunkBuffer._x</definition>
+        <argsstring></argsstring>
+        <name>_x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="222" column="34" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1af5601298680ecddcde40cb8b187ac5f3" prot="private" static="no" mutable="no">
+        <type>readonly int</type>
+        <definition>readonly int GemBlocks.RegionFile.ChunkBuffer._z</definition>
+        <argsstring></argsstring>
+        <name>_z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="222" column="37" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1a35274dbb3ac541bca953c64487e5b17f" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="class_gem_blocks_1_1_region_file" kindref="compound">RegionFile</ref></type>
+        <definition>readonly RegionFile GemBlocks.RegionFile.ChunkBuffer._parent</definition>
+        <argsstring></argsstring>
+        <name>_parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="223" column="41" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1ad27a956402e5824c2fb4b9046d8fa983" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.RegionFile.ChunkBuffer.ChunkBuffer</definition>
+        <argsstring>(int x, int z, RegionFile parent)</argsstring>
+        <name>ChunkBuffer</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_region_file" kindref="compound">RegionFile</ref></type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="225" column="20" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="225" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1a2b1e1474afb9556c6d5cdfc60268d56b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.RegionFile.ChunkBuffer.Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="232" column="25" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="232" bodyend="235"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ByteArrayOutputStream</label>
+      </node>
+      <node id="1">
+        <label>GemBlocks.RegionFile.ChunkBuffer</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ByteArrayOutputStream</label>
+      </node>
+      <node id="1">
+        <label>GemBlocks.RegionFile.ChunkBuffer</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" line="221" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/RegionFile.cs" bodystart="220" bodyend="236"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1a35274dbb3ac541bca953c64487e5b17f" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile::ChunkBuffer</scope><name>_parent</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1a9d3d063520f71bfd5d95ed758d8a9753" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile::ChunkBuffer</scope><name>_x</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1af5601298680ecddcde40cb8b187ac5f3" prot="private" virt="non-virtual"><scope>GemBlocks::RegionFile::ChunkBuffer</scope><name>_z</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1ad27a956402e5824c2fb4b9046d8fa983" prot="public" virt="non-virtual"><scope>GemBlocks::RegionFile::ChunkBuffer</scope><name>ChunkBuffer</name></member>
+      <member refid="class_gem_blocks_1_1_region_file_1_1_chunk_buffer_1a2b1e1474afb9556c6d5cdfc60268d56b" prot="public" virt="non-virtual"><scope>GemBlocks::RegionFile::ChunkBuffer</scope><name>Close</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

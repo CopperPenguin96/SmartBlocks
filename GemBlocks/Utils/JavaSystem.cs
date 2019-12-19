@@ -24,12 +24,20 @@
 */
 namespace GemBlocks.Utils
 {
+    /// <summary>
+    /// Used to create methods close to or similar to java-system methods
+    /// </summary>
     public static class JavaSystem
     {
         // ReSharper disable once InconsistentNaming
         private static readonly DateTime Jan1st1970 = new DateTime(
             1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
+        /// <summary>
+        /// same result as java's System.CurrentTimeMillis(),
+        /// milliseconds from January 1st, 1970
+        /// </summary>
+        /// <returns></returns>
         public static long CurrentTimeMillis()
         {
             return (long) (DateTime.UtcNow - Jan1st1970).TotalMilliseconds;

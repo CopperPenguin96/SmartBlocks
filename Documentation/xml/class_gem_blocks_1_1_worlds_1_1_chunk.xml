@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_worlds_1_1_chunk" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::Worlds::Chunk</compoundname>
+    <basecompoundref refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider" prot="public" virt="non-virtual">GemBlocks.Tags.ITagProvider</basecompoundref>
+    <basecompoundref refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container" prot="public" virt="non-virtual">GemBlocks.Worlds.IBlockContainer</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1aa14def940ef43fc783f69cb8eefb3b28" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GemBlocks.Worlds.Chunk.SectionsPerChunk</definition>
+        <argsstring></argsstring>
+        <name>SectionsPerChunk</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+<para>Sections per chunk side </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="67" column="26" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a562e8bab35d48aa1f44d8ea87bd4e400" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GemBlocks.Worlds.Chunk.BlocksPerChunkSide</definition>
+        <argsstring></argsstring>
+        <name>BlocksPerChunkSide</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+<para><ref refid="namespace_gem_blocks_1_1_blocks" kindref="compound">Blocks</ref> per chunk side </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="72" column="26" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1aa544959975b14119049e4927d7b4ea90" prot="public" static="no" mutable="no">
+        <type><ref refid="class_gem_blocks_1_1_worlds_1_1_section" kindref="compound">Section</ref>[]</type>
+        <definition>Section [] GemBlocks.Worlds.Chunk.Sections</definition>
+        <argsstring></argsstring>
+        <name>Sections</name>
+        <initializer>= new <ref refid="class_gem_blocks_1_1_worlds_1_1_section" kindref="compound">Section</ref>[<ref refid="class_gem_blocks_1_1_worlds_1_1_chunk_1aa14def940ef43fc783f69cb8eefb3b28" kindref="member">SectionsPerChunk</ref>]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="74" column="24" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1aab9ef5d807d5ea06328b32f2f5b0fd5f" prot="public" static="no" mutable="no">
+        <type>int[][]</type>
+        <definition>int [][] GemBlocks.Worlds.Chunk.HeightMap</definition>
+        <argsstring></argsstring>
+        <name>HeightMap</name>
+        <initializer>= new <ref refid="class_gem_blocks_1_1_utils_1_1_rect_array" kindref="compound">RectArray</ref>&lt;int&gt;(<ref refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a562e8bab35d48aa1f44d8ea87bd4e400" kindref="member">BlocksPerChunkSide</ref>, <ref refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a562e8bab35d48aa1f44d8ea87bd4e400" kindref="member">BlocksPerChunkSide</ref>).ToArray()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="75" column="20" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1af4d2dee0b58455e4fffae3cee81801a3" prot="public" static="no" mutable="no">
+        <type><ref refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container" kindref="compound">IBlockContainer</ref></type>
+        <definition>IBlockContainer GemBlocks.Worlds.Chunk.Parent</definition>
+        <argsstring></argsstring>
+        <name>Parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="77" column="32" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1ad0ebc740626f22111486e09b2f9faa86" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GemBlocks.Worlds.Chunk.X</definition>
+        <argsstring></argsstring>
+        <name>X</name>
+        <initializer>=&gt; _xPos</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="111" column="20" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a5079928840c33509d541af3262ca64fa" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GemBlocks.Worlds.Chunk.Z</definition>
+        <argsstring></argsstring>
+        <name>Z</name>
+        <initializer>=&gt; _zPos</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="112" column="20" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a2644ea1e060b5f72ad94d009d5f30f5f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GemBlocks.Worlds.Chunk.HasBlocks</definition>
+        <argsstring></argsstring>
+        <name>HasBlocks</name>
+        <initializer>=&gt; Sections.Any(section =&gt; section != null &amp;&amp; section.BlockCount &gt; 0)</initializer>
+        <briefdescription>
+<para>True if there is at least 1 block that is not air </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="241" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1ac203406dec599a190438c98ec090955f" prot="private" static="no" mutable="no">
+        <type>readonly int</type>
+        <definition>readonly int GemBlocks.Worlds.Chunk._xPos</definition>
+        <argsstring></argsstring>
+        <name>_xPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="76" column="30" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a6f1b7aca4d31ec64652bd8d5f90880a9" prot="private" static="no" mutable="no">
+        <type>readonly int</type>
+        <definition>readonly int GemBlocks.Worlds.Chunk._zPos</definition>
+        <argsstring></argsstring>
+        <name>_zPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="76" column="36" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a6197731e33f660ad29140109e2c09b6c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>Tag</type>
+        <definition>Tag GemBlocks.Worlds.Chunk.Tag</definition>
+        <argsstring></argsstring>
+        <name>Tag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="270" column="20" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="271" bodyend="313"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1aea6186b042ece5732a75ff46073e35b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GemBlocks.Worlds.Chunk.Chunk</definition>
+        <argsstring>(IBlockContainer parent, int xpos, int zpos, DefaultLayers layers)</argsstring>
+        <name>Chunk</name>
+        <param>
+          <type><ref refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container" kindref="compound">IBlockContainer</ref></type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xpos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>zpos</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_worlds_1_1_default_layers" kindref="compound">DefaultLayers</ref></type>
+          <declname>layers</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent block container</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xpos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The X-coordinate within the region</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zpos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Z-coordinate within the region</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>layers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The default layers. Can be &apos;null&apos;</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="86" column="16" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="86" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1ac6409755b5189a896a6dd8b0c95ca27f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Worlds.Chunk.SetBlock</definition>
+        <argsstring>(Position pos, Block block)</argsstring>
+        <name>SetBlock</name>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_worlds_1_1_position" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_blocks_1_1_block" kindref="compound">Block</ref></type>
+          <declname>block</declname>
+        </param>
+        <briefdescription>
+<para>Sets a block at the given position </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="117" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="117" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a1b38947e25943ae4071d742a67cf0861" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte GemBlocks.Worlds.Chunk.GetSkyLight</definition>
+        <argsstring>(Position pos)</argsstring>
+        <name>GetSkyLight</name>
+        <reimplements refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1a633a48bf7ae0fe210c5592d017d82efc">GetSkyLight</reimplements>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_worlds_1_1_position" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Returns the sky light level of the block at given positon. If there is no block <ref refid="class_gem_blocks_1_1_worlds_1_1_world_1aa64dccf7ca6dbb07976cac22be346f0f" kindref="member">World.DefaultSkyLight</ref> will be returned. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The local XYZ-coordinate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sky light level</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="128" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="128" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a7eb2969a6650775f75ef94dd4c66306a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Worlds.Chunk.SetSkyLight</definition>
+        <argsstring>(Position pos, byte light)</argsstring>
+        <name>SetSkyLight</name>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_worlds_1_1_position" kindref="compound">Position</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>byte</type>
+          <declname>light</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="144" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="144" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a6caeef905f537b4948f79487fa12fcac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte GemBlocks.Worlds.Chunk.GetSkyLightFromParent</definition>
+        <argsstring>(IBlockContainer block, Position child)</argsstring>
+        <name>GetSkyLightFromParent</name>
+        <reimplements refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1a3f3115bad982b3a33b1bd80cffd49355">GetSkyLightFromParent</reimplements>
+        <param>
+          <type><ref refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container" kindref="compound">IBlockContainer</ref></type>
+          <declname>childBlock</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_worlds_1_1_position" kindref="compound">Position</ref></type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+<para>Returns the sky light level of a block that is out of bounds of the child block container. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>childBlock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child block container</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>child</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The local X,Y, &amp; Z coordinate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The sky light level</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="157" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="157" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1ab9fba486ff0847524cd1cfb15c9009d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Worlds.Chunk.SpreadSkyLight</definition>
+        <argsstring>(byte light)</argsstring>
+        <name>SpreadSkyLight</name>
+        <reimplements refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container_1ab8fae9852f29d730f41726d2bf4cacff">SpreadSkyLight</reimplements>
+        <param>
+          <type>byte</type>
+          <declname>light</declname>
+        </param>
+        <briefdescription>
+<para>Spreads the sky light. For each block that has the given light level it&apos;s adjacent blocks will be lit if their current light level is lower. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>light</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The light level</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="184" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="184" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1afd7540bf963e803ed0f637475b547752" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Worlds.Chunk.AddSkyLight</definition>
+        <argsstring>()</argsstring>
+        <name>AddSkyLight</name>
+        <briefdescription>
+<para>Adds the sky light. Starts from the top of each column and sets the sky light to full, up to the first non-transparent block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="197" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="197" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1a96a7ea6085cb7a935e3bf0329d75f419" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int GemBlocks.Worlds.Chunk.GetHighestBlock</definition>
+        <argsstring>(int x, int z)</argsstring>
+        <name>GetHighestBlock</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Returns the highest non transparent block. <ref refid="class_gem_blocks_1_1_worlds_1_1_chunk_1abf6af15f85190646e2d31d60790f5298" kindref="member">CalculateHeightMap()</ref> has to be invoked before calling this method to get actual results. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The X-coordinate</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Z-coordinate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The y coordinate of the highest block</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="220" column="20" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1abf6af15f85190646e2d31d60790f5298" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Worlds.Chunk.CalculateHeightMap</definition>
+        <argsstring>()</argsstring>
+        <name>CalculateHeightMap</name>
+        <briefdescription>
+<para>Calculates the height map. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="246" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="246" bodyend="268"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_chunk_1ab0a7f2d0c520cb8023e73277171fa8fc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_gem_blocks_1_1_worlds_1_1_section" kindref="compound">Section</ref></type>
+        <definition>Section GemBlocks.Worlds.Chunk.GetSection</definition>
+        <argsstring>(int y, bool create)</argsstring>
+        <name>GetSection</name>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>create</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="225" column="25" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="225" bodyend="236"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a chunk. It consists of 16x16 blocks in XZ-dimension and up to 16 sections for the height. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ITagProvider</label>
+        <link refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider"/>
+      </node>
+      <node id="1">
+        <label>GemBlocks.Worlds.Chunk</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_chunk"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IBlockContainer</label>
+        <link refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ITagProvider</label>
+        <link refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider"/>
+      </node>
+      <node id="4">
+        <label>GemBlocks.Worlds.IBlockContainer</label>
+        <link refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container"/>
+      </node>
+      <node id="5">
+        <label>GemBlocks.Worlds.Section</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_section"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>GemBlocks.Worlds.Chunk</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_chunk"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Parent</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>Sections</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IBlockContainer</label>
+        <link refid="interface_gem_blocks_1_1_worlds_1_1_i_block_container"/>
+      </node>
+    </collaborationgraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" line="63" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/Chunk.cs" bodystart="62" bodyend="314"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1ac203406dec599a190438c98ec090955f" prot="private" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>_xPos</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a6f1b7aca4d31ec64652bd8d5f90880a9" prot="private" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>_zPos</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1afd7540bf963e803ed0f637475b547752" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>AddSkyLight</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a562e8bab35d48aa1f44d8ea87bd4e400" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>BlocksPerChunkSide</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1abf6af15f85190646e2d31d60790f5298" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>CalculateHeightMap</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1aea6186b042ece5732a75ff46073e35b7" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>Chunk</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a96a7ea6085cb7a935e3bf0329d75f419" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>GetHighestBlock</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1ab0a7f2d0c520cb8023e73277171fa8fc" prot="private" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>GetSection</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a1b38947e25943ae4071d742a67cf0861" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>GetSkyLight</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a6caeef905f537b4948f79487fa12fcac" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>GetSkyLightFromParent</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a2644ea1e060b5f72ad94d009d5f30f5f" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>HasBlocks</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1aab9ef5d807d5ea06328b32f2f5b0fd5f" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>HeightMap</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1af4d2dee0b58455e4fffae3cee81801a3" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>Parent</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1aa544959975b14119049e4927d7b4ea90" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>Sections</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1aa14def940ef43fc783f69cb8eefb3b28" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>SectionsPerChunk</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1ac6409755b5189a896a6dd8b0c95ca27f" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>SetBlock</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a7eb2969a6650775f75ef94dd4c66306a" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>SetSkyLight</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1ab9fba486ff0847524cd1cfb15c9009d5" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>SpreadSkyLight</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a6197731e33f660ad29140109e2c09b6c" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>Tag</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1ad0ebc740626f22111486e09b2f9faa86" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>X</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_chunk_1a5079928840c33509d541af3262ca64fa" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::Chunk</scope><name>Z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

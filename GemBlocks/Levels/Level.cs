@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using GemBlocks.Levels.Generators;
+﻿using GemBlocks.Levels.Generators;
 using GemBlocks.Tags;
 using GemBlocks.Worlds;
 using org.jnbt;
-using sun.nio.cs;
 using static GemBlocks.Utils.JavaSystem;
 using Math = java.lang.Math;
 /*
@@ -63,33 +59,74 @@ namespace GemBlocks.Levels
     /// </summary>
     public class Level: ITagProvider
     {
+        /// <summary>
+        /// The name of the level
+        /// </summary>
         public string Name { get; }
+
+        /// <summary>
+        /// Cheats enabled
+        /// </summary>
         public bool AllowCommands { get; set; }
+
+        /// <summary>
+        /// Structures enabled
+        /// </summary>
         public bool MapFeatures { get; set; }
+
+        /// <summary>
+        /// The gamemode of the world
+        /// </summary>
         public GameMode GameMode { get; set; }
+
+        /// <summary>
+        /// Where new players spawn
+        /// </summary>
         public Position SpawnPoint { get; set; }
+
+        /// <summary>
+        /// The seed of my fruitfulness
+        /// </summary>
         public long RandomSeed { get; set; }
 
-        private IGenerator _generator = new FlatGenerator();
+        /// <summary>
+        /// The world generator, FlatGenerator is the default if none specified
+        /// </summary>
+        private readonly IGenerator _generator = new FlatGenerator();
 
+        /// <summary>
+        /// Initializes this instance, with Flat World
+        /// </summary>
+        /// <param name="levelName"></param>
         public Level(string levelName)
         {
             Name = levelName;
             MakeRandomSeed();
         }
 
+        /// <summary>
+        /// Initializes this instance
+        /// </summary>
+        /// <param name="levelName"></param>
+        /// <param name="generator"></param>
         public Level(string levelName, IGenerator generator)
         {
             Name = levelName;
             _generator = generator;
         }
 
+        /// <summary>
+        /// Generates a random seed, positive numbers only
+        /// </summary>
         private void MakeRandomSeed()
         {
             // TODO: add support for negative random values
             RandomSeed = (long) (Math.random() * long.MaxValue);
         }
 
+        /// <summary>
+        /// Gets the NBT Tag
+        /// </summary>
         public Tag Tag
         {
             get

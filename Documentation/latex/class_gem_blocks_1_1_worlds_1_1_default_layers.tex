@@ -1,0 +1,96 @@
+\hypertarget{class_gem_blocks_1_1_worlds_1_1_default_layers}{}\doxysection{Gem\+Blocks.\+Worlds.\+Default\+Layers Class Reference}
+\label{class_gem_blocks_1_1_worlds_1_1_default_layers}\index{GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}}
+
+
+Can be used to define the default block layers of the part of the world that was created by \mbox{\hyperlink{namespace_gem_blocks}{Gem\+Blocks}}. This results in a flat world where the blocks of each Y-\/coordinate are the same until they get overwritten. It is recommended to combine the \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_default_layers}{Default\+Layers}} with the Flat\+Generator to get a consitent world.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_default_layers_ae16bbf4b782e41544b18030488fcecd3}{Set\+Layer}} (int y, \mbox{\hyperlink{class_gem_blocks_1_1_blocks_1_1_block}{Block}} material)
+\begin{DoxyCompactList}\small\item\em Sets the layer at the given Y-\/coordinate with the given material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_default_layers_a4a18489b7246d958842450a0c076e8aa}{Set\+Layers}} (int y1, int y2, \mbox{\hyperlink{class_gem_blocks_1_1_blocks_1_1_block}{Block}} material)
+\begin{DoxyCompactList}\small\item\em Sets the layers of the given range of Y-\/coordinates (including y1 and y2) with the given material. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gem_blocks_1_1_blocks_1_1_block}{Block}} \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_default_layers_a13ace269e41e19ce5bfa054d9ce9e4a2}{Get\+Layer}} (int y)
+\begin{DoxyCompactList}\small\item\em Gets the material at the given Y-\/coordinate \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_default_layers_a20ad38036079c20aa712dc053b1a4461}{Valid\+Layer}} (int y)
+\begin{DoxyCompactList}\small\item\em Checks whether the Y-\/coordinate is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Can be used to define the default block layers of the part of the world that was created by \mbox{\hyperlink{namespace_gem_blocks}{Gem\+Blocks}}. This results in a flat world where the blocks of each Y-\/coordinate are the same until they get overwritten. It is recommended to combine the \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_default_layers}{Default\+Layers}} with the Flat\+Generator to get a consitent world. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_default_layers_a13ace269e41e19ce5bfa054d9ce9e4a2}\label{class_gem_blocks_1_1_worlds_1_1_default_layers_a13ace269e41e19ce5bfa054d9ce9e4a2}} 
+\index{GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}!GetLayer@{GetLayer}}
+\index{GetLayer@{GetLayer}!GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}}
+\doxysubsubsection{\texorpdfstring{GetLayer()}{GetLayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gem_blocks_1_1_blocks_1_1_block}{Block}} Gem\+Blocks.\+Worlds.\+Default\+Layers.\+Get\+Layer (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Gets the material at the given Y-\/coordinate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_default_layers_ae16bbf4b782e41544b18030488fcecd3}\label{class_gem_blocks_1_1_worlds_1_1_default_layers_ae16bbf4b782e41544b18030488fcecd3}} 
+\index{GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}!SetLayer@{SetLayer}}
+\index{SetLayer@{SetLayer}!GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}}
+\doxysubsubsection{\texorpdfstring{SetLayer()}{SetLayer()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Worlds.\+Default\+Layers.\+Set\+Layer (\begin{DoxyParamCaption}\item[{int}]{y,  }\item[{\mbox{\hyperlink{class_gem_blocks_1_1_blocks_1_1_block}{Block}}}]{material }\end{DoxyParamCaption})}
+
+
+
+Sets the layer at the given Y-\/coordinate with the given material. 
+
+gv \mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_default_layers_a4a18489b7246d958842450a0c076e8aa}\label{class_gem_blocks_1_1_worlds_1_1_default_layers_a4a18489b7246d958842450a0c076e8aa}} 
+\index{GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}!SetLayers@{SetLayers}}
+\index{SetLayers@{SetLayers}!GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}}
+\doxysubsubsection{\texorpdfstring{SetLayers()}{SetLayers()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Worlds.\+Default\+Layers.\+Set\+Layers (\begin{DoxyParamCaption}\item[{int}]{y1,  }\item[{int}]{y2,  }\item[{\mbox{\hyperlink{class_gem_blocks_1_1_blocks_1_1_block}{Block}}}]{material }\end{DoxyParamCaption})}
+
+
+
+Sets the layers of the given range of Y-\/coordinates (including y1 and y2) with the given material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y1} & The lower Y-\/coordiante\\
+\hline
+{\em y2} & The higher Y-\/coordinate\\
+\hline
+{\em material} & The block\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_default_layers_a20ad38036079c20aa712dc053b1a4461}\label{class_gem_blocks_1_1_worlds_1_1_default_layers_a20ad38036079c20aa712dc053b1a4461}} 
+\index{GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}!ValidLayer@{ValidLayer}}
+\index{ValidLayer@{ValidLayer}!GemBlocks.Worlds.DefaultLayers@{GemBlocks.Worlds.DefaultLayers}}
+\doxysubsubsection{\texorpdfstring{ValidLayer()}{ValidLayer()}}
+{\footnotesize\ttfamily bool Gem\+Blocks.\+Worlds.\+Default\+Layers.\+Valid\+Layer (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Checks whether the Y-\/coordinate is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Documents/\+Programming/\+Gems\+Craft/\+Gem\+Blocks/\+Gem\+Blocks/\+Gem\+Blocks/\+Worlds/\mbox{\hyperlink{_default_layers_8cs}{Default\+Layers.\+cs}}\end{DoxyCompactItemize}

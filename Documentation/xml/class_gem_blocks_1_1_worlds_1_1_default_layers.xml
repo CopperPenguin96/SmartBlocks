@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="class_gem_blocks_1_1_worlds_1_1_default_layers" kind="class" language="C#" prot="public">
+    <compoundname>GemBlocks::Worlds::DefaultLayers</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gem_blocks_1_1_worlds_1_1_default_layers_1ae0c4027c9099c83d171d6ce9373321e2" prot="private" static="no" mutable="no">
+        <type>readonly <ref refid="class_gem_blocks_1_1_blocks_1_1_block" kindref="compound">Block</ref>[]</type>
+        <definition>readonly Block [] GemBlocks.Worlds.DefaultLayers._layers</definition>
+        <argsstring></argsstring>
+        <name>_layers</name>
+        <initializer>= new <ref refid="class_gem_blocks_1_1_blocks_1_1_block" kindref="compound">Block</ref>[<ref refid="class_gem_blocks_1_1_worlds_1_1_world_1a6c87f16e7fed90cb891081d1e21681c9" kindref="member">World.MaxHeight</ref>]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" line="61" column="32" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_default_layers_1ae16bbf4b782e41544b18030488fcecd3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Worlds.DefaultLayers.SetLayer</definition>
+        <argsstring>(int y, Block material)</argsstring>
+        <name>SetLayer</name>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_blocks_1_1_block" kindref="compound">Block</ref></type>
+          <declname>material</declname>
+        </param>
+        <briefdescription>
+<para>Sets the layer at the given Y-coordinate with the given material. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>gv </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" line="67" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" bodystart="67" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_default_layers_1a4a18489b7246d958842450a0c076e8aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GemBlocks.Worlds.DefaultLayers.SetLayers</definition>
+        <argsstring>(int y1, int y2, Block material)</argsstring>
+        <name>SetLayers</name>
+        <param>
+          <type>int</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y2</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gem_blocks_1_1_blocks_1_1_block" kindref="compound">Block</ref></type>
+          <declname>material</declname>
+        </param>
+        <briefdescription>
+<para>Sets the layers of the given range of Y-coordinates (including y1 and y2) with the given material. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lower Y-coordiante</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The higher Y-coordinate</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>material</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The block</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" line="87" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" bodystart="87" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_default_layers_1a13ace269e41e19ce5bfa054d9ce9e4a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_gem_blocks_1_1_blocks_1_1_block" kindref="compound">Block</ref></type>
+        <definition>Block GemBlocks.Worlds.DefaultLayers.GetLayer</definition>
+        <argsstring>(int y)</argsstring>
+        <name>GetLayer</name>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Gets the material at the given Y-coordinate </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" line="108" column="22" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" bodystart="108" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gem_blocks_1_1_worlds_1_1_default_layers_1a20ad38036079c20aa712dc053b1a4461" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GemBlocks.Worlds.DefaultLayers.ValidLayer</definition>
+        <argsstring>(int y)</argsstring>
+        <name>ValidLayer</name>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the Y-coordinate is valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" line="119" column="21" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" bodystart="119" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Can be used to define the default block layers of the part of the world that was created by <ref refid="namespace_gem_blocks" kindref="compound">GemBlocks</ref>. This results in a flat world where the blocks of each Y-coordinate are the same until they get overwritten. It is recommended to combine the <ref refid="class_gem_blocks_1_1_worlds_1_1_default_layers" kindref="compound">DefaultLayers</ref> with the FlatGenerator to get a consitent world. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" line="60" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Worlds/DefaultLayers.cs" bodystart="59" bodyend="123"/>
+    <listofallmembers>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_default_layers_1ae0c4027c9099c83d171d6ce9373321e2" prot="private" virt="non-virtual"><scope>GemBlocks::Worlds::DefaultLayers</scope><name>_layers</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_default_layers_1a13ace269e41e19ce5bfa054d9ce9e4a2" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::DefaultLayers</scope><name>GetLayer</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_default_layers_1ae16bbf4b782e41544b18030488fcecd3" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::DefaultLayers</scope><name>SetLayer</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_default_layers_1a4a18489b7246d958842450a0c076e8aa" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::DefaultLayers</scope><name>SetLayers</name></member>
+      <member refid="class_gem_blocks_1_1_worlds_1_1_default_layers_1a20ad38036079c20aa712dc053b1a4461" prot="public" virt="non-virtual"><scope>GemBlocks::Worlds::DefaultLayers</scope><name>ValidLayer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

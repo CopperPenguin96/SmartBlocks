@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-/*
+﻿/*
 * The MIT License (MIT)
 * 
 * Copyright (c) 2014-2015 Merten Peetz
@@ -50,11 +47,27 @@ using System.Text;
 */
 namespace GemBlocks.Levels
 {
+    /// <summary>
+    /// Gamemodes of Minecraft
+    /// </summary>
     public enum GameMode
     {
+        /// <summary>
+        /// The default gamemode, where you must survive
+        /// by retrieving materials and food to grow and build.
+        /// </summary>
         Survival = 0,
+        /// <summary>
+        /// Free-roam, flying abilities, easy place and delete
+        /// </summary>
         Creative = 1,
+        /// <summary>
+        /// Story time
+        /// </summary>
         Adventure = 2,
+        /// <summary>
+        /// ?
+        /// </summary>
         Spectator = 3
     }
 }

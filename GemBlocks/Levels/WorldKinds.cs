@@ -23,10 +23,24 @@
 */
 namespace GemBlocks.Levels
 {
+    /// <summary>
+    /// The kind of normal world
+    /// </summary>
     public static class WorldKinds
     {
+        /// <summary>
+        /// The mostly used default world with regular biomes
+        /// </summary>
         public const string Default = "default";
+
+        /// <summary>
+        /// Woah bro
+        /// </summary>
         public const string Amplified = "amplified";
+
+        /// <summary>
+        /// Big biomes, really big
+        /// </summary>
         public const string LargeBiomes = "largeBomes";
     }
 }

@@ -1,0 +1,185 @@
+\hypertarget{class_gem_blocks_1_1_worlds_1_1_region}{}\doxysection{Gem\+Blocks.\+Worlds.\+Region Class Reference}
+\label{class_gem_blocks_1_1_worlds_1_1_region}\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+Inheritance diagram for Gem\+Blocks.\+Worlds.\+Region\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gem_blocks_1_1_worlds_1_1_region}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_a8af0e70cae86f69346c1920c4f158788}{Region}} (\mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container}{I\+Block\+Container}} parent, int x\+Pos, int z\+Pos, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_default_layers}{Default\+Layers}} layers)
+\item 
+void \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_abdad76f8109b1c4f57994ae340a98a61}{Set\+Block}} (\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}} pos, \mbox{\hyperlink{class_gem_blocks_1_1_blocks_1_1_block}{Block}} block)
+\item 
+byte \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_aaa4c0026054dce6d1a770411e1e90e73}{Get\+Sky\+Light}} (\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}} pos)
+\begin{DoxyCompactList}\small\item\em Returns the sky light level of the block at given positon. If there is no block \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_world_aa64dccf7ca6dbb07976cac22be346f0f}{World.\+Default\+Sky\+Light}} will be returned. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_a1a0e073af63bde09a9de847c77425fe9}{Get\+Sky\+Light\+From\+Parent}} (\mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container}{I\+Block\+Container}} block\+Child, \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}} child)
+\begin{DoxyCompactList}\small\item\em Returns the sky light level of a block that is out of bounds of the child block container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_aa2bfbb0e0bc1ac09344b461b913191bc}{Spread\+Sky\+Light}} (byte light)
+\begin{DoxyCompactList}\small\item\em Spreads the sky light. For each block that has the given light level it\textquotesingle{}s adjacent blocks will be lit if their current light level is lower. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_a9a11e526cc70ce661e645cd2327dc1f2}{Add\+Sky\+Light}} ()
+\item 
+int \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_aad710248e87e37958259e3811af00615}{Get\+Highest\+Block}} (int x, int z)
+\item 
+void \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_a3369b81e2eef51ab26a0b5efef2afb01}{Calculate\+Height\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_a64c5811efb4bef980aaf0575ef35264e}{Write\+To\+File}} (File path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_abc17d6d97bbcf3a224c594ceabedd4fb}{Chunks\+Per\+Region\+Side}} = 32
+\item 
+const int \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_a4cf5f96545af1d67dbcd849269e02579}{Blocks\+Per\+Region\+Size}} = \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_abc17d6d97bbcf3a224c594ceabedd4fb}{Chunks\+Per\+Region\+Side}} $\ast$ \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_chunk_a562e8bab35d48aa1f44d8ea87bd4e400}{Chunk.\+Blocks\+Per\+Chunk\+Side}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_af28523c3362f097f0853db700f4bed20}{X}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_abfde17527ce94bf7ffe84aa82b4f5288}{Z}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_a8af0e70cae86f69346c1920c4f158788}\label{class_gem_blocks_1_1_worlds_1_1_region_a8af0e70cae86f69346c1920c4f158788}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!Region@{Region}}
+\index{Region@{Region}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{Region()}{Region()}}
+{\footnotesize\ttfamily Gem\+Blocks.\+Worlds.\+Region.\+Region (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container}{I\+Block\+Container}}}]{parent,  }\item[{int}]{x\+Pos,  }\item[{int}]{z\+Pos,  }\item[{\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_default_layers}{Default\+Layers}}}]{layers }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_a9a11e526cc70ce661e645cd2327dc1f2}\label{class_gem_blocks_1_1_worlds_1_1_region_a9a11e526cc70ce661e645cd2327dc1f2}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!AddSkyLight@{AddSkyLight}}
+\index{AddSkyLight@{AddSkyLight}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{AddSkyLight()}{AddSkyLight()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Worlds.\+Region.\+Add\+Sky\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_a3369b81e2eef51ab26a0b5efef2afb01}\label{class_gem_blocks_1_1_worlds_1_1_region_a3369b81e2eef51ab26a0b5efef2afb01}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!CalculateHeightMap@{CalculateHeightMap}}
+\index{CalculateHeightMap@{CalculateHeightMap}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{CalculateHeightMap()}{CalculateHeightMap()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Worlds.\+Region.\+Calculate\+Height\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_aad710248e87e37958259e3811af00615}\label{class_gem_blocks_1_1_worlds_1_1_region_aad710248e87e37958259e3811af00615}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!GetHighestBlock@{GetHighestBlock}}
+\index{GetHighestBlock@{GetHighestBlock}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{GetHighestBlock()}{GetHighestBlock()}}
+{\footnotesize\ttfamily int Gem\+Blocks.\+Worlds.\+Region.\+Get\+Highest\+Block (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_aaa4c0026054dce6d1a770411e1e90e73}\label{class_gem_blocks_1_1_worlds_1_1_region_aaa4c0026054dce6d1a770411e1e90e73}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!GetSkyLight@{GetSkyLight}}
+\index{GetSkyLight@{GetSkyLight}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{GetSkyLight()}{GetSkyLight()}}
+{\footnotesize\ttfamily byte Gem\+Blocks.\+Worlds.\+Region.\+Get\+Sky\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Returns the sky light level of the block at given positon. If there is no block \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_world_aa64dccf7ca6dbb07976cac22be346f0f}{World.\+Default\+Sky\+Light}} will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The local X\+Y\+Z-\/coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sky light level
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container_a633a48bf7ae0fe210c5592d017d82efc}{Gem\+Blocks.\+Worlds.\+I\+Block\+Container}}.
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_a1a0e073af63bde09a9de847c77425fe9}\label{class_gem_blocks_1_1_worlds_1_1_region_a1a0e073af63bde09a9de847c77425fe9}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!GetSkyLightFromParent@{GetSkyLightFromParent}}
+\index{GetSkyLightFromParent@{GetSkyLightFromParent}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{GetSkyLightFromParent()}{GetSkyLightFromParent()}}
+{\footnotesize\ttfamily byte Gem\+Blocks.\+Worlds.\+Region.\+Get\+Sky\+Light\+From\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container}{I\+Block\+Container}}}]{child\+Block,  }\item[{\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}}}]{child }\end{DoxyParamCaption})}
+
+
+
+Returns the sky light level of a block that is out of bounds of the child block container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child\+Block} & The child block container\\
+\hline
+{\em child} & The local X,Y, \& Z coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sky light level
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container_a3f3115bad982b3a33b1bd80cffd49355}{Gem\+Blocks.\+Worlds.\+I\+Block\+Container}}.
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_abdad76f8109b1c4f57994ae340a98a61}\label{class_gem_blocks_1_1_worlds_1_1_region_abdad76f8109b1c4f57994ae340a98a61}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!SetBlock@{SetBlock}}
+\index{SetBlock@{SetBlock}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{SetBlock()}{SetBlock()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Worlds.\+Region.\+Set\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_position}{Position}}}]{pos,  }\item[{\mbox{\hyperlink{class_gem_blocks_1_1_blocks_1_1_block}{Block}}}]{block }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_aa2bfbb0e0bc1ac09344b461b913191bc}\label{class_gem_blocks_1_1_worlds_1_1_region_aa2bfbb0e0bc1ac09344b461b913191bc}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!SpreadSkyLight@{SpreadSkyLight}}
+\index{SpreadSkyLight@{SpreadSkyLight}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{SpreadSkyLight()}{SpreadSkyLight()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Worlds.\+Region.\+Spread\+Sky\+Light (\begin{DoxyParamCaption}\item[{byte}]{light }\end{DoxyParamCaption})}
+
+
+
+Spreads the sky light. For each block that has the given light level it\textquotesingle{}s adjacent blocks will be lit if their current light level is lower. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light level\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_gem_blocks_1_1_worlds_1_1_i_block_container_ab8fae9852f29d730f41726d2bf4cacff}{Gem\+Blocks.\+Worlds.\+I\+Block\+Container}}.
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_a64c5811efb4bef980aaf0575ef35264e}\label{class_gem_blocks_1_1_worlds_1_1_region_a64c5811efb4bef980aaf0575ef35264e}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!WriteToFile@{WriteToFile}}
+\index{WriteToFile@{WriteToFile}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{WriteToFile()}{WriteToFile()}}
+{\footnotesize\ttfamily void Gem\+Blocks.\+Worlds.\+Region.\+Write\+To\+File (\begin{DoxyParamCaption}\item[{File}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_a4cf5f96545af1d67dbcd849269e02579}\label{class_gem_blocks_1_1_worlds_1_1_region_a4cf5f96545af1d67dbcd849269e02579}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!BlocksPerRegionSize@{BlocksPerRegionSize}}
+\index{BlocksPerRegionSize@{BlocksPerRegionSize}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{BlocksPerRegionSize}{BlocksPerRegionSize}}
+{\footnotesize\ttfamily const int Gem\+Blocks.\+Worlds.\+Region.\+Blocks\+Per\+Region\+Size = \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_region_abc17d6d97bbcf3a224c594ceabedd4fb}{Chunks\+Per\+Region\+Side}} $\ast$ \mbox{\hyperlink{class_gem_blocks_1_1_worlds_1_1_chunk_a562e8bab35d48aa1f44d8ea87bd4e400}{Chunk.\+Blocks\+Per\+Chunk\+Side}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_abc17d6d97bbcf3a224c594ceabedd4fb}\label{class_gem_blocks_1_1_worlds_1_1_region_abc17d6d97bbcf3a224c594ceabedd4fb}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!ChunksPerRegionSide@{ChunksPerRegionSide}}
+\index{ChunksPerRegionSide@{ChunksPerRegionSide}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{ChunksPerRegionSide}{ChunksPerRegionSide}}
+{\footnotesize\ttfamily const int Gem\+Blocks.\+Worlds.\+Region.\+Chunks\+Per\+Region\+Side = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_af28523c3362f097f0853db700f4bed20}\label{class_gem_blocks_1_1_worlds_1_1_region_af28523c3362f097f0853db700f4bed20}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!X@{X}}
+\index{X@{X}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily int Gem\+Blocks.\+Worlds.\+Region.\+X\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_gem_blocks_1_1_worlds_1_1_region_abfde17527ce94bf7ffe84aa82b4f5288}\label{class_gem_blocks_1_1_worlds_1_1_region_abfde17527ce94bf7ffe84aa82b4f5288}} 
+\index{GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}!Z@{Z}}
+\index{Z@{Z}!GemBlocks.Worlds.Region@{GemBlocks.Worlds.Region}}
+\doxysubsubsection{\texorpdfstring{Z}{Z}}
+{\footnotesize\ttfamily int Gem\+Blocks.\+Worlds.\+Region.\+Z\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Documents/\+Programming/\+Gems\+Craft/\+Gem\+Blocks/\+Gem\+Blocks/\+Gem\+Blocks/\+Worlds/\mbox{\hyperlink{_region_8cs}{Region.\+cs}}\end{DoxyCompactItemize}

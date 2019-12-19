@@ -48,10 +48,21 @@
 */
 namespace GemBlocks.Levels.Generators
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// Generates the normal world types (Default, Amplified, Large Biomes)
+    /// </summary>
     public class SimpleGenerator: IGenerator
     {
+        /// <summary>
+        /// The kind of world
+        /// </summary>
         public WorldType WorldKind { get; set; }
 
+        /// <summary>
+        /// Used to enumerate through the enum as if it was a string
+        /// </summary>
+        /// <returns></returns>
         private string GetWorldKindString()
         {
             switch (WorldKind)
@@ -64,9 +75,22 @@ namespace GemBlocks.Levels.Generators
             }
         }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Tells the world generator what kind of world
+        /// </summary>
         public string Name => GetWorldKindString();
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Options....
+        /// </summary>
         public string Options => null;
 
+        /// <summary>
+        /// Initializes this instance with the specified world kind
+        /// </summary>
+        /// <param name="value"></param>
         public SimpleGenerator(string value)
         {
             switch (value.ToLower())

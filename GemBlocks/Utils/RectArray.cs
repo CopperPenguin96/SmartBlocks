@@ -5,6 +5,11 @@ using System.Linq;
 
 namespace GemBlocks.Utils
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// A class to work around T[][]
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class RectArray<T> : IEnumerable<T>
     {
         public T[][] Array;

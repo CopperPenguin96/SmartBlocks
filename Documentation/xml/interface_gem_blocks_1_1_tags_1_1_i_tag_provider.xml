@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="interface_gem_blocks_1_1_tags_1_1_i_tag_provider" kind="interface" language="C#" prot="public">
+    <compoundname>GemBlocks::Tags::ITagProvider</compoundname>
+    <derivedcompoundref refid="class_gem_blocks_1_1_levels_1_1_level" prot="public" virt="non-virtual">GemBlocks.Levels.Level</derivedcompoundref>
+    <derivedcompoundref refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory" prot="public" virt="non-virtual">GemBlocks.Tags.CompoundTagFactory</derivedcompoundref>
+    <derivedcompoundref refid="class_gem_blocks_1_1_tags_1_1_list_tag_factory" prot="public" virt="non-virtual">GemBlocks.Tags.ListTagFactory</derivedcompoundref>
+    <derivedcompoundref refid="class_gem_blocks_1_1_worlds_1_1_chunk" prot="public" virt="non-virtual">GemBlocks.Worlds.Chunk</derivedcompoundref>
+    <derivedcompoundref refid="class_gem_blocks_1_1_worlds_1_1_section" prot="public" virt="non-virtual">GemBlocks.Worlds.Section</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_gem_blocks_1_1_tags_1_1_i_tag_provider_1a9150ea778be59cbeb4b4cb4e630b046b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>Tag</type>
+        <definition>Tag GemBlocks.Tags.ITagProvider.Tag</definition>
+        <argsstring></argsstring>
+        <name>Tag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/ITagProvider.cs" line="53" column="13" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/ITagProvider.cs" bodystart="53" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>GemBlocks.Tags.ListTagFactory</label>
+        <link refid="class_gem_blocks_1_1_tags_1_1_list_tag_factory"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>GemBlocks.Worlds.Section</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_section"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>GemBlocks.Worlds.Chunk</label>
+        <link refid="class_gem_blocks_1_1_worlds_1_1_chunk"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>GemBlocks.Tags.CompoundTagFactory</label>
+        <link refid="class_gem_blocks_1_1_tags_1_1_compound_tag_factory"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>GemBlocks.Tags.ITagProvider</label>
+        <link refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider"/>
+      </node>
+      <node id="2">
+        <label>GemBlocks.Levels.Level</label>
+        <link refid="class_gem_blocks_1_1_levels_1_1_level"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/ITagProvider.cs" line="52" column="1" bodyfile="F:/Documents/Programming/GemsCraft/GemBlocks/GemBlocks/GemBlocks/Tags/ITagProvider.cs" bodystart="51" bodyend="54"/>
+    <listofallmembers>
+      <member refid="interface_gem_blocks_1_1_tags_1_1_i_tag_provider_1a9150ea778be59cbeb4b4cb4e630b046b" prot="public" virt="non-virtual"><scope>GemBlocks::Tags::ITagProvider</scope><name>Tag</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
