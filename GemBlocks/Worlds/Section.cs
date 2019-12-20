@@ -214,9 +214,9 @@ namespace GemBlocks.Worlds
 
         private static bool IsInBounds(Position pos)
         {
-            int x = pos.X;
-            int y = pos.Y;
-            int z = pos.Z;
+            int x = (int) pos.X;
+            int y = (int) pos.Y;
+            int z = (int) pos.Z;
             if (x < 0 || x > Chunk.BlocksPerChunkSide - 1)
             {
                 return false;
@@ -238,9 +238,9 @@ namespace GemBlocks.Worlds
 
         private static int GetBlockIndex(Position pos)
         {
-            int x = pos.X;
-            int y = pos.Y;
-            int z = pos.Z;
+            int x = (int) pos.X;
+            int y = (int) pos.Y;
+            int z = (int) pos.Z;
             int index = 0;
             index += y * Chunk.BlocksPerChunkSide * Chunk.BlocksPerChunkSide;
             index += z * Chunk.BlocksPerChunkSide;

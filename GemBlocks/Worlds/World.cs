@@ -86,11 +86,11 @@ namespace GemBlocks.Worlds
             }
 
             // Get region
-            Region region = GetRegion(pos.X, pos.Z, true);
+            Region region = GetRegion((int) pos.X, (int) pos.Z, true);
 
             // Set block
-            int blockX = GetRegionCoord(pos.X);
-            int blockZ = GetRegionCoord(pos.Z);
+            int blockX = GetRegionCoord((int) pos.X);
+            int blockZ = GetRegionCoord((int) pos.Z);
             region.SetBlock(new Position(blockX, pos.Y, blockZ), block);
         }
 
@@ -128,19 +128,19 @@ namespace GemBlocks.Worlds
         public byte GetSkyLight(Position pos)
         {
             // Get region
-            Region region = GetRegion(pos.X, pos.Z, false);
+            Region region = GetRegion((int) pos.X, (int) pos.Z, false);
 
             // Get light
             if (region == null) return DefaultSkyLight;
-            int blockX = GetRegionCoord(pos.X);
-            int blockZ = GetRegionCoord(pos.Z);
+            int blockX = GetRegionCoord((int) pos.X);
+            int blockZ = GetRegionCoord((int) pos.Z);
             return region.GetSkyLight(new Position(blockX, pos.Y, blockZ));
         }
 
         public byte GetSkyLightFromParent(IBlockContainer blockChild, Position child)
         {
-            int x = Region.BlocksPerRegionSize * ((Region) blockChild).X + child.X;
-            int z = Region.BlocksPerRegionSize * ((Region) blockChild).Z + child.Z;
+            int x = Region.BlocksPerRegionSize * ((Region) blockChild).X + (int) child.X;
+            int z = Region.BlocksPerRegionSize * ((Region) blockChild).Z + (int) child.Z;
             return GetSkyLight(new Position(x, child.Y, z));
         }
 

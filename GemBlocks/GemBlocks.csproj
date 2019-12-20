@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1</Version>
+    <Version>1.1.1</Version>
     <Authors>apotter96</Authors>
     <Description>A .NET standard library for easy saving/loading/generating of minecraft worlds.</Description>
     <Copyright>Copyright (c) 2019 by apotter96</Copyright>
@@ -13,7 +13,7 @@
     <PackageTags>minecraft, world, generation, server, software, blocks, flatgrass, standard, default, dirt, amplified, largebiomes</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Overhauled, fixed issues, adding the other world types</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated Position so that GemsCraft and other similar softwares can utilize the Position class without having to do much extra work.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

@@ -79,23 +79,23 @@ namespace GemBlocks.Worlds
         public void SetBlock(Position pos, Block block)
         {
             // Get chunk
-            Chunk chunk = GetChunk(pos.X, pos.Z, true);
+            Chunk chunk = GetChunk((int) pos.X, (int) pos.Z, true);
 
             // Set block
-            int blockX = pos.X % Chunk.BlocksPerChunkSide;
-            int blockZ = pos.Z % Chunk.BlocksPerChunkSide;
+            int blockX = (int) pos.X % Chunk.BlocksPerChunkSide;
+            int blockZ = (int) pos.Z % Chunk.BlocksPerChunkSide;
             chunk.SetBlock(new Position(blockX, pos.Y, blockZ), block);
         }
 
         public byte GetSkyLight(Position pos)
         {
             // Get chunk
-            Chunk chunk = GetChunk(pos.X, pos.Z, false);
+            Chunk chunk = GetChunk((int) pos.X, (int) pos.Z, false);
 
             if (chunk != null)
             {
-                int blockX = pos.X % Chunk.BlocksPerChunkSide;
-                int blockZ = pos.Z % Chunk.BlocksPerChunkSide;
+                int blockX = (int) pos.X % Chunk.BlocksPerChunkSide;
+                int blockZ = (int) pos.Z % Chunk.BlocksPerChunkSide;
                 byte light = chunk.GetSkyLight(new Position(blockX, pos.Y, blockZ));
                 return light;
             }
@@ -106,8 +106,8 @@ namespace GemBlocks.Worlds
         public byte GetSkyLightFromParent(IBlockContainer blockChild,
             Position child)
         {
-            int x = ((Chunk) blockChild).X * Chunk.BlocksPerChunkSide + child.X;
-            int z = ((Chunk) blockChild).Z * Chunk.BlocksPerChunkSide + child.Z;
+            int x = ((Chunk) blockChild).X * Chunk.BlocksPerChunkSide + (int) child.X;
+            int z = ((Chunk) blockChild).Z * Chunk.BlocksPerChunkSide + (int) child.Z;
 
             // Same region?
             if (x >= 0 && x < BlocksPerRegionSize &&

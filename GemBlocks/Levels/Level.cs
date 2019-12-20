@@ -139,9 +139,9 @@ namespace GemBlocks.Levels
                 factory.Set(new StringTag("LevelName", Name));
                 factory.Set(new ByteTag("MapFeatures", MapFeatures ? (byte) 1 : (byte) 0));
                 factory.Set(new LongTag("RandomSeed", RandomSeed));
-                factory.Set(new IntTag("SpawnX", SpawnPoint.X));
-                factory.Set(new IntTag("SpawnY", SpawnPoint.Y));
-                factory.Set(new IntTag("SpawnZ", SpawnPoint.Z));
+                factory.Set(new IntTag("SpawnX", (int) SpawnPoint.X));
+                factory.Set(new IntTag("SpawnY", (int) SpawnPoint.Y));
+                factory.Set(new IntTag("SpawnZ", (int) SpawnPoint.Z));
                 factory.Set(new IntTag("version", 19133));
                 
                 // Generator options

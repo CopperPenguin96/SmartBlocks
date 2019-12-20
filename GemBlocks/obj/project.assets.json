@@ -233,7 +233,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.1.0",
+    "version": "1.1.1",
     "restore": {
       "projectUniqueName": "F:\\Documents\\Programming\\GemsCraft\\GemBlocks\\GemBlocks\\GemBlocks\\GemBlocks.csproj",
       "projectName": "GemBlocks",

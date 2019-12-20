@@ -28,9 +28,25 @@ namespace GemBlocks.Worlds
 {
     public class Position
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Z { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
+        public double Z { get; set; }
+
+        public byte Pitch { get; set; }
+        public byte Yaw { get; set; }
+        public byte HeadPitch { get; set; }
+
+        public Position(double x, double y, double z,
+            byte pit = 0, byte yaw = 0, byte head = 0)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+
+            Pitch = pit;
+            Yaw = yaw;
+            HeadPitch = head;
+        }
 
         public Position(int x, int y, int z)
         {

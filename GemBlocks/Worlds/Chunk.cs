@@ -118,10 +118,10 @@ namespace GemBlocks.Worlds
         {
             if (pos == null) throw new ArgumentNullException(nameof(pos));
             // Get section
-            Section section = GetSection(pos.Y, true);
+            Section section = GetSection((int) pos.Y, true);
 
             // Set Block
-            int blockY = pos.Y % Section.SectionHeight;
+            int blockY = (int) pos.Y % Section.SectionHeight;
             section.SetBlock(new Position(pos.X, blockY, pos.Z), block);
         }
         
@@ -130,10 +130,10 @@ namespace GemBlocks.Worlds
             if (pos == null) throw new ArgumentNullException(nameof(pos));
             
             // Get section
-            Section section = GetSection(pos.Y, false);
+            Section section = GetSection((int) pos.Y, false);
             if (section != null)
             {
-                int blockY = pos.Y % Section.SectionHeight;
+                int blockY = (int) pos.Y % Section.SectionHeight;
                 byte light = section.GetSkyLight(new Position(pos.X, blockY, pos.Z));
                 return light;
             }
@@ -145,11 +145,11 @@ namespace GemBlocks.Worlds
         {
             if (pos == null) throw new ArgumentNullException(nameof(pos));
             // Get Section
-            Section section = GetSection(pos.Y, false);
+            Section section = GetSection((int) pos.Y, false);
 
             if (section != null)
             {
-                int blockY = pos.Y % Section.SectionHeight;
+                int blockY = (int) pos.Y % Section.SectionHeight;
                 section.SetSkyLight(new Position(pos.X, blockY, pos.Z), light);
             }
         }
@@ -160,7 +160,7 @@ namespace GemBlocks.Worlds
             if (block == null) throw new ArgumentNullException(nameof(block));
 
             // Get total y
-            int y = ((Section) block).Y * Section.SectionHeight + child.Y;
+            int y = ((Section) block).Y * Section.SectionHeight + (int) child.Y;
             if (y >= World.MaxHeight)
             {
                 return World.DefaultSkyLight;
