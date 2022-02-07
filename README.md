@@ -1,12 +1,12 @@
 **A C# library for easy generation of Minecraft worlds**
 
-GemBlocks aims to provide a simple library for custom map generation. In order to use this library it is not necessary to deal with things like regions, chunks and block data. However it aims to implement all map features that Minecraft offers.
+SmartBlocks aims to provide a simple library for custom map generation. In order to use this library it is not necessary to deal with things like regions, chunks and block data. However it aims to implement all map features that Minecraft offers.
 
 This library was forked from MorbZ/J2Blocks and converted to C# for use of .NET Minecraft implementations (Clients, World Editors, Servers, etc.)
 
 Any assistance is welcomed! Please do a pull request if you see something that needs changed.
 Also changed was the naming conventions. Java conventions don't look right in C#! :D
-[→ GemBlocks Documentation] COMING SOON!
+[→ SmartBlocks Documentation] COMING SOON!
 
 Example (:D)
 ------
