@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartBlocks\SmartBlocks.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MinecraftTypes">
+      <HintPath>..\..\MinecraftTypes\MinecraftTypes\bin\Debug\net6.0\MinecraftTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartNbt">
+      <HintPath>..\..\SmartNbt\SmartNbt\SmartNbt\bin\Debug\netstandard2.0\SmartNbt.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

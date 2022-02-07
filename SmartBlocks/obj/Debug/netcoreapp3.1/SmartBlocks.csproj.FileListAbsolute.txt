@@ -1,0 +1,5 @@
+A:\Programming\SmartBlocks\SmartBlocks\obj\Debug\netcoreapp3.1\SmartBlocks.csproj.AssemblyReference.cache
+A:\Programming\SmartBlocks\SmartBlocks\obj\Debug\netcoreapp3.1\SmartBlocks.GeneratedMSBuildEditorConfig.editorconfig
+A:\Programming\SmartBlocks\SmartBlocks\obj\Debug\netcoreapp3.1\SmartBlocks.AssemblyInfoInputs.cache
+A:\Programming\SmartBlocks\SmartBlocks\obj\Debug\netcoreapp3.1\SmartBlocks.AssemblyInfo.cs
+A:\Programming\SmartBlocks\SmartBlocks\obj\Debug\netcoreapp3.1\SmartBlocks.csproj.CoreCompileInputs.cache
