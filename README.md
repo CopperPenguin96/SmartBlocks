@@ -6,6 +6,9 @@ This library was forked from MorbZ/J2Blocks and converted to C# for use of .NET 
 
 Any assistance is welcomed! Please do a pull request if you see something that needs changed.
 Also changed was the naming conventions. Java conventions don't look right in C#! :D
+
+SmartBlocks 2.0 (formerly GemBlocks) will be available shortly for 1.17.1+!
+When SmartBlocks is ready, will be the official world handler of [REDSTONE](https://github.com/CopperPenguin96/Redstone), a 1.17.1+ custom Minecraft server in C#.
 [→ SmartBlocks Documentation] COMING SOON!
 
 Example (:D)
