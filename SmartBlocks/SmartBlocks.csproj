@@ -18,7 +18,7 @@
       <HintPath>..\..\GemBlocks.1.1.1\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
     <Reference Include="MinecraftTypes">
-      <HintPath>..\..\MinecraftTypes\MinecraftTypes\bin\Debug\net6.0\MinecraftTypes.dll</HintPath>
+      <HintPath>..\..\MinecraftTypes.dll</HintPath>
     </Reference>
     <Reference Include="SmartNbt">
       <HintPath>..\..\SmartNbt 1.1.0.0.dll</HintPath>

@@ -54,7 +54,7 @@ namespace SmartBlocks.Worlds
         public void SetBlock(Position pos, Block? block)
         {
             // We ignore if it's air (air heads)
-            if (block == Block.Air) block = null!;
+            if (block == new Block("air")) block = null!;
 
             // Count non-air blocks
             int index = GetBlockIndex(pos);
@@ -64,9 +64,8 @@ namespace SmartBlocks.Worlds
             // Set block
             if (block != null)
             {
-                _blockIds[index] = (byte)block.Type;
-                _blockData.Set(index, (byte)block.Meta);
-                _transparency[index] = (byte)block.Transparency;
+                _blockIds[index] = (byte) block.Id;
+                _blockData.Set(index, (byte)block.Type);
             }
             else
             {

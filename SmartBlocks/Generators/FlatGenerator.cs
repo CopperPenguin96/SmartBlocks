@@ -158,7 +158,7 @@ namespace SmartBlocks.Generators
                     NbtCompound layer = new()
                     {
                         new NbtInt("height", 1),
-                        new NbtString("block", layers.TypeText)
+                        new NbtString("block", layers.ItemId.ToString())
                     };
 
                     layersBlock.Add(layer);

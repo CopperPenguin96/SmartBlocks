@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBlocks", "SmartBlocks\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartTest", "SmartTest\SmartTest.csproj", "{075AEE0F-44CD-4067-BFB9-07CE81D998A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockBuilder", "BlockBuilder\BlockBuilder.csproj", "{A00CD338-40C7-4D46-9784-FAC5ACBC6940}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{075AEE0F-44CD-4067-BFB9-07CE81D998A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{075AEE0F-44CD-4067-BFB9-07CE81D998A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{075AEE0F-44CD-4067-BFB9-07CE81D998A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A00CD338-40C7-4D46-9784-FAC5ACBC6940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A00CD338-40C7-4D46-9784-FAC5ACBC6940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A00CD338-40C7-4D46-9784-FAC5ACBC6940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A00CD338-40C7-4D46-9784-FAC5ACBC6940}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

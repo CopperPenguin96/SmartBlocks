@@ -2,7 +2,6 @@ A:\Programming\SmartBlocks\SmartBlocks\bin\Debug\net6.0\SmartBlocks.deps.json
 A:\Programming\SmartBlocks\SmartBlocks\bin\Debug\net6.0\SmartBlocks.dll
 A:\Programming\SmartBlocks\SmartBlocks\bin\Debug\net6.0\ref\SmartBlocks.dll
 A:\Programming\SmartBlocks\SmartBlocks\bin\Debug\net6.0\SmartBlocks.pdb
-A:\Programming\SmartBlocks\SmartBlocks\bin\Debug\net6.0\MinecraftTypes.pdb
 A:\Programming\SmartBlocks\bin\Debug\net6.0\SmartBlocks.deps.json
 A:\Programming\SmartBlocks\bin\Debug\net6.0\SmartBlocks.dll
 A:\Programming\SmartBlocks\bin\Debug\net6.0\ref\SmartBlocks.dll
