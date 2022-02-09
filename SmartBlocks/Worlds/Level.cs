@@ -155,7 +155,7 @@ namespace SmartBlocks.Worlds
                     {
                         new NbtCompound("minecraft:overworld")
                         {
-                            Generator.Nbt, // "generator"
+                            Generator.Tag, // "generator"
                             new NbtString("type", Overworld.Type.ToString())
                         },
                         new NbtCompound("minecraft:the_end")

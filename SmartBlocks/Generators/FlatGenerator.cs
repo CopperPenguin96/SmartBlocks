@@ -146,7 +146,7 @@ namespace SmartBlocks.Generators
             set => _seed = value;
         }
 
-        public NbtCompound Nbt
+        public NbtTag Tag
         {
             get
             {
@@ -187,7 +187,7 @@ namespace SmartBlocks.Generators
                 structs.Add(structures);
 
                 // Build Nbt
-                return new("generator")
+                return new NbtCompound("generator")
                 {
                     new NbtString("type", new Identifier("flat").ToString()),
                     new NbtCompound("settings")

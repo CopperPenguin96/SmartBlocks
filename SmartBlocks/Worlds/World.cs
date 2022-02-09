@@ -2,6 +2,7 @@
 using MinecraftTypes;
 using SmartBlocks.Blocks;
 using SmartBlocks.Generators;
+using SmartBlocks.Worlds.Raids;
 using SmartNbt;
 using SmartNbt.Tags;
 
@@ -27,7 +28,12 @@ namespace SmartBlocks.Worlds
         private readonly Dictionary<Point, Region> _regions = new();
         private readonly Level _level;
         
+        /// <summary>
+        /// The generator to be used to create the world.
+        /// </summary>
         public IGenerator Generator { get; }
+        
+        public RaidList RaidList { get; set; }
 
         /// <summary>
         /// Creates a new instance
@@ -267,6 +273,15 @@ namespace SmartBlocks.Worlds
                 region.WriteToFile(regionFile);
             }
 
+            // Save raids
+            string dataDir = lvlDir + "data";
+            if (!Directory.Exists(dataDir))
+                Directory.CreateDirectory(dataDir);
+
+            NbtFile raids = new NbtFile(new NbtCompound("") {RaidList.Tag});
+            string raidFile = dataDir + "raids.dat";
+            if (File.Exists(raidFile)) File.Delete(raidFile);
+            raids.SaveToFile(raidFile, NbtCompression.GZip);
             return;
         }
 

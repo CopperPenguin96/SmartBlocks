@@ -1,4 +1,5 @@
 ﻿using MinecraftTypes;
+using SmartBlocks.Worlds;
 using SmartNbt.Tags;
 
 namespace SmartBlocks.Generators
@@ -28,7 +29,7 @@ namespace SmartBlocks.Generators
             set => _seed = value;
         }
 
-        public NbtCompound Nbt
+        public NbtTag Tag
         {
             get
             {
@@ -41,7 +42,7 @@ namespace SmartBlocks.Generators
                 };
 
                 // Build Nbt
-                return new("generator")
+                return new NbtCompound("generator")
                 {
                     new NbtString("settings", new Identifier("amplified").ToString()),
                     new NbtLong("seed", Seed),

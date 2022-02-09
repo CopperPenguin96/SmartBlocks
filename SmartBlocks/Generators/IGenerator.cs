@@ -1,8 +1,9 @@
-﻿using SmartNbt.Tags;
+﻿using SmartBlocks.Worlds;
+using SmartNbt.Tags;
 
 namespace SmartBlocks.Generators
 {
-    public interface IGenerator
+    public interface IGenerator : ITagProvider
     {
         static string Name { get; }
 
@@ -11,7 +12,5 @@ namespace SmartBlocks.Generators
         string Options { get; }
 
         long Seed { get; set; }
-
-        NbtCompound Nbt { get; }
     }
 }
