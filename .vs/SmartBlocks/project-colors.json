@@ -25,7 +25,12 @@
       "ProjectGuid": "a2f502fa-fd10-40dd-b006-7240d467f521",
       "DisplayName": "doubleteset",
       "ColorIndex": 3
+    },
+    "a00cd338-40c7-4d46-9784-fac5acbc6940": {
+      "ProjectGuid": "a00cd338-40c7-4d46-9784-fac5acbc6940",
+      "DisplayName": "BlockBuilder",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

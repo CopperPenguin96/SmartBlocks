@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lboBlocks = new System.Windows.Forms.ListBox();
@@ -39,24 +40,11 @@
             this.lblNamespace = new System.Windows.Forms.Label();
             this.txtItemId = new System.Windows.Forms.TextBox();
             this.lblItemId = new System.Windows.Forms.Label();
-            this.cboStackable = new System.Windows.Forms.CheckBox();
-            this.cboDiggable = new System.Windows.Forms.CheckBox();
-            this.lblMaxStackSize = new System.Windows.Forms.Label();
-            this.numMaxStackSize = new System.Windows.Forms.NumericUpDown();
-            this.numHardness = new System.Windows.Forms.NumericUpDown();
-            this.lblHardness = new System.Windows.Forms.Label();
-            this.numMinStateId = new System.Windows.Forms.NumericUpDown();
-            this.lblMinStateId = new System.Windows.Forms.Label();
-            this.numMaxStateId = new System.Windows.Forms.NumericUpDown();
-            this.lblMaxStateId = new System.Windows.Forms.Label();
             this.btnFinish = new System.Windows.Forms.Button();
             this.lblNumericId = new System.Windows.Forms.Label();
             this.numId = new System.Windows.Forms.NumericUpDown();
             this.numItemMeta = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numMaxStackSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHardness)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinStateId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMaxStateId)).BeginInit();
+            this.tipNames = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numItemMeta)).BeginInit();
             this.SuspendLayout();
@@ -74,26 +62,31 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(168, 88);
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Location = new System.Drawing.Point(168, 110);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(49, 20);
+            this.lblName.Size = new System.Drawing.Size(64, 28);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             // 
             // lboBlocks
             // 
+            this.lboBlocks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lboBlocks.FormattingEnabled = true;
-            this.lboBlocks.ItemHeight = 20;
+            this.lboBlocks.ItemHeight = 28;
             this.lboBlocks.Location = new System.Drawing.Point(13, 50);
             this.lboBlocks.Name = "lboBlocks";
-            this.lboBlocks.Size = new System.Drawing.Size(150, 364);
+            this.lboBlocks.ScrollAlwaysVisible = true;
+            this.lboBlocks.Size = new System.Drawing.Size(150, 340);
             this.lboBlocks.TabIndex = 2;
+            this.lboBlocks.SelectedIndexChanged += new System.EventHandler(this.lboBlocks_SelectedIndexChanged);
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.Location = new System.Drawing.Point(168, 50);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(94, 29);
+            this.btnAdd.Size = new System.Drawing.Size(94, 51);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -101,9 +94,10 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.Location = new System.Drawing.Point(268, 50);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(94, 29);
+            this.btnEdit.Size = new System.Drawing.Size(94, 51);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -111,9 +105,10 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.Location = new System.Drawing.Point(368, 50);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(94, 29);
+            this.btnDelete.Size = new System.Drawing.Size(94, 51);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -121,211 +116,107 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(223, 85);
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.Location = new System.Drawing.Point(232, 107);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(239, 27);
-            this.txtName.TabIndex = 6;
+            this.txtName.Size = new System.Drawing.Size(230, 34);
+            this.txtName.TabIndex = 100;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtNamespace
             // 
-            this.txtNamespace.Location = new System.Drawing.Point(261, 118);
+            this.txtNamespace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNamespace.Location = new System.Drawing.Point(291, 147);
             this.txtNamespace.Name = "txtNamespace";
-            this.txtNamespace.Size = new System.Drawing.Size(201, 27);
-            this.txtNamespace.TabIndex = 8;
+            this.txtNamespace.Size = new System.Drawing.Size(171, 34);
+            this.txtNamespace.TabIndex = 101;
             this.txtNamespace.Text = "minecraft";
             // 
             // lblNamespace
             // 
             this.lblNamespace.AutoSize = true;
-            this.lblNamespace.Location = new System.Drawing.Point(168, 121);
+            this.lblNamespace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNamespace.Location = new System.Drawing.Point(172, 150);
             this.lblNamespace.Name = "lblNamespace";
-            this.lblNamespace.Size = new System.Drawing.Size(87, 20);
+            this.lblNamespace.Size = new System.Drawing.Size(113, 28);
             this.lblNamespace.TabIndex = 7;
             this.lblNamespace.Text = "Namespace";
             // 
             // txtItemId
             // 
-            this.txtItemId.Location = new System.Drawing.Point(230, 151);
+            this.txtItemId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtItemId.Location = new System.Drawing.Point(251, 187);
             this.txtItemId.Name = "txtItemId";
-            this.txtItemId.Size = new System.Drawing.Size(232, 27);
-            this.txtItemId.TabIndex = 10;
+            this.txtItemId.Size = new System.Drawing.Size(213, 34);
+            this.txtItemId.TabIndex = 102;
             // 
             // lblItemId
             // 
             this.lblItemId.AutoSize = true;
-            this.lblItemId.Location = new System.Drawing.Point(168, 154);
+            this.lblItemId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblItemId.Location = new System.Drawing.Point(172, 190);
             this.lblItemId.Name = "lblItemId";
-            this.lblItemId.Size = new System.Drawing.Size(56, 20);
+            this.lblItemId.Size = new System.Drawing.Size(73, 28);
             this.lblItemId.TabIndex = 9;
             this.lblItemId.Text = "Item Id";
-            // 
-            // cboStackable
-            // 
-            this.cboStackable.AutoSize = true;
-            this.cboStackable.Location = new System.Drawing.Point(168, 184);
-            this.cboStackable.Name = "cboStackable";
-            this.cboStackable.Size = new System.Drawing.Size(95, 24);
-            this.cboStackable.TabIndex = 11;
-            this.cboStackable.Text = "Stackable";
-            this.cboStackable.UseVisualStyleBackColor = true;
-            // 
-            // cboDiggable
-            // 
-            this.cboDiggable.AutoSize = true;
-            this.cboDiggable.Location = new System.Drawing.Point(287, 184);
-            this.cboDiggable.Name = "cboDiggable";
-            this.cboDiggable.Size = new System.Drawing.Size(93, 24);
-            this.cboDiggable.TabIndex = 12;
-            this.cboDiggable.Text = "Diggable";
-            this.cboDiggable.UseVisualStyleBackColor = true;
-            // 
-            // lblMaxStackSize
-            // 
-            this.lblMaxStackSize.AutoSize = true;
-            this.lblMaxStackSize.Location = new System.Drawing.Point(168, 217);
-            this.lblMaxStackSize.Name = "lblMaxStackSize";
-            this.lblMaxStackSize.Size = new System.Drawing.Size(107, 20);
-            this.lblMaxStackSize.TabIndex = 13;
-            this.lblMaxStackSize.Text = "Max Stack Size";
-            // 
-            // numMaxStackSize
-            // 
-            this.numMaxStackSize.Location = new System.Drawing.Point(281, 215);
-            this.numMaxStackSize.Maximum = new decimal(new int[] {
-            64,
-            0,
-            0,
-            0});
-            this.numMaxStackSize.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numMaxStackSize.Name = "numMaxStackSize";
-            this.numMaxStackSize.Size = new System.Drawing.Size(181, 27);
-            this.numMaxStackSize.TabIndex = 15;
-            this.numMaxStackSize.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numHardness
-            // 
-            this.numHardness.DecimalPlaces = 3;
-            this.numHardness.Location = new System.Drawing.Point(244, 248);
-            this.numHardness.Maximum = new decimal(new int[] {
-            64,
-            0,
-            0,
-            0});
-            this.numHardness.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numHardness.Name = "numHardness";
-            this.numHardness.Size = new System.Drawing.Size(218, 27);
-            this.numHardness.TabIndex = 17;
-            this.numHardness.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lblHardness
-            // 
-            this.lblHardness.AutoSize = true;
-            this.lblHardness.Location = new System.Drawing.Point(168, 250);
-            this.lblHardness.Name = "lblHardness";
-            this.lblHardness.Size = new System.Drawing.Size(70, 20);
-            this.lblHardness.TabIndex = 16;
-            this.lblHardness.Text = "Hardness";
-            // 
-            // numMinStateId
-            // 
-            this.numMinStateId.Location = new System.Drawing.Point(263, 281);
-            this.numMinStateId.Name = "numMinStateId";
-            this.numMinStateId.Size = new System.Drawing.Size(199, 27);
-            this.numMinStateId.TabIndex = 19;
-            // 
-            // lblMinStateId
-            // 
-            this.lblMinStateId.AutoSize = true;
-            this.lblMinStateId.Location = new System.Drawing.Point(168, 283);
-            this.lblMinStateId.Name = "lblMinStateId";
-            this.lblMinStateId.Size = new System.Drawing.Size(89, 20);
-            this.lblMinStateId.TabIndex = 18;
-            this.lblMinStateId.Text = "Min State Id";
-            // 
-            // numMaxStateId
-            // 
-            this.numMaxStateId.Location = new System.Drawing.Point(261, 314);
-            this.numMaxStateId.Name = "numMaxStateId";
-            this.numMaxStateId.Size = new System.Drawing.Size(199, 27);
-            this.numMaxStateId.TabIndex = 21;
-            // 
-            // lblMaxStateId
-            // 
-            this.lblMaxStateId.AutoSize = true;
-            this.lblMaxStateId.Location = new System.Drawing.Point(166, 316);
-            this.lblMaxStateId.Name = "lblMaxStateId";
-            this.lblMaxStateId.Size = new System.Drawing.Size(92, 20);
-            this.lblMaxStateId.TabIndex = 20;
-            this.lblMaxStateId.Text = "Max State Id";
             // 
             // btnFinish
             // 
             this.btnFinish.Enabled = false;
-            this.btnFinish.Location = new System.Drawing.Point(169, 380);
+            this.btnFinish.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFinish.Location = new System.Drawing.Point(172, 267);
             this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(296, 29);
-            this.btnFinish.TabIndex = 22;
+            this.btnFinish.Size = new System.Drawing.Size(296, 51);
+            this.btnFinish.TabIndex = 105;
             this.btnFinish.UseVisualStyleBackColor = true;
             this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // lblNumericId
             // 
             this.lblNumericId.AutoSize = true;
-            this.lblNumericId.Location = new System.Drawing.Point(169, 349);
+            this.lblNumericId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNumericId.Location = new System.Drawing.Point(174, 229);
             this.lblNumericId.Name = "lblNumericId";
-            this.lblNumericId.Size = new System.Drawing.Size(82, 20);
+            this.lblNumericId.Size = new System.Drawing.Size(108, 28);
             this.lblNumericId.TabIndex = 23;
             this.lblNumericId.Text = "Numeric Id";
             // 
             // numId
             // 
-            this.numId.Location = new System.Drawing.Point(257, 347);
+            this.numId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numId.Location = new System.Drawing.Point(262, 227);
+            this.numId.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numId.Name = "numId";
-            this.numId.Size = new System.Drawing.Size(62, 27);
-            this.numId.TabIndex = 24;
+            this.numId.Size = new System.Drawing.Size(62, 34);
+            this.numId.TabIndex = 103;
+            this.numId.ValueChanged += new System.EventHandler(this.numId_ValueChanged);
             // 
             // numItemMeta
             // 
-            this.numItemMeta.Location = new System.Drawing.Point(334, 347);
+            this.numItemMeta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numItemMeta.Location = new System.Drawing.Point(339, 227);
+            this.numItemMeta.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numItemMeta.Name = "numItemMeta";
-            this.numItemMeta.Size = new System.Drawing.Size(62, 27);
-            this.numItemMeta.TabIndex = 25;
+            this.numItemMeta.Size = new System.Drawing.Size(62, 34);
+            this.numItemMeta.TabIndex = 104;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 432);
+            this.ClientSize = new System.Drawing.Size(480, 410);
             this.Controls.Add(this.numItemMeta);
             this.Controls.Add(this.numId);
             this.Controls.Add(this.lblNumericId);
             this.Controls.Add(this.btnFinish);
-            this.Controls.Add(this.numMaxStateId);
-            this.Controls.Add(this.lblMaxStateId);
-            this.Controls.Add(this.numMinStateId);
-            this.Controls.Add(this.lblMinStateId);
-            this.Controls.Add(this.numHardness);
-            this.Controls.Add(this.lblHardness);
-            this.Controls.Add(this.numMaxStackSize);
-            this.Controls.Add(this.lblMaxStackSize);
-            this.Controls.Add(this.cboDiggable);
-            this.Controls.Add(this.cboStackable);
             this.Controls.Add(this.txtItemId);
             this.Controls.Add(this.lblItemId);
             this.Controls.Add(this.txtNamespace);
@@ -342,10 +233,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SmartBlocks Block Builder";
-            ((System.ComponentModel.ISupportInitialize)(this.numMaxStackSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHardness)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinStateId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMaxStateId)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numItemMeta)).EndInit();
             this.ResumeLayout(false);
@@ -366,19 +254,10 @@
         private Label lblNamespace;
         private TextBox txtItemId;
         private Label lblItemId;
-        private CheckBox cboStackable;
-        private CheckBox cboDiggable;
-        private Label lblMaxStackSize;
-        private NumericUpDown numMaxStackSize;
-        private NumericUpDown numHardness;
-        private Label lblHardness;
-        private NumericUpDown numMinStateId;
-        private Label lblMinStateId;
-        private NumericUpDown numMaxStateId;
-        private Label lblMaxStateId;
         private Button btnFinish;
         private Label lblNumericId;
         private NumericUpDown numId;
         private NumericUpDown numItemMeta;
+        private ToolTip tipNames;
     }
 }

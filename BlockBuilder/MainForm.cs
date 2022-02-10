@@ -10,7 +10,29 @@ namespace BlockBuilder
         {
             InitializeComponent();
             LoadBlocks();
+            lboBlocks.MouseHover += Hover;
+            numId.GotFocus += IdFocus;
+            numItemMeta.GotFocus += IdFocus;
+            MessageBox.Show($"There are {_blocks.Count} items loaded.");
         }
+
+        private void IdFocus(object? sender, EventArgs e)
+        {
+            ((NumericUpDown) sender).Select(0, numId.Text.Length);
+        }
+        
+        private void Hover(object? sender, EventArgs e)
+        {
+            if (lboBlocks.SelectedIndex > -1)
+                tipNames.SetToolTip(lboBlocks,
+                    _blocks[lboBlocks.SelectedIndex].Name);
+        }
+
+        private void DrawItem(object? sender, DrawItemEventArgs e)
+        {
+            lboBlocks.SelectedIndex = lboBlocks.Items.Count - 1;
+        }
+
         private const string File = "blocks.json";
 
         private void LoadBlocks()
@@ -29,6 +51,7 @@ namespace BlockBuilder
                 foreach (Block block in _blocks)
                 {
                     lboBlocks.Items.Add(block.ItemId.ToString());
+                    lboBlocks.SelectedIndex = lboBlocks.Items.Count - 1;
                 }
             }
         }
@@ -46,17 +69,19 @@ namespace BlockBuilder
         private List<Block> _blocks = new();
 
         private byte _method;
-        
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearForm();
             btnFinish.Enabled = true;
             btnFinish.Text = "Add Block";
             _method = 0x01;
+            txtName.Focus();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            txtName.Focus();
             if (lboBlocks.SelectedIndex == -1)
             {
                 MessageBox.Show("No block selected");
@@ -72,12 +97,6 @@ namespace BlockBuilder
             txtName.Text = blk.Name;
             txtNamespace.Text = blk.ItemId.Namespace;
             txtItemId.Text = blk.ItemId.Name;
-            cboStackable.Checked = blk.IsStackable;
-            cboDiggable.Checked = blk.IsDiggable;
-            numMaxStackSize.Value = blk.MaxStackSize;
-            numHardness.Value = (decimal)blk.Hardness;
-            numMinStateId.Value = blk.MinStateId;
-            numMaxStateId.Value = blk.MaxStateId;
             numId.Value = blk.Id;
             numItemMeta.Value = blk.Type;
         }
@@ -101,12 +120,6 @@ namespace BlockBuilder
             txtName.Text = string.Empty;
             txtNamespace.Text = "minecraft";
             txtItemId.Text = string.Empty;
-            cboStackable.Checked = false;
-            cboDiggable.Checked = false;
-            numMaxStackSize.Value = 1;
-            numHardness.Value = (decimal) 1.0;
-            numMinStateId.Value = 0;
-            numMaxStateId.Value = 0;
             numId.Value = 0;
             numItemMeta.Value = 0;
             btnFinish.Enabled = false;
@@ -115,16 +128,11 @@ namespace BlockBuilder
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
+            txtName.Focus();
             Block block = new()
             {
                 Name = txtName.Text,
                 ItemId = new Identifier(txtNamespace.Text, txtItemId.Text),
-                IsStackable = cboStackable.Checked,
-                IsDiggable = cboDiggable.Checked,
-                MaxStackSize = (short)numMaxStackSize.Value,
-                Hardness = (double)numHardness.Value,
-                MinStateId = (short)numMinStateId.Value,
-                MaxStateId = (short)numMaxStateId.Value,
                 Id = (uint)numId.Value,
                 Type = (uint)numItemMeta.Value
             };
@@ -136,6 +144,7 @@ namespace BlockBuilder
                     _blocks.Add(block);
                     SaveBlocks();
                     MessageBox.Show("Block added");
+                    btnAdd_Click(sender, e);
                     return;
                 case 0x02: // Editing
                     if (lboBlocks.SelectedIndex == -1)
@@ -147,7 +156,7 @@ namespace BlockBuilder
                     for (int x = 0; x < _blocks.Count; x++)
                     {
                         Block blk = _blocks[x];
-                        if (!blk.Id.ToString().Equals(lboBlocks.Text)) continue;
+                        if (blk.ItemId.ToString() != lboBlocks.Text) continue;
                         _blocks[x] = block;
                         SaveBlocks();
                         MessageBox.Show("Block updated");
@@ -155,6 +164,42 @@ namespace BlockBuilder
                     }
                     return;
             }
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            string[] parts = txtName.Text.Split(" ");
+            if (parts.Length == 1)
+            {
+                txtItemId.Text = parts[0].ToLower();
+            }
+            else
+            {
+                string newStr = "";
+
+                for (int x = 0; x < parts.Length; x++)
+                {
+                    if (x == 0) newStr += parts[x].ToLower();
+                    else newStr += "_" + parts[x].ToLower();
+                }
+
+                txtItemId.Text = newStr;
+            }
+        }
+
+        private void lboBlocks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numId_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
