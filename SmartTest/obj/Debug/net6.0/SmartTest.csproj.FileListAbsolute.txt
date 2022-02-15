@@ -49,3 +49,4 @@ A:\Programming\SmartBlocks\SmartTest\bin\Debug\net6.0\runtimes\unix\lib\net6.0\S
 A:\Programming\SmartBlocks\SmartTest\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 A:\Programming\SmartBlocks\SmartTest\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 A:\Programming\SmartBlocks\SmartTest\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+A:\Programming\SmartBlocks\SmartTest\bin\Debug\net6.0\Newtonsoft.Json.dll

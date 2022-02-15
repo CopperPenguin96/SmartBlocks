@@ -34,3 +34,5 @@ A:\Programming\SmartBlocks\SmartBlocks\bin\Debug\net6.0\IKVM.Runtime.JNI.dll
 A:\Programming\SmartBlocks\SmartBlocks\bin\Debug\net6.0\MinecraftTypes.dll
 A:\Programming\SmartBlocks\SmartBlocks\obj\Debug\net6.0\SmartBlocks.csproj.AssemblyReference.cache
 A:\Programming\SmartBlocks\SmartBlocks\bin\Debug\net6.0\SmartNbt 1.1.0.0.dll
+A:\Programming\SmartBlocks\SmartBlocks\obj\Debug\net6.0\SmartBlocks.Properties.Resources.resources
+A:\Programming\SmartBlocks\SmartBlocks\obj\Debug\net6.0\SmartBlocks.csproj.GenerateResource.cache

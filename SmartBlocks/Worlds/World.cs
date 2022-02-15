@@ -32,7 +32,9 @@ namespace SmartBlocks.Worlds
         /// The generator to be used to create the world.
         /// </summary>
         public IGenerator Generator { get; }
-        
+
+        public List<InterestPoint> InterestPoints { get; set; }
+
         public RaidList RaidList { get; set; }
 
         /// <summary>
@@ -274,7 +276,7 @@ namespace SmartBlocks.Worlds
             }
 
             // Save raids
-            string dataDir = lvlDir + "data";
+            string dataDir = lvlDir + "data/";
             if (!Directory.Exists(dataDir))
                 Directory.CreateDirectory(dataDir);
 
@@ -282,7 +284,74 @@ namespace SmartBlocks.Worlds
             string raidFile = dataDir + "raids.dat";
             if (File.Exists(raidFile)) File.Delete(raidFile);
             raids.SaveToFile(raidFile, NbtCompression.GZip);
-            return;
+            
+            // Save datapacks
+            string dataPacksDir = lvlDir + "datapacks/";
+            if (!Directory.Exists(dataPacksDir))
+                Directory.CreateDirectory(dataPacksDir);
+
+            // Save POIs
+            string poiDir = lvlDir + "poi/";
+            if (!Directory.Exists(poiDir))
+                Directory.CreateDirectory(poiDir);
+
+            List<NbtCompound> sections = new();
+            List<Point> points = new();
+            for (int x = 0; x < _regions.Count; x++)
+            {
+                Region region = _regions.Values.ToList()[x];
+
+                NbtList records = new("Records", NbtTagType.Compound);
+                foreach (var poi in 
+                         from poi 
+                             in InterestPoints 
+                         from chunk 
+                             in region.Chunks 
+                         where chunk.HasBlocks
+                             && chunk.X == poi.Position.X
+                             && chunk.Z == poi.Position.Z 
+                         select poi)
+                {
+                    records.Add(poi.Tag);
+                    points.Add(new(poi.Position.X, poi.Position.Z));
+                }
+
+                NbtCompound number = new("4")
+                {
+                    new NbtBoolean("Valid", true),
+                    records
+                };
+
+                sections.Add(number);
+            }
+
+            NbtCompound data = new("Data");
+            foreach (NbtCompound section in sections)
+            {
+                data.Add(section);
+            }
+
+            NbtCompound root = new()
+            {
+                data,
+                new NbtInt("DataVersion", InterestPoint.DataVersion)
+            };
+
+            foreach (Point point in points)
+            {
+                RegionFile poiFile = new(poiDir + "r." + point.X + "." + point.Y + ".mca");
+                NbtOutputStream output = new(
+                    poiFile.GetChunkDataWriterStream(point.X, point.Y).BaseStream, false);
+
+                try
+                {
+                    output.WriteTag(root);
+                }
+                finally
+                {
+                    output.Close();
+                }
+            }
         }
 
         private void AddSkyLight()

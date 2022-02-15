@@ -1358,6 +1358,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "MedallionRandom": "1.1.0",
+          "Newtonsoft.Json": "13.0.1",
           "System.Configuration.ConfigurationManager": "6.0.0",
           "System.IO.FileSystem": "4.3.0"
         },

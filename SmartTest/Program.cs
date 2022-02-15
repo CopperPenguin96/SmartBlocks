@@ -9,8 +9,6 @@ using SmartBlocks.Worlds;
 Console.WriteLine("Hello, World!");
 try
 {
-    World world = new("test/");
-    
 }
 catch (Exception e)
 {

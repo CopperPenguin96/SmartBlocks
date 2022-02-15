@@ -10,7 +10,7 @@ namespace SmartBlocks.Worlds
         public const int ChunksPerRegionSide = 32;
         public const int BlocksPerRegionSize = ChunksPerRegionSide * Chunk.BlocksPerChunkSide;
 
-        private readonly RectArray<Chunk> _chunks = new(ChunksPerRegionSide, ChunksPerRegionSide);
+        internal readonly RectArray<Chunk> Chunks = new(ChunksPerRegionSide, ChunksPerRegionSide);
 
         private readonly IBlockContainer _parent;
 
@@ -77,7 +77,7 @@ namespace SmartBlocks.Worlds
             {
                 for (int z = 0; z < ChunksPerRegionSide; z++)
                 {
-                    Chunk chunk = _chunks.Get(x, z);
+                    Chunk chunk = Chunks.Get(x, z);
                     chunk?.SpreadSkyLight(light);
                 }
             }
@@ -89,7 +89,7 @@ namespace SmartBlocks.Worlds
             {
                 for (int z = 0; z < ChunksPerRegionSide; z++)
                 {
-                    Chunk chunk = _chunks.Get(x, z);
+                    Chunk chunk = Chunks.Get(x, z);
                     chunk?.AddSkyLight();
                 }
             }
@@ -114,12 +114,12 @@ namespace SmartBlocks.Worlds
             // Make chunk coords
             int chunkX = x / Chunk.BlocksPerChunkSide;
             int chunkZ = z / Chunk.BlocksPerChunkSide;
-            Chunk chunk = _chunks.Get(chunkX, chunkZ);
+            Chunk chunk = Chunks.Get(chunkX, chunkZ);
 
             // Create chunk
             if (chunk != null || !create) return chunk;
             chunk = new Chunk(this, chunkX, chunkZ);
-            _chunks.Set(chunkX, chunkZ, chunk);
+            Chunks.Set(chunkX, chunkZ, chunk);
 
             return chunk;
         }
@@ -130,7 +130,7 @@ namespace SmartBlocks.Worlds
             {
                 for (int z = 0; z < ChunksPerRegionSide; z++)
                 {
-                    Chunk chunk = _chunks.Get(x, z);
+                    Chunk chunk = Chunks.Get(x, z);
                     chunk?.CalculateHeightMap();
                 }
             }
@@ -146,16 +146,16 @@ namespace SmartBlocks.Worlds
                 {
                     for (int z = 0; z < ChunksPerRegionSide; z++)
                     {
-                        Chunk chunk = _chunks.Get(x, z);
+                        Chunk chunk = Chunks.Get(x, z);
                         if (chunk is not {HasBlocks: true}) continue;
 
-                        NbtOutputStream output = new NbtOutputStream(
+                        NbtOutputStream output = new(
                             regionFile.GetChunkDataWriterStream(x, z).BaseStream, false
                         );
 
                         try
                         {
-                            output.WriteTag(_chunks.Get(x, z).Tag);
+                            output.WriteTag(Chunks.Get(x, z).Tag);
                         }
                         finally
                         {
