@@ -3,4 +3,5 @@
   &lt;Assembly Path="A:\Programming\MinecraftTypes\MinecraftTypes\bin\Debug\net6.0\MinecraftTypes.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=biome/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/UserDictionary/Words/=Elytra/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Elytra/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Overworld/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

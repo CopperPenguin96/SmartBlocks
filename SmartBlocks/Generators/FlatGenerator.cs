@@ -18,6 +18,8 @@ namespace SmartBlocks.Generators
         /// </summary>
         public readonly DefaultLayers Layers;
 
+        public Dimension Dimension => Dimension.Overworld;
+
         public Biome Biome { get; set; } = new Identifier("plains");
 
         public bool Lakes { get; set; } = false;

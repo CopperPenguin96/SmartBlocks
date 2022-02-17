@@ -1,5 +1,4 @@
 ﻿using MinecraftTypes;
-using SmartBlocks.Dimensions;
 using SmartBlocks.Generators;
 using SmartBlocks.Utils;
 using SmartNbt;
@@ -80,12 +79,9 @@ namespace SmartBlocks.Worlds
 
         public bool GenerateStructures { get; set; } = true;
 
+        public NetherGenerator NetherGen { get; set; }
 
-        public Overworld Overworld { get; set; } = new();
-
-        public TheEnd TheEnd { get; set; } = new();
-
-        public TheNether TheNether { get; set; } = new();
+        public EndGenerator EndGenerator { get; set; }
 
         public Level()
         {
@@ -97,12 +93,18 @@ namespace SmartBlocks.Worlds
             Name = levelName ?? throw new ArgumentNullException(nameof(levelName));
             // No need to call MakeRandomSeed
             // When seed is called and not set yet, gens a random one
+
+            NetherGen = new();
+            EndGenerator = new();
         }
 
         public Level(string levelName, IGenerator gen)
         {
             Name = levelName ?? throw new ArgumentNullException(nameof(levelName));
             Generator = gen;
+
+            NetherGen = new();
+            EndGenerator = new();
         }
 
         public NbtCompound Nbt
@@ -156,38 +158,17 @@ namespace SmartBlocks.Worlds
                         new NbtCompound("minecraft:overworld")
                         {
                             Generator.Tag, // "generator"
-                            new NbtString("type", Overworld.Type.ToString())
+                            new NbtString("type", Generator.Dimension.ToString())
                         },
                         new NbtCompound("minecraft:the_end")
                         {
-                            new NbtCompound("generator")
-                            {
-                                new NbtCompound("biome_source")
-                                {
-                                    new NbtLong("seed", Generator.Seed),
-                                    new NbtString("type", TheEnd.BiomeSourceType.ToString())
-                                },
-                                new NbtLong("seed", Generator.Seed),
-                                new NbtString("settings", TheEnd.Settings.ToString()),
-                                new NbtString("type", TheEnd.GenType.ToString())
-                            },
-                            new NbtString("type", TheEnd.Type.ToString())
+                            EndGenerator.Tag,
+                            new NbtString("type", EndGenerator.Dimension.ToString())
                         },
                         new NbtCompound("minecraft:the_nether")
                         {
-                            new NbtCompound("generator")
-                            {
-                                new NbtCompound("biome_source")
-                                {
-                                    new NbtString("preset", TheNether.Preset.ToString()),
-                                    new NbtLong("seed", Generator.Seed),
-                                    new NbtString("type", TheNether.BiomeSourceType.ToString())
-                                },
-                                new NbtLong("seed", Generator.Seed),
-                                new NbtString("settings", TheNether.Settings.ToString()),
-                                new NbtString("type", TheNether.GenType.ToString())
-                            },
-                            new NbtString("type", TheNether.Type.ToString())
+                            NetherGen.Tag,
+                            new NbtString("type", NetherGen.Dimension.ToString())
                         }
                     },
                     new NbtByte("bonus_chest", BonusChest.ToByte()),

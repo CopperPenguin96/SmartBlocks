@@ -8,6 +8,8 @@ namespace SmartBlocks.Generators
     {
         public GenType Type => GenType.LargeBiomes;
 
+        public Dimension Dimension => Dimension.Overworld;
+
         public string Options { get; }
 
         private long _seed = -1;

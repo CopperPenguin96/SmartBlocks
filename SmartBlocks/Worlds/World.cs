@@ -37,6 +37,10 @@ namespace SmartBlocks.Worlds
 
         public RaidList RaidList { get; set; }
 
+        public RaidList NetherRaids { get; set; }
+
+        public RaidList EndRaids { get; set; }
+
         /// <summary>
         /// Creates a new instance
         /// </summary>
@@ -195,65 +199,69 @@ namespace SmartBlocks.Worlds
             }
         }
 
-        public void Save()
+        #region Saving
+
+        private const string WorldDir = "Worlds/";
+        private string _lvlFile;
+        private string _lvlDir;
+
+        public void Save(bool newWorld = true)
         {
             // Creates worlds directory
-            string worldDir = "Worlds/";
-            if (!Directory.Exists(worldDir))
+            
+            if (!Directory.Exists(WorldDir))
             {
-                Directory.CreateDirectory(worldDir);
+                Directory.CreateDirectory(WorldDir);
             }
 
             // Get level directory
             string levelName = _level.Name;
-            string lvlDir = worldDir + levelName;
-            if (Directory.Exists(lvlDir))
+            _lvlDir = WorldDir + levelName;
+            if (Directory.Exists(_lvlDir) && !newWorld)
             {
                 int dirPostFix = 0;
                 do
                 {
                     dirPostFix++;
-                    lvlDir = worldDir + levelName + dirPostFix;
-                } while (Directory.Exists(lvlDir));
+                    _lvlDir = WorldDir + levelName + dirPostFix;
+                } while (Directory.Exists(_lvlDir));
             }
 
             // Create directories
-            Directory.CreateDirectory(lvlDir);
-            if (lvlDir[^1] != '/') lvlDir += '/';
-            string regionDir = lvlDir + "region/";
+            Directory.CreateDirectory(_lvlDir);
+            if (_lvlDir[^1] != '/') _lvlDir += '/';
+            string regionDir = _lvlDir + "region/";
             Directory.CreateDirectory(regionDir);
 
             // Write session.lock
-            string sessionLockFile = lvlDir + "session.lock";
+            string sessionLockFile = _lvlDir + "session.lock";
             var sessionLockWriter = File.CreateText(sessionLockFile);
             sessionLockWriter.Write(DateTime.Now.Ticks);
             sessionLockWriter.Flush();
             sessionLockWriter.Close();
 
             // Write level.dat
-            string lvlFile = lvlDir + "level.dat";
-            if (Directory.Exists(lvlFile))
+            _lvlFile = _lvlDir + "level.dat";
+            if (Directory.Exists(_lvlFile))
             {
-                if (File.Exists(lvlDir + "level.dat_old"))
+                if (File.Exists(_lvlDir + "level.dat_old"))
                 {
-                    File.Delete(lvlDir + "level.dat_old");
+                    File.Delete(_lvlDir + "level.dat_old");
                 }
 
-                File.Copy(lvlFile, lvlDir + "level.dat_old");
+                File.Copy(_lvlFile, _lvlDir + "level.dat_old");
             }
 
-            File.Delete(lvlFile);
+            File.Delete(_lvlFile);
             NbtFile nbtFile = new(new NbtCompound("") {_level.Nbt});
-            nbtFile.SaveToFile(lvlFile, NbtCompression.GZip);
-            
-            Console.WriteLine("test");
+            nbtFile.SaveToFile(_lvlFile, NbtCompression.GZip);
+
             // Calculate height maps
             foreach (Region region in _regions.Values)
             {
                 region.CalculateHeightMap();
             }
-
-            Console.WriteLine("test2");
+            
             // Set sky light
             AddSkyLight();
 
@@ -276,7 +284,7 @@ namespace SmartBlocks.Worlds
             }
 
             // Save raids
-            string dataDir = lvlDir + "data/";
+            string dataDir = _lvlDir + "data/";
             if (!Directory.Exists(dataDir))
                 Directory.CreateDirectory(dataDir);
 
@@ -286,12 +294,12 @@ namespace SmartBlocks.Worlds
             raids.SaveToFile(raidFile, NbtCompression.GZip);
             
             // Save datapacks
-            string dataPacksDir = lvlDir + "datapacks/";
+            string dataPacksDir = _lvlDir + "datapacks/";
             if (!Directory.Exists(dataPacksDir))
                 Directory.CreateDirectory(dataPacksDir);
 
             // Save POIs
-            string poiDir = lvlDir + "poi/";
+            string poiDir = _lvlDir + "poi/";
             if (!Directory.Exists(poiDir))
                 Directory.CreateDirectory(poiDir);
 
@@ -352,8 +360,37 @@ namespace SmartBlocks.Worlds
                     output.Close();
                 }
             }
+
+            // Save other dimensions
+            SaveNether();
+            SaveEnd();
         }
 
+        private void SaveNether()
+        {
+            string dir = _lvlDir + "DIM-1/";
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+
+            // Create raids
+            string raidDir = _lvlDir + "data/";
+            if (!Directory.Exists(raidDir))
+                Directory.CreateDirectory(raidDir);
+
+            string raidFile = raidDir + "raids.dat";
+            NbtFile raids = new NbtFile(new NbtCompound("") { RaidList.Tag });
+            if (File.Exists(raidFile)) File.Delete(raidFile);
+            raids.SaveToFile(raidFile, NbtCompression.GZip);
+
+
+        }
+
+        private void SaveEnd()
+        {
+            string dir = _lvlDir + "DIM1/";
+        }
+
+        #endregion
         private void AddSkyLight()
         {
             foreach (Region region in _regions.Values)

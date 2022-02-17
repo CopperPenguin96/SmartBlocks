@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MinecraftTypes;
-using SmartNbt;
+﻿using MinecraftTypes;
 using SmartNbt.Tags;
 
 namespace SmartBlocks.Worlds

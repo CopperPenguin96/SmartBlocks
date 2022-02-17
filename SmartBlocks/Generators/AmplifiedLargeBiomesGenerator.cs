@@ -8,9 +8,7 @@ namespace SmartBlocks.Generators
     {
         public GenType Type => GenType.AmplifiedLargeBiomes;
 
-        public string Options { get; }
-
-        public bool BonusChest { get; set; } = false;
+        public Dimension Dimension => Dimension.Overworld;
 
         private long _seed = -1;
 

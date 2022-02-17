@@ -8,7 +8,7 @@ namespace SmartBlocks.Generators
     {
         public GenType Type => GenType.Normal;
 
-        public string Options { get; }
+        public Dimension Dimension => Dimension.Overworld;
 
         private long _seed = -1;
 

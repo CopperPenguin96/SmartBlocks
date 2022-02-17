@@ -1,15 +1,12 @@
 ﻿using SmartBlocks.Worlds;
-using SmartNbt.Tags;
 
 namespace SmartBlocks.Generators
 {
     public interface IGenerator : ITagProvider
     {
-        static string Name { get; }
-
         GenType Type { get; }
 
-        string Options { get; }
+        Dimension Dimension { get; }
 
         long Seed { get; set; }
     }
