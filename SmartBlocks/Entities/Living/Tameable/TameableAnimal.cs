@@ -1,6 +1,7 @@
 ﻿using java.util;
 using MinecraftTypes;
 using SmartBlocks.Entities.Living.Ageable;
+using SmartBlocks.Utils;
 
 namespace SmartBlocks.Entities.Living.Tameable
 {

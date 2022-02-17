@@ -1,4 +1,6 @@
-﻿namespace SmartBlocks.Entities.Arrows
+﻿using SmartBlocks.Utils;
+
+namespace SmartBlocks.Entities.Arrows
 {
     public class AbstractArrow : Entity
     {

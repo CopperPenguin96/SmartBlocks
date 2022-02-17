@@ -1,6 +1,7 @@
 ﻿using MinecraftTypes;
 using SmartBlocks.Entities;
 using SmartBlocks.Entities.Living;
+using SmartBlocks.Utils;
 using SmartNbt.Tags;
 
 // ReSharper disable once CheckNamespace
