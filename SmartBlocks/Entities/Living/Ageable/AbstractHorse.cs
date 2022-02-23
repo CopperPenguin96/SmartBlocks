@@ -7,13 +7,13 @@ namespace SmartBlocks.Entities.Living.Ageable
 {
     public abstract class AbstractHorse : Animal
     {
-        internal override bool UseSpawnEntityOnly => false;
+        public override bool UseSpawnEntityOnly => false;
 
-        internal override bool UseSpawnPaintingOnly => false;
+        public override bool UseSpawnPaintingOnly => false;
 
-        internal override bool UseSpawnXpOnly => false;
+        public override bool UseSpawnXpOnly => false;
 
-        internal override bool AllowedSpawn => false;
+        public override bool AllowedSpawn => false;
         
         public override Identifier Identifier => new("falling_block");
         private byte _flags = 0;

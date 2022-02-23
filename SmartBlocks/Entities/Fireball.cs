@@ -8,13 +8,13 @@ namespace SmartBlocks.Entities
 
         public override VarInt Type => 43;
 
-        internal override bool UseSpawnEntityOnly => true;
+        public override bool UseSpawnEntityOnly => true;
 
-        internal override bool UseSpawnPaintingOnly => false;
+        public override bool UseSpawnPaintingOnly => false;
 
-        internal override bool UseSpawnXpOnly => false;
+        public override bool UseSpawnXpOnly => false;
 
-        internal override bool AllowedSpawn => true;
+        public override bool AllowedSpawn => true;
 
         public override BoundingBox BoundingBox => new(1.0, 1.0, 1.0);
 

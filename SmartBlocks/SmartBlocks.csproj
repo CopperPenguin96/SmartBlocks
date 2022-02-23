@@ -15,14 +15,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MinecraftTypes\MinecraftTypes\MinecraftTypes.csproj" />
+    <ProjectReference Include="..\..\SmartNbt\SmartNbt\SmartNbt\SmartNbt.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="IKVM.OpenJDK.Core">
-      <HintPath>..\..\GemBlocks.1.1.1\IKVM.OpenJDK.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MinecraftTypes">
-      <HintPath>..\..\MinecraftTypes.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartNbt">
-      <HintPath>..\..\SmartNbt 1.1.0.0.dll</HintPath>
+      <HintPath>C:\Users\super\Downloads\GemBlocks.1.1.1 (1)\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 

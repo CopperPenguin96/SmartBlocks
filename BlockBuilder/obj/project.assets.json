@@ -1353,12 +1353,24 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "MinecraftTypes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MinecraftTypes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MinecraftTypes.dll": {}
+        }
+      },
       "SmartBlocks/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "MedallionRandom": "1.1.0",
+          "MinecraftTypes": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
+          "SmartNbt": "1.1.0",
           "System.Configuration.ConfigurationManager": "6.0.0",
           "System.IO.FileSystem": "4.3.0"
         },
@@ -1367,6 +1379,16 @@
         },
         "runtime": {
           "bin/placeholder/SmartBlocks.dll": {}
+        }
+      },
+      "SmartNbt/1.1.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SmartNbt.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartNbt.dll": {}
         }
       }
     }
@@ -4932,10 +4954,20 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "MinecraftTypes/1.0.0": {
+      "type": "project",
+      "path": "../../MinecraftTypes/MinecraftTypes/MinecraftTypes.csproj",
+      "msbuildProject": "../../MinecraftTypes/MinecraftTypes/MinecraftTypes.csproj"
+    },
     "SmartBlocks/1.0.0": {
       "type": "project",
       "path": "../SmartBlocks/SmartBlocks.csproj",
       "msbuildProject": "../SmartBlocks/SmartBlocks.csproj"
+    },
+    "SmartNbt/1.1.0": {
+      "type": "project",
+      "path": "../../SmartNbt/SmartNbt/SmartNbt/SmartNbt.csproj",
+      "msbuildProject": "../../SmartNbt/SmartNbt/SmartNbt/SmartNbt.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4950,11 +4982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Programming\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj",
+      "projectUniqueName": "A:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj",
       "projectName": "BlockBuilder",
-      "projectPath": "A:\\Programming\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj",
+      "projectPath": "A:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj",
       "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-      "outputPath": "A:\\Programming\\SmartBlocks\\BlockBuilder\\obj\\",
+      "outputPath": "A:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4971,8 +5003,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "A:\\Programming\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj": {
-              "projectPath": "A:\\Programming\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj"
+            "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj": {
+              "projectPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj"
             }
           }
         }

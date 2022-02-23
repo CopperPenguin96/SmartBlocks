@@ -4,12 +4,12 @@
     {
         public override string Name => "Abstract Skeleton";
 
-        internal override bool UseSpawnEntityOnly => true;
+        public override bool UseSpawnEntityOnly => true;
 
-        internal override bool UseSpawnPaintingOnly => false;
+        public override bool UseSpawnPaintingOnly => false;
 
-        internal override bool UseSpawnXpOnly => false;
+        public override bool UseSpawnXpOnly => false;
 
-        internal override bool AllowedSpawn => false;
+        public override bool AllowedSpawn => false;
     }
 }

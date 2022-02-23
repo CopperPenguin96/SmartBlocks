@@ -1,5 +1,6 @@
 ﻿using MinecraftTypes;
 using SmartBlocks.Entities.Flags;
+using SmartBlocks.Entities.Living.Mobs;
 using SmartBlocks.Utils;
 
 namespace SmartBlocks.Entities.Living
@@ -62,5 +63,12 @@ namespace SmartBlocks.Entities.Living
         public VarInt NumberOfBeeStingers { get; set; } = 0;
 
         public OptBlockPos SleepingLocation { get; set; }
+
+        private MobAttribute _maxHealth;
+
+        public void SetMaxHealth(float max)
+        {
+
+        }
     }
 }

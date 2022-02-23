@@ -1352,6 +1352,26 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "MinecraftTypes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MinecraftTypes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MinecraftTypes.dll": {}
+        }
+      },
+      "SmartNbt/1.1.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SmartNbt.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartNbt.dll": {}
+        }
       }
     }
   },
@@ -4915,12 +4935,24 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "MinecraftTypes/1.0.0": {
+      "type": "project",
+      "path": "../../MinecraftTypes/MinecraftTypes/MinecraftTypes.csproj",
+      "msbuildProject": "../../MinecraftTypes/MinecraftTypes/MinecraftTypes.csproj"
+    },
+    "SmartNbt/1.1.0": {
+      "type": "project",
+      "path": "../../SmartNbt/SmartNbt/SmartNbt/SmartNbt.csproj",
+      "msbuildProject": "../../SmartNbt/SmartNbt/SmartNbt/SmartNbt.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "MedallionRandom >= 1.1.0",
+      "MinecraftTypes >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1",
+      "SmartNbt >= 1.1.0",
       "System.Configuration.ConfigurationManager >= 6.0.0",
       "System.IO.FileSystem >= 4.3.0"
     ]
@@ -4931,11 +4963,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Programming\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
+      "projectUniqueName": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
       "projectName": "SmartBlocks",
-      "projectPath": "A:\\Programming\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
+      "projectPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
       "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-      "outputPath": "A:\\Programming\\SmartBlocks\\SmartBlocks\\obj\\",
+      "outputPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4951,7 +4983,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj": {
+              "projectPath": "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj"
+            },
+            "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj": {
+              "projectPath": "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

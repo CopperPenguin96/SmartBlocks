@@ -10,13 +10,13 @@ namespace SmartBlocks.Entities.Living.Ageable
 
         public override VarInt Type => 61;
 
-        internal override bool UseSpawnEntityOnly => false;
+        public override bool UseSpawnEntityOnly => false;
 
-        internal override bool UseSpawnPaintingOnly => false;
+        public override bool UseSpawnPaintingOnly => false;
 
-        internal override bool UseSpawnXpOnly => false;
+        public override bool UseSpawnXpOnly => false;
 
-        internal override bool AllowedSpawn => true;
+        public override bool AllowedSpawn => true;
 
         public override BoundingBox BoundingBox => new(1.3, 1.25, 1.3);
 

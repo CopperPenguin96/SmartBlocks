@@ -9,8 +9,7 @@
       "BlockBuilder/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
-          "SmartBlocks": "1.0.0",
-          "MinecraftTypes": "1.0.0.0"
+          "SmartBlocks": "1.0.0"
         },
         "runtime": {
           "BlockBuilder.dll": {}
@@ -732,10 +731,17 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "MinecraftTypes/1.0.0": {
+        "runtime": {
+          "MinecraftTypes.dll": {}
+        }
+      },
       "SmartBlocks/1.0.0": {
         "dependencies": {
           "MedallionRandom": "1.1.0",
+          "MinecraftTypes": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
+          "SmartNbt": "1.1.0",
           "System.Configuration.ConfigurationManager": "6.0.0",
           "System.IO.FileSystem": "4.3.0"
         },
@@ -743,12 +749,9 @@
           "SmartBlocks.dll": {}
         }
       },
-      "MinecraftTypes/1.0.0.0": {
+      "SmartNbt/1.1.0": {
         "runtime": {
-          "MinecraftTypes.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "SmartNbt.dll": {}
         }
       },
       "IKVM.OpenJDK.Core/7.2.4630.5": {
@@ -1476,13 +1479,18 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
+    "MinecraftTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "SmartBlocks/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "MinecraftTypes/1.0.0.0": {
-      "type": "reference",
+    "SmartNbt/1.1.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     },

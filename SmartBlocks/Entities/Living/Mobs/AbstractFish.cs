@@ -4,13 +4,13 @@
     {
         public override string Name => "Abstract Fish";
 
-        internal override bool UseSpawnEntityOnly => false;
+        public override bool UseSpawnEntityOnly => false;
 
-        internal override bool UseSpawnPaintingOnly => false;
+        public override bool UseSpawnPaintingOnly => false;
 
-        internal override bool UseSpawnXpOnly => false;
+        public override bool UseSpawnXpOnly => false;
 
-        internal override bool AllowedSpawn => false;
+        public override bool AllowedSpawn => false;
 
         public bool FromBucket { get; set; } = false;
     }

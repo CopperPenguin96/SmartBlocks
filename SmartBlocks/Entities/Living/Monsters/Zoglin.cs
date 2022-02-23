@@ -8,13 +8,13 @@ namespace SmartBlocks.Entities.Living.Monsters
 
         public override VarInt Type => 106;
 
-        internal override bool UseSpawnEntityOnly => false;
+        public override bool UseSpawnEntityOnly => false;
 
-        internal override bool UseSpawnPaintingOnly => false;
+        public override bool UseSpawnPaintingOnly => false;
 
-        internal override bool UseSpawnXpOnly => false;
+        public override bool UseSpawnXpOnly => false;
 
-        internal override bool AllowedSpawn => true;
+        public override bool AllowedSpawn => true;
 
         public override BoundingBox BoundingBox => new(1.39648, 1.4, 1.39648);
 

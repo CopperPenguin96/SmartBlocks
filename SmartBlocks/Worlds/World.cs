@@ -72,8 +72,7 @@ namespace SmartBlocks.Worlds
             {
                 File.Copy(levelOldFile, levelFile);
             }
-
-            Level level = new();
+            
             NbtFile lvlFile = new NbtFile(levelFile);
             NbtCompound dataTag = (NbtCompound) lvlFile.RootTag.Tags.ElementAt(0);
             if (dataTag.Name != "Data")
@@ -360,6 +359,12 @@ namespace SmartBlocks.Worlds
                     output.Close();
                 }
             }
+
+            // Save Entities
+            string entityDir = _lvlDir + "entities/";
+            if (!Directory.Exists(entityDir))
+                Directory.CreateDirectory(entityDir);
+
 
             // Save other dimensions
             SaveNether();

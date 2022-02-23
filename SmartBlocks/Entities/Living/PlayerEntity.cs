@@ -1,25 +1,22 @@
 ﻿using MinecraftTypes;
-using SmartBlocks.Entities;
-using SmartBlocks.Entities.Living;
 using SmartBlocks.Utils;
 using SmartNbt.Tags;
 
-// ReSharper disable once CheckNamespace
-namespace Redstone.Players
+namespace SmartBlocks.Entities.Living
 {
-    public partial class Player : LivingEntity
+    public class PlayerEntity : LivingEntity
     {
         public override string Name => "Player";
 
         public override VarInt Type => 111;
 
-        internal override bool UseSpawnEntityOnly => false;
+        public override bool UseSpawnEntityOnly => false;
 
-        internal override bool UseSpawnPaintingOnly => false;
+        public override bool UseSpawnPaintingOnly => false;
 
-        internal override bool UseSpawnXpOnly => false;
+        public override bool UseSpawnXpOnly => false;
 
-        internal override bool AllowedSpawn => false;
+        public override bool AllowedSpawn => false;
 
         public override BoundingBox BoundingBox => new(0.6, 1.8, 0.6);
 

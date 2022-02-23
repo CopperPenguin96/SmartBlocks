@@ -1,4 +1,6 @@
-﻿using SmartBlocks.Entities.Flags;
+﻿using MinecraftTypes;
+using SmartBlocks.Blocks;
+using SmartBlocks.Entities.Flags;
 using SmartBlocks.Utils;
 
 namespace SmartBlocks.Entities.Living.Mobs
@@ -36,5 +38,21 @@ namespace SmartBlocks.Entities.Living.Mobs
                 else FlagsHelper.Unset(ref _mobMask, (byte) MobFlag.Aggressive);
             }
         }
+
+        public float AbsorptionAmount { get; set; }
+
+        public List<PotionEffect> PotionEffects { get; set; }
+
+        public List<ArmorDropChance> ArmorDropChances { get; set; }
+
+        public Slot ArmorFeet { get; set; }
+
+        public Slot ArmorLeg { get; set; }
+
+        public Slot ArmorChest { get; set; }
+
+        public Slot ArmorHead { get; set; }
+
+
     }
 }

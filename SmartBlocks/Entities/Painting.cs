@@ -18,13 +18,13 @@ namespace SmartBlocks.Entities
 
         public int Height { get; set; }
 
-        internal override bool UseSpawnEntityOnly => false;
+        public override bool UseSpawnEntityOnly => false;
 
-        internal override bool UseSpawnPaintingOnly => true;
+        public override bool UseSpawnPaintingOnly => true;
 
-        internal override bool UseSpawnXpOnly => false;
+        public override bool UseSpawnXpOnly => false;
 
-        internal override bool AllowedSpawn => true;
+        public override bool AllowedSpawn => true;
 
         public override BoundingBox BoundingBox { get; set; }
 

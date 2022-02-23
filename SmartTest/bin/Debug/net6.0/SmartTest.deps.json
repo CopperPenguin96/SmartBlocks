@@ -9,8 +9,8 @@
       "SmartTest/1.0.0": {
         "dependencies": {
           "SmartBlocks": "1.0.0",
-          "MinecraftTypes": "1.0.0.0",
-          "SmartNbt": "1.0.0.0"
+          "MinecraftTypes.Reference": "1.0.0.0",
+          "SmartNbt.Reference": "1.0.0.0"
         },
         "runtime": {
           "SmartTest.dll": {}
@@ -811,7 +811,9 @@
       "SmartBlocks/1.0.0": {
         "dependencies": {
           "MedallionRandom": "1.1.0",
+          "MinecraftTypes": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
+          "SmartNbt": "1.1.0",
           "System.Configuration.ConfigurationManager": "6.0.0",
           "System.IO.FileSystem": "4.3.0"
         },
@@ -819,7 +821,7 @@
           "SmartBlocks.dll": {}
         }
       },
-      "MinecraftTypes/1.0.0.0": {
+      "MinecraftTypes.Reference/1.0.0.0": {
         "runtime": {
           "MinecraftTypes.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -827,7 +829,7 @@
           }
         }
       },
-      "SmartNbt/1.0.0.0": {
+      "SmartNbt.Reference/1.0.0.0": {
         "runtime": {
           "SmartNbt.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -1565,12 +1567,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MinecraftTypes/1.0.0.0": {
+    "MinecraftTypes.Reference/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "SmartNbt/1.0.0.0": {
+    "SmartNbt.Reference/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

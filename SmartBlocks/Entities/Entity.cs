@@ -1,11 +1,15 @@
 ﻿using java.util;
 using MinecraftTypes;
 using SmartBlocks.Entities.Flags;
+using SmartBlocks.Entities.Particles;
 using SmartBlocks.Utils;
+using SmartBlocks.Worlds;
+using SmartNbt;
+using SmartNbt.Tags;
 
 namespace SmartBlocks.Entities
 {
-    public class Entity
+    public class Entity : ITagProvider
     {
         public VarInt Id { get; set; }
 
@@ -15,13 +19,13 @@ namespace SmartBlocks.Entities
 
         public virtual string Name => "Entity";
         
-        internal virtual bool UseSpawnEntityOnly { get; }
+        public virtual bool UseSpawnEntityOnly { get; }
 
-        internal virtual bool UseSpawnPaintingOnly { get; }
+        public virtual bool UseSpawnPaintingOnly { get; }
 
-        internal virtual bool UseSpawnXpOnly { get; }
+        public virtual bool UseSpawnXpOnly { get; }
 
-        internal virtual bool AllowedSpawn { get; }
+        public virtual bool AllowedSpawn { get; }
 
         public Position Velocity { get; set; }
 
@@ -38,8 +42,6 @@ namespace SmartBlocks.Entities
         // todo OptChatBuilder
         public OptObject<string> CustomName { get; set; }
 
-        public bool IsCustomNameVisible { get; set; } = false;
-
         public bool IsSilent { get; set; } = false;
 
         public bool HasNoGravity { get; set; } = false;
@@ -47,6 +49,20 @@ namespace SmartBlocks.Entities
         public Pose Pose { get; set; } = Pose.Standing;
 
         public VarInt TicksFrozenInPoweredSnow { get; set; } = 0;
+
+        public short FireLeft { get; set; } = -20;
+
+        public float FallDistance { get; set; }
+
+        public bool IsInvulnerable { get; set; }
+
+        public PosDouble MotionVelocity { get; set; }
+
+        public bool OnGround { get; set; }
+
+        public List<Entity> Riders { get; set; }
+
+        public int PortalCooldown { get; set; } = 0;
 
         #region Flags
 
@@ -123,5 +139,64 @@ namespace SmartBlocks.Entities
         }
 
         #endregion
+
+        public virtual NbtTag Tag
+        {
+            get
+            {
+                // Pull together all the piggybackers
+                NbtList riders = new("Passengers");
+                foreach (Entity entity in Riders)
+                {
+                    riders.Add(entity.Tag);
+                }
+
+                // Build the nbt
+                NbtCompound entityData = new()
+                {
+                    new NbtShort("Air", AirTicks),
+                    new NbtString("CustomName", CustomName.Value!),
+                    new NbtBoolean("CustomNameVisible", CustomName.Enabled),
+                    new NbtFloat("FallDistance", FallDistance),
+                    new NbtShort("Fire", FireLeft),
+                    new NbtBoolean("Glowing", HasGlowingEffect),
+                    new NbtBoolean("HasVisualFire", IsOnFire),
+                    new NbtString("id", Id.ToString()),
+                    new NbtBoolean("Invulnerable", IsInvulnerable),
+                    new NbtList("Motion", new List<NbtDouble>
+                    {
+                        new(MotionVelocity.X),
+                        new(MotionVelocity.Y),
+                        new(MotionVelocity.Z)
+                    }),
+                    new NbtBoolean("NoGravity", HasNoGravity),
+                    new NbtBoolean("OnGround", OnGround),
+                    riders,
+                    new NbtInt("PortalCooldown", PortalCooldown),
+                    new NbtList("Pos", new List<NbtDouble>
+                    {
+                        new(Position.X),
+                        new(Position.Y),
+                        new(Position.Z)
+                    }),
+                    new NbtList("Rotation", new List<NbtFloat>
+                    {
+                        new(Position.Yaw),
+                        new(Position.Pitch)
+                    }),
+                    new NbtBoolean("Silent", IsSilent),
+                    new NbtList("Tags", NbtTagType.String),
+                    new NbtInt("TicksFrozen", TicksFrozenInPoweredSnow),
+                    new NbtIntArray("UUID", new[]
+                    {
+                        (int) UniqueId.getMostSignificantBits(),
+                        (int) UniqueId.getLeastSignificantBits()
+                    })
+                };
+                
+
+                return entityData;
+            }
+        }
     }
 }

@@ -9,12 +9,12 @@
       "SmartBlocks/1.0.0": {
         "dependencies": {
           "MedallionRandom": "1.1.0",
+          "MinecraftTypes": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
+          "SmartNbt": "1.1.0",
           "System.Configuration.ConfigurationManager": "6.0.0",
           "System.IO.FileSystem": "4.3.0",
-          "IKVM.OpenJDK.Core": "7.2.4630.5",
-          "MinecraftTypes": "1.0.0.0",
-          "SmartNbt 1.1.0.0": "1.0.0.0"
+          "IKVM.OpenJDK.Core": "7.2.4630.5"
         },
         "runtime": {
           "SmartBlocks.dll": {}
@@ -812,27 +812,21 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "MinecraftTypes/1.0.0": {
+        "runtime": {
+          "MinecraftTypes.dll": {}
+        }
+      },
+      "SmartNbt/1.1.0": {
+        "runtime": {
+          "SmartNbt.dll": {}
+        }
+      },
       "IKVM.OpenJDK.Core/7.2.4630.5": {
         "runtime": {
           "IKVM.OpenJDK.Core.dll": {
             "assemblyVersion": "7.2.4630.5",
             "fileVersion": "7.2.4630.5"
-          }
-        }
-      },
-      "MinecraftTypes/1.0.0.0": {
-        "runtime": {
-          "MinecraftTypes.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "SmartNbt 1.1.0.0/1.0.0.0": {
-        "runtime": {
-          "SmartNbt 1.1.0.0.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1553,17 +1547,17 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
+    "MinecraftTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SmartNbt/1.1.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "IKVM.OpenJDK.Core/7.2.4630.5": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "MinecraftTypes/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SmartNbt 1.1.0.0/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
