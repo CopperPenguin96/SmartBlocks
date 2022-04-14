@@ -1,23 +1,22 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Minecarts
+namespace SmartBlocks.Entities.Minecarts;
+
+public class MinecartSpawner : AbstractMinecart
 {
-    public class MinecartSpawner : AbstractMinecart
-    {
-        public override string Name => "Minecart Spawner";
+    public override string Name => "Minecart Spawner";
 
-        public override VarInt Type => 55;
+    public override VarInt Type => 55;
 
-        public override bool UseSpawnEntityOnly => true;
+    public override bool UseSpawnEntityOnly => true;
 
-        public override bool UseSpawnPaintingOnly => false;
+    public override bool UseSpawnPaintingOnly => false;
 
-        public override bool UseSpawnXpOnly => false;
+    public override bool UseSpawnXpOnly => false;
 
-        public override bool AllowedSpawn => true;
+    public override bool AllowedSpawn => true;
 
-        public override BoundingBox BoundingBox => new(0.98, 0.7, 0.98);
+    public override BoundingBox BoundingBox => new(0.98, 0.7, 0.98);
 
-        public override Identifier Identifier => new("spawner_minecart");
-    }
+    public override Identifier Identifier => new("spawner_minecart");
 }

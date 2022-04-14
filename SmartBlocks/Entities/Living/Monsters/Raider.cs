@@ -1,7 +1,6 @@
-﻿namespace SmartBlocks.Entities.Living.Monsters
+﻿namespace SmartBlocks.Entities.Living.Monsters;
+
+public class Raider : Monster
 {
-    public class Raider : Monster
-    {
-        public bool IsCelebrating { get; set; } = false;
-    }
+    public bool IsCelebrating { get; set; } = false;
 }

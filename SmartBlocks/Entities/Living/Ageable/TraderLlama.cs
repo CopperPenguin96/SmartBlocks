@@ -1,23 +1,24 @@
 ﻿using MinecraftTypes;
+using SmartBlocks.Entities.Living.Mobs;
 
-namespace SmartBlocks.Entities.Living.Ageable
+namespace SmartBlocks.Entities.Living.Ageable;
+
+public class TraderLlama : Llama
 {
-    public class TraderLlama : Llama
-    {
-        public override string Name => "Trader Llama";
+    public override string Name => "Trader Llama";
 
-        public override VarInt Type => 94;
+    public override VarInt Type => 94;
 
-        public override bool UseSpawnEntityOnly => false;
+    public override bool UseSpawnEntityOnly => false;
 
-        public override bool UseSpawnPaintingOnly => false;
+    public override bool UseSpawnPaintingOnly => false;
 
-        public override bool UseSpawnXpOnly => false;
+    public override bool UseSpawnXpOnly => false;
 
-        public override bool AllowedSpawn => true;
+    public override bool AllowedSpawn => true;
 
-        public override BoundingBox BoundingBox => new(0.9, 1.87, 0.9);
+    public override BoundingBox BoundingBox => new(0.9, 1.87, 0.9);
 
-        public override Identifier Identifier => new("trader_llama");
-    }
+    public override Identifier Identifier => new("trader_llama");
+    
 }

@@ -1,11 +1,10 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Particles
-{
-    public class Light : Particle
-    {
-        public override VarInt Id => 3;
+namespace SmartBlocks.Entities.Particles;
 
-        public override Identifier Name => "light";
-    }
+public class Light : Particle
+{
+    public override VarInt Id => 3;
+
+    public override Identifier Name => "light";
 }

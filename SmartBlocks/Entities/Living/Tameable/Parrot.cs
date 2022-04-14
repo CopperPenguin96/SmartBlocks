@@ -1,34 +1,42 @@
 ﻿using MinecraftTypes;
+using SmartBlocks.Entities.Attributes;
+using SmartBlocks.Entities.Living.Mobs;
 
-namespace SmartBlocks.Entities.Living.Tameable
+namespace SmartBlocks.Entities.Living.Tameable;
+
+public class Parrot : TameableAnimal
 {
-    public class Parrot : TameableAnimal
+    public override string Name => "Parrot";
+
+    public override VarInt Type => 62;
+
+    public override bool UseSpawnEntityOnly => false;
+
+    public override bool UseSpawnPaintingOnly => false;
+
+    public override bool UseSpawnXpOnly => false;
+
+    public override bool AllowedSpawn => true;
+
+    public override BoundingBox BoundingBox => new(0.5, 0.9, 0.5);
+
+    public override Identifier Identifier => new("parrot");
+
+    public VarInt Variant { get; set; } = 0;
+
+    public double FlyingSpeed
     {
-        public override string Name => "Parrot";
-
-        public override VarInt Type => 62;
-
-        public override bool UseSpawnEntityOnly => false;
-
-        public override bool UseSpawnPaintingOnly => false;
-
-        public override bool UseSpawnXpOnly => false;
-
-        public override bool AllowedSpawn => true;
-
-        public override BoundingBox BoundingBox => new(0.5, 0.9, 0.5);
-
-        public override Identifier Identifier => new("parrot");
-
-        public VarInt Variant { get; set; } = 0;
+        get => Attributes["generic.flying_speed"].Value;
+        set
+        {
+            Attributes["generic.flying_speed"].Value = value;
+        }
     }
 
-    public enum ParrotVariant
+    public override void Spawn()
     {
-        RedBlue = 0,
-        Blue = 1,
-        Green = 2,
-        YellowBlue = 3,
-        Grey = 4
+        base.Spawn();
+        Attributes.Add(MobAttribute.FlyingSpeed);
     }
+
 }

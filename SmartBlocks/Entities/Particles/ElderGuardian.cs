@@ -1,11 +1,10 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Particles
-{
-    public class ElderGuardian : Particle
-    {
-        public override VarInt Id => 18;
+namespace SmartBlocks.Entities.Particles;
 
-        public override Identifier Name => "elder_guardian";
-    }
+public class ElderGuardian : Particle
+{
+    public override VarInt Id => 18;
+
+    public override Identifier Name => "elder_guardian";
 }

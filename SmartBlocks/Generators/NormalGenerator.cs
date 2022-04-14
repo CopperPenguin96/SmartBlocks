@@ -2,54 +2,53 @@
 using SmartBlocks.Worlds;
 using SmartNbt.Tags;
 
-namespace SmartBlocks.Generators
+namespace SmartBlocks.Generators;
+
+public class NormalGenerator : IGenerator
 {
-    public class NormalGenerator : IGenerator
+    public GenType Type => GenType.Normal;
+
+    public Dimension Dimension => Dimension.Overworld;
+
+    private long _seed = -1;
+
+    /// <summary>
+    /// Gets or sets seed value. If seed is not set, then returns a random value.
+    /// </summary>
+    public long Seed
     {
-        public GenType Type => GenType.Normal;
-
-        public Dimension Dimension => Dimension.Overworld;
-
-        private long _seed = -1;
-
-        /// <summary>
-        /// Gets or sets seed value. If seed is not set, then returns a random value.
-        /// </summary>
-        public long Seed
+        get
         {
-            get
+            if (_seed == -1)
             {
-                if (_seed == -1)
-                {
-                    _seed = new Random(new Random().Next()).NextInt64();
-                }
-
-                return _seed;
+                _seed = new Random(new Random().Next()).NextInt64();
             }
-            set => _seed = value;
+
+            return _seed;
         }
+        set => _seed = value;
+    }
 
-        public NbtTag Tag
+    public NbtTag Tag
+    {
+        get
         {
-            get
+            // Biome Source
+            NbtCompound biomeSource = new("biome_source")
             {
-                // Biome Source
-                NbtCompound biomeSource = new("biome_source")
-                {
-                    new NbtLong("seed", Seed),
-                    new NbtBoolean("large_biomes", false),
-                    new NbtString("type", new Identifier("vanilla_layered").ToString())
-                };
+                new NbtLong("seed", Seed),
+                new NbtBoolean("large_biomes", false),
+                new NbtString("type", new Identifier("vanilla_layered").ToString())
+            };
 
-                // Build Nbt
-                return new NbtCompound("generator")
-                {
-                    new NbtString("settings", new Identifier("overworld").ToString()),
-                    new NbtLong("seed", Seed),
-                    new NbtString("type", new Identifier("noise").ToString()),
-                    biomeSource
-                };
-            }
+            // Build Nbt
+            return new NbtCompound("generator")
+            {
+                new NbtString("settings", new Identifier("overworld").ToString()),
+                new NbtLong("seed", Seed),
+                new NbtString("type", new Identifier("noise").ToString()),
+                biomeSource
+            };
         }
     }
 }

@@ -1,23 +1,24 @@
 ﻿using MinecraftTypes;
+using SmartBlocks.Entities.Living.Mobs;
 
-namespace SmartBlocks.Entities.Living.Villagers
+namespace SmartBlocks.Entities.Living.Villagers;
+
+public class WanderingTrader : AbstractVillager
 {
-    public class WanderingTrader : AbstractVillager
-    {
-        public override string Name => "Wandering Trader";
+    public override string Name => "Wandering Trader";
 
-        public override VarInt Type => 100;
+    public override VarInt Type => 100;
 
-        public override bool UseSpawnEntityOnly => false;
+    public override bool UseSpawnEntityOnly => false;
 
-        public override bool UseSpawnPaintingOnly => false;
+    public override bool UseSpawnPaintingOnly => false;
 
-        public override bool UseSpawnXpOnly => false;
+    public override bool UseSpawnXpOnly => false;
 
-        public override bool AllowedSpawn => true;
+    public override bool AllowedSpawn => true;
 
-        public override BoundingBox BoundingBox => new(0.6, 1.95, 0.6);
+    public override BoundingBox BoundingBox => new(0.6, 1.95, 0.6);
 
-        public override Identifier Identifier => new("wandering_trader");
-    }
+    public override Identifier Identifier => new("wandering_trader");
+    
 }

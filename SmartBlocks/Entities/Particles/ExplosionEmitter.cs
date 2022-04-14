@@ -1,11 +1,10 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Particles
-{
-    public class ExplosionEmitter : Particle
-    {
-        public override VarInt Id => 23;
+namespace SmartBlocks.Entities.Particles;
 
-        public override Identifier Name => "explision_emitter";
-    }
+public class ExplosionEmitter : Particle
+{
+    public override VarInt Id => 23;
+
+    public override Identifier Name => "explision_emitter";
 }

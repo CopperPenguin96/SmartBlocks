@@ -1,46 +1,32 @@
 ﻿using MinecraftTypes;
+using SmartBlocks.Entities.Living.Mobs;
 
-namespace SmartBlocks.Entities.Living.Tameable
+namespace SmartBlocks.Entities.Living.Tameable;
+
+public class Cat : TameableAnimal
 {
-    public class Cat : TameableAnimal
-    {
-        public override string Name => "Cat";
+    public override string Name => "Cat";
 
-        public override VarInt Type => 8;
+    public override VarInt Type => 8;
 
-        public override bool UseSpawnEntityOnly => false;
+    public override bool UseSpawnEntityOnly => false;
 
-        public override bool UseSpawnPaintingOnly => false;
+    public override bool UseSpawnPaintingOnly => false;
 
-        public override bool UseSpawnXpOnly => false;
+    public override bool UseSpawnXpOnly => false;
 
-        public override bool AllowedSpawn => true;
+    public override bool AllowedSpawn => true;
 
-        public override BoundingBox BoundingBox => new(0.6, 0.7, 0.6);
+    public override BoundingBox BoundingBox => new(0.6, 0.7, 0.6);
 
-        public override Identifier Identifier => "cat";
+    public override Identifier Identifier => "cat";
 
-        public VarInt CatType { get; set; } = 1;
+    public VarInt CatType { get; set; } = 1;
 
-        public bool IsLying { get; set; } = false;
+    public bool IsLying { get; set; } = false;
 
-        public bool IsRelaxed { get; set; } = false;
+    public bool IsRelaxed { get; set; } = false;
 
-        public VarInt CollarColor { get; set; } = 14;
-    }
-
-    public enum CatVariant
-    {
-        Tabby = 0,
-        Black = 1,
-        Red = 2,
-        Siamese = 3,
-        BritishShorthair = 4,
-        Calico = 5,
-        Persian = 6,
-        Ragdoll = 7,
-        White = 8,
-        Jellie = 9,
-        AllBlack = 10
-    }
+    public VarInt CollarColor { get; set; } = 14;
+    
 }

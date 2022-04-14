@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OOWeFsgTU0Ib8/tgbY3tGQisSbkBk3yOpxreO7VJvhMcGvwBFjfEf6F38ZG/k0yN+xaU/Ke1UrmqU23AqAUw3g==",
+  "dgSpecHash": "9NsiynBQtpOq7bHOqbjHhHCGGBdEQnkyoN35c+5TTG40LRebiWjhJqNS2OKa2f3xlm7Cp0WbU8lVEXDyfYysTQ==",
   "success": true,
-  "projectFilePath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
+  "projectFilePath": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\super\\.nuget\\packages\\medallionrandom\\1.1.0\\medallionrandom.1.1.0.nupkg.sha512",
     "C:\\Users\\super\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

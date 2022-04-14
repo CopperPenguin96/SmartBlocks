@@ -1,6 +1,5 @@
-﻿namespace SmartBlocks.Entities.Living.Mobs
+﻿namespace SmartBlocks.Entities.Living.Mobs;
+
+public class AmbientCreature : Mob
 {
-    public class AmbientCreature : Mob
-    {
-    }
 }

@@ -1,11 +1,10 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Particles
-{
-    public class BubbleColumnUp : Particle
-    {
-        public override VarInt Id => 58;
+namespace SmartBlocks.Entities.Particles;
 
-        public override Identifier Name => "bubble_column_up";
-    }
+public class BubbleColumnUp : Particle
+{
+    public override VarInt Id => 58;
+
+    public override Identifier Name => "bubble_column_up";
 }

@@ -1,11 +1,10 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Particles
-{
-    public class LargeSmoke : Particle
-    {
-        public override VarInt Id => 40;
+namespace SmartBlocks.Entities.Particles;
 
-        public override Identifier Name => "large_smoke";
-    }
+public class LargeSmoke : Particle
+{
+    public override VarInt Id => 40;
+
+    public override Identifier Name => "large_smoke";
 }

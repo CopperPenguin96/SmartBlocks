@@ -2,129 +2,128 @@
 using java.util;
 using SmartNbt.Tags;
 
-namespace SmartBlocks.Utils
+namespace SmartBlocks.Utils;
+
+public static class ExtensionMethods
 {
-    public static class ExtensionMethods
+    public static NbtList ToNbtList<T>(this List<T> list, string listName)
     {
-        public static NbtList ToNbtList<T>(this List<T> list, string listName)
+        NbtList lst = new(listName);
+
+        if (typeof(T) == typeof(byte))
         {
-            NbtList lst = new(listName);
-
-            if (typeof(T) == typeof(byte))
+            foreach (var b in list)
             {
-                foreach (var b in list)
-                {
-                    lst.Add(new NbtByte(Convert.ToByte(b)));
-                }
+                lst.Add(new NbtByte(Convert.ToByte(b)));
             }
-            else if (typeof(T) == typeof(short))
+        }
+        else if (typeof(T) == typeof(short))
+        {
+            foreach (var b in list)
             {
-                foreach (var b in list)
-                {
-                    lst.Add(new NbtShort(Convert.ToInt16(b)));
-                }
+                lst.Add(new NbtShort(Convert.ToInt16(b)));
             }
-            else if (typeof(T) == typeof(int))
+        }
+        else if (typeof(T) == typeof(int))
+        {
+            foreach (var b in list)
             {
-                foreach (var b in list)
-                {
-                    lst.Add(new NbtInt(Convert.ToInt32(b)));
-                }
+                lst.Add(new NbtInt(Convert.ToInt32(b)));
             }
-            else if (typeof(T) == typeof(long))
+        }
+        else if (typeof(T) == typeof(long))
+        {
+            foreach (var b in list)
             {
-                foreach (var b in list)
-                {
-                    lst.Add(new NbtLong(Convert.ToInt64(b)));
-                }
+                lst.Add(new NbtLong(Convert.ToInt64(b)));
             }
-            else if (typeof(T) == typeof(float))
+        }
+        else if (typeof(T) == typeof(float))
+        {
+            foreach (var b in list)
             {
-                foreach (var b in list)
-                {
-                    lst.Add(new NbtFloat(Convert.ToSingle(b)));
-                }
+                lst.Add(new NbtFloat(Convert.ToSingle(b)));
             }
-            else if (typeof(T) == typeof(double))
+        }
+        else if (typeof(T) == typeof(double))
+        {
+            foreach (var b in list)
             {
-                foreach (var b in list)
-                {
-                    lst.Add(new NbtDouble(Convert.ToDouble(b)));
-                }
+                lst.Add(new NbtDouble(Convert.ToDouble(b)));
             }
-            else if (typeof(T) == typeof(string))
+        }
+        else if (typeof(T) == typeof(string))
+        {
+            foreach (var b in list)
             {
-                foreach (var b in list)
-                {
-                    lst.Add(new NbtShort(Convert.ToString(b)));
-                }
+                lst.Add(new NbtShort(Convert.ToString(b)));
             }
-
-            return lst;
         }
 
-        public static string Join(this string[] parts, string glue)
-        {
-            string str = "";
-            bool isFirst = true;
-            foreach (string part in parts)
-            {
-                if (!isFirst)
-                {
-                    str += glue;
-                }
-                else
-                {
-                    isFirst = false;
-                }
+        return lst;
+    }
 
-                str += part;
+    public static string Join(this string[] parts, string glue)
+    {
+        string str = "";
+        bool isFirst = true;
+        foreach (string part in parts)
+        {
+            if (!isFirst)
+            {
+                str += glue;
+            }
+            else
+            {
+                isFirst = false;
             }
 
-            return str;
+            str += part;
         }
 
-        public static string Join(this List<string> parts, string glue)
-        {
-            return Join(parts.ToArray(), glue);
-        }
+        return str;
+    }
 
-        public static int[] GetIntArray(this UUID uuid)
-        {
-            if (uuid == null) throw new NullReferenceException(nameof(uuid));
+    public static string Join(this List<string> parts, string glue)
+    {
+        return Join(parts.ToArray(), glue);
+    }
 
-            int[] i = new int[4];
-            long msb = uuid.getMostSignificantBits();
-            long lsb = uuid.getLeastSignificantBits();
+    public static int[] GetIntArray(this UUID uuid)
+    {
+        if (uuid == null) throw new NullReferenceException(nameof(uuid));
 
-            i[0] = (int)(msb >> 32);
-            i[1] = (int)(msb);
-            i[2] = (int)(lsb >> 32);
-            i[3] = (int)(lsb);
-            return i;
-        }
+        int[] i = new int[4];
+        long msb = uuid.getMostSignificantBits();
+        long lsb = uuid.getLeastSignificantBits();
 
-        public static byte ToByte(this bool b)
-        {
-            return b ? (byte)1 : (byte)0;
-        }
+        i[0] = (int)(msb >> 32);
+        i[1] = (int)(msb);
+        i[2] = (int)(lsb >> 32);
+        i[3] = (int)(lsb);
+        return i;
+    }
 
-        public static string Base64Encode(this string original)
-        {
-            if (original == null) throw new NullReferenceException(nameof(original));
+    public static byte ToByte(this bool b)
+    {
+        return b ? (byte)1 : (byte)0;
+    }
 
-            byte[] plainBytes = Encoding.UTF8.GetBytes(original);
-            return System.Convert.ToBase64String(plainBytes);
-        }
+    public static string Base64Encode(this string original)
+    {
+        if (original == null) throw new NullReferenceException(nameof(original));
 
-        public static byte[] ToBytes(this string str, Encoding enc)
-        {
-            return enc.GetBytes(str);
-        }
+        byte[] plainBytes = Encoding.UTF8.GetBytes(original);
+        return System.Convert.ToBase64String(plainBytes);
+    }
 
-        public static byte[] ToBytes(this string str)
-        {
-            return ToBytes(str, Encoding.UTF8);
-        }
+    public static byte[] ToBytes(this string str, Encoding enc)
+    {
+        return enc.GetBytes(str);
+    }
+
+    public static byte[] ToBytes(this string str)
+    {
+        return ToBytes(str, Encoding.UTF8);
     }
 }

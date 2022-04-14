@@ -1,11 +1,10 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Particles
-{
-    public class FallingLava : Particle
-    {
-        public override VarInt Id => 11;
+namespace SmartBlocks.Entities.Particles;
 
-        public override Identifier Name => "falling_lava";
-    }
+public class FallingLava : Particle
+{
+    public override VarInt Id => 11;
+
+    public override Identifier Name => "falling_lava";
 }

@@ -1,6 +1,5 @@
-﻿namespace SmartBlocks.Entities.Living.Mobs
+﻿namespace SmartBlocks.Entities.Living.Mobs;
+
+public class WaterAnimal : PathFinderMob
 {
-    public class WaterAnimal : PathFinderMob
-    {
-    }
 }

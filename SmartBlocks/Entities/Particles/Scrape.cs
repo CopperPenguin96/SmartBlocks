@@ -1,11 +1,10 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Particles
-{
-    public class Scrape : Particle
-    {
-        public override VarInt Id => 88;
+namespace SmartBlocks.Entities.Particles;
 
-        public override Identifier Name => "scrape";
-    }
+public class Scrape : Particle
+{
+    public override VarInt Id => 88;
+
+    public override Identifier Name => "scrape";
 }

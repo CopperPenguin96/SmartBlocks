@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "A:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj": {}
+    "D:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj": {}
   },
   "projects": {
-    "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj": {
+    "D:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj",
+        "projectUniqueName": "D:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj",
         "projectName": "MinecraftTypes",
-        "projectPath": "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj",
+        "projectPath": "D:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj",
         "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-        "outputPath": "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\obj\\",
+        "outputPath": "D:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,7 +27,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj": {
+                "projectPath": "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -58,14 +62,14 @@
         }
       }
     },
-    "A:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj": {
+    "D:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj",
+        "projectUniqueName": "D:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj",
         "projectName": "BlockBuilder",
-        "projectPath": "A:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj",
+        "projectPath": "D:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\BlockBuilder.csproj",
         "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-        "outputPath": "A:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\obj\\",
+        "outputPath": "D:\\Programming\\rs\\SmartBlocks\\BlockBuilder\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +86,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj": {
-                "projectPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj"
+              "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj": {
+                "projectPath": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj"
               }
             }
           }
@@ -125,14 +129,14 @@
         }
       }
     },
-    "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj": {
+    "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
+        "projectUniqueName": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
         "projectName": "SmartBlocks",
-        "projectPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
+        "projectPath": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
         "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-        "outputPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\obj\\",
+        "outputPath": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -149,11 +153,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj": {
-                "projectPath": "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj"
+              "D:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj": {
+                "projectPath": "D:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj"
               },
-              "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj": {
-                "projectPath": "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj"
+              "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj": {
+                "projectPath": "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj"
               }
             }
           }
@@ -204,14 +208,14 @@
         }
       }
     },
-    "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj": {
+    "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj",
+        "projectUniqueName": "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj",
         "projectName": "SmartNbt",
-        "projectPath": "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj",
+        "projectPath": "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj",
         "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-        "outputPath": "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\obj\\",
+        "outputPath": "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",

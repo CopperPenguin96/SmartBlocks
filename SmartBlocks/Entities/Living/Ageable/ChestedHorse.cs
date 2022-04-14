@@ -1,7 +1,6 @@
-﻿namespace SmartBlocks.Entities.Living.Ageable
+﻿namespace SmartBlocks.Entities.Living.Ageable;
+
+public class ChestedHorse : AbstractHorse
 {
-    public class ChestedHorse : AbstractHorse
-    {
-        public bool HasChest { get; set; } = false;
-    }
+    public bool HasChest { get; set; } = false;
 }

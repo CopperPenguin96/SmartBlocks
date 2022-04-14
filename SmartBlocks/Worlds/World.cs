@@ -6,402 +6,401 @@ using SmartBlocks.Worlds.Raids;
 using SmartNbt;
 using SmartNbt.Tags;
 
-namespace SmartBlocks.Worlds
+namespace SmartBlocks.Worlds;
+
+public class World : IBlockContainer
 {
-    public class World : IBlockContainer
-    {
-        /// <summary>
-        /// Max world height
-        /// </summary>
-        public const int MaxHeight = 256;
+    /// <summary>
+    /// Max world height
+    /// </summary>
+    public const int MaxHeight = 256;
 
-        /// <summary>
-        /// The default transparency level
-        /// </summary>
-        public const byte DefaultTransparency = 1;
+    /// <summary>
+    /// The default transparency level
+    /// </summary>
+    public const byte DefaultTransparency = 1;
 
-        /// <summary>
-        /// The default sky light level (max light)
-        /// </summary>
-        public const byte DefaultSkyLight = 0xF;
+    /// <summary>
+    /// The default sky light level (max light)
+    /// </summary>
+    public const byte DefaultSkyLight = 0xF;
 
-        private readonly Dictionary<Point, Region> _regions = new();
-        private readonly Level _level;
+    private readonly Dictionary<Point, Region> _regions = new();
+    private readonly Level _level;
         
-        /// <summary>
-        /// The generator to be used to create the world.
-        /// </summary>
-        public IGenerator Generator { get; }
+    /// <summary>
+    /// The generator to be used to create the world.
+    /// </summary>
+    public IGenerator Generator { get; }
 
-        public List<InterestPoint> InterestPoints { get; set; }
+    public List<InterestPoint> InterestPoints { get; set; }
 
-        public RaidList RaidList { get; set; }
+    public RaidList RaidList { get; set; }
 
-        public RaidList NetherRaids { get; set; }
+    public RaidList NetherRaids { get; set; }
 
-        public RaidList EndRaids { get; set; }
+    public RaidList EndRaids { get; set; }
 
-        /// <summary>
-        /// Creates a new instance
-        /// </summary>
-        /// <param name="level">The level that is used to define the world settings</param>
-        public World(Level level)
+    /// <summary>
+    /// Creates a new instance
+    /// </summary>
+    /// <param name="level">The level that is used to define the world settings</param>
+    public World(Level level)
+    {
+        _level = level;
+        Generator = _level.Generator;
+    }
+
+    public World(string saveDir)
+    {
+        saveDir = "Worlds/" + saveDir;
+        if (saveDir == null)
+            throw new ArgumentNullException(
+                "World location cannot be null. To create a new world use new World(new Level)");
+
+        if (!Directory.Exists(saveDir))
+            throw new FileNotFoundException(nameof(saveDir));
+
+        string levelFile = saveDir + "level.dat";
+        string levelOldFile = saveDir + "level.dat_old";
+        Console.WriteLine(levelFile);
+        if (!File.Exists(levelFile) && !File.Exists(levelOldFile))
         {
-            _level = level;
-            Generator = _level.Generator;
+            throw new WorldLoadException("Invalid World: level.dat and level.dat_old missing.");
         }
-
-        public World(string saveDir)
+        else if (!File.Exists(levelFile))
         {
-            saveDir = "Worlds/" + saveDir;
-            if (saveDir == null)
-                throw new ArgumentNullException(
-                    "World location cannot be null. To create a new world use new World(new Level)");
-
-            if (!Directory.Exists(saveDir))
-                throw new FileNotFoundException(nameof(saveDir));
-
-            string levelFile = saveDir + "level.dat";
-            string levelOldFile = saveDir + "level.dat_old";
-            Console.WriteLine(levelFile);
-            if (!File.Exists(levelFile) && !File.Exists(levelOldFile))
-            {
-                throw new WorldLoadException("Invalid World: level.dat and level.dat_old missing.");
-            }
-            else if (!File.Exists(levelFile))
-            {
-                File.Copy(levelOldFile, levelFile);
-            }
+            File.Copy(levelOldFile, levelFile);
+        }
             
-            NbtFile lvlFile = new NbtFile(levelFile);
-            NbtCompound dataTag = (NbtCompound) lvlFile.RootTag.Tags.ElementAt(0);
-            if (dataTag.Name != "Data")
-            {
-                throw new WorldLoadException("Invalid level.dat. Missing \"Data\" tag. Is \"");
-            }
-
-            foreach (NbtTag tag in dataTag.Tags)
-            {
-                Console.WriteLine("Tag: " + tag.Name);
-            }
+        NbtFile lvlFile = new NbtFile(levelFile);
+        NbtCompound dataTag = (NbtCompound) lvlFile.RootTag.Tags.ElementAt(0);
+        if (dataTag.Name != "Data")
+        {
+            throw new WorldLoadException("Invalid level.dat. Missing \"Data\" tag. Is \"");
         }
 
-        /// <summary>
-        /// Sets a block at the given world position.
-        /// </summary>
-        /// <param name="pos">The XYZ Coord. Y must be between 0 and 255</param>
-        /// <param name="block">The block</param>
-        public void SetBlock(Position pos, Block? block)
+        foreach (NbtTag tag in dataTag.Tags)
         {
-            // Check for valid height
-            if (pos.Y is > MaxHeight - 1 or < 0)
-            {
-                // Fail silently
-                return;
-            }
+            Console.WriteLine("Tag: " + tag.Name);
+        }
+    }
 
-            // Get region
-            Region region = GetRegion((int)pos.X, (int)pos.Z, true);
-
-            // Set block
-            int blockX = GetRegionCoord((int)pos.X);
-            int blockZ = GetRegionCoord((int)pos.Z);
-            region.SetBlock(new Position(blockX, pos.Y, blockZ), block);
+    /// <summary>
+    /// Sets a block at the given world position.
+    /// </summary>
+    /// <param name="pos">The XYZ Coord. Y must be between 0 and 255</param>
+    /// <param name="block">The block</param>
+    public void SetBlock(Position pos, Block? block)
+    {
+        // Check for valid height
+        if (pos.Y is > MaxHeight - 1 or < 0)
+        {
+            // Fail silently
+            return;
         }
 
-        /// <summary>
-        /// Sets a block at the given world position.
-        /// </summary>
-        /// <param name="x">The X-Coordinate</param>
-        /// <param name="y">The Y-Coordinate (0-255)</param>
-        /// <param name="z">The Z-Coordinate</param>
-        /// <param name="block">The block</param>
-        public void SetBlock(int x, int y, int z, Block? block)
+        // Get region
+        Region region = GetRegion((int)pos.X, (int)pos.Z, true);
+
+        // Set block
+        int blockX = GetRegionCoord((int)pos.X);
+        int blockZ = GetRegionCoord((int)pos.Z);
+        region.SetBlock(new Position(blockX, pos.Y, blockZ), block);
+    }
+
+    /// <summary>
+    /// Sets a block at the given world position.
+    /// </summary>
+    /// <param name="x">The X-Coordinate</param>
+    /// <param name="y">The Y-Coordinate (0-255)</param>
+    /// <param name="z">The Z-Coordinate</param>
+    /// <param name="block">The block</param>
+    public void SetBlock(int x, int y, int z, Block? block)
+    {
+        SetBlock(new Position(x, y, z), block);
+    }
+
+    public Region GetRegion(int x, int z, bool create)
+    {
+        // Get region point
+        int regionX = x / Region.BlocksPerRegionSize;
+        if (x < 0) regionX--;
+
+        int regionZ = z / Region.BlocksPerRegionSize;
+        if (z < 0) regionZ--;
+
+        Point point = new(regionX, regionZ);
+
+        // Create region
+
+        Region region;
+        if (!_regions.ContainsKey(point) && create)
         {
-            SetBlock(new Position(x, y, z), block);
-        }
-
-        public Region GetRegion(int x, int z, bool create)
-        {
-            // Get region point
-            int regionX = x / Region.BlocksPerRegionSize;
-            if (x < 0) regionX--;
-
-            int regionZ = z / Region.BlocksPerRegionSize;
-            if (z < 0) regionZ--;
-
-            Point point = new(regionX, regionZ);
-
-            // Create region
-
-            Region region;
-            if (!_regions.ContainsKey(point) && create)
-            {
-                region = new Region(this, regionX, regionZ);
-                _regions.Add(point, region);
-                return region;
-            }
-            else if (_regions.ContainsKey(point))
-            {
-                region = _regions[point];
-            }
-            else
-            {
-                return GetRegion(x, z, true);
-            }
+            region = new Region(this, regionX, regionZ);
+            _regions.Add(point, region);
             return region;
         }
-
-        private static int GetRegionCoord(int coord)
+        else if (_regions.ContainsKey(point))
         {
-            int regionCoord = coord % Region.BlocksPerRegionSize;
-            if (regionCoord < 0)
-            {
-                regionCoord += Region.BlocksPerRegionSize;
-            }
+            region = _regions[point];
+        }
+        else
+        {
+            return GetRegion(x, z, true);
+        }
+        return region;
+    }
 
-            return regionCoord;
+    private static int GetRegionCoord(int coord)
+    {
+        int regionCoord = coord % Region.BlocksPerRegionSize;
+        if (regionCoord < 0)
+        {
+            regionCoord += Region.BlocksPerRegionSize;
         }
 
-        public byte GetSkyLight(Position pos)
+        return regionCoord;
+    }
+
+    public byte GetSkyLight(Position pos)
+    {
+        // Get region
+        Region region = GetRegion((int)pos.X, (int)pos.Z, false);
+
+        // Get light
+        if (region == null) return DefaultSkyLight;
+        int blockX = GetRegionCoord((int)pos.X);
+        int blockZ = GetRegionCoord((int)pos.Z);
+        return region.GetSkyLight(new Position(blockX, pos.Y, blockZ));
+    }
+
+    public byte GetSkyLightFromParent(IBlockContainer blockChild, Position child)
+    {
+        int x = Region.BlocksPerRegionSize * ((Region)blockChild).X + (int)child.X;
+        int z = Region.BlocksPerRegionSize * ((Region)blockChild).Z + (int)child.Z;
+        return GetSkyLight(new Position(x, child.Y, z));
+    }
+
+    public void SpreadSkyLight(byte light)
+    {
+        try
         {
-            // Get region
-            Region region = GetRegion((int)pos.X, (int)pos.Z, false);
-
-            // Get light
-            if (region == null) return DefaultSkyLight;
-            int blockX = GetRegionCoord((int)pos.X);
-            int blockZ = GetRegionCoord((int)pos.Z);
-            return region.GetSkyLight(new Position(blockX, pos.Y, blockZ));
-        }
-
-        public byte GetSkyLightFromParent(IBlockContainer blockChild, Position child)
-        {
-            int x = Region.BlocksPerRegionSize * ((Region)blockChild).X + (int)child.X;
-            int z = Region.BlocksPerRegionSize * ((Region)blockChild).Z + (int)child.Z;
-            return GetSkyLight(new Position(x, child.Y, z));
-        }
-
-        public void SpreadSkyLight(byte light)
-        {
-            try
-            {
-                foreach (Region region in _regions.Values)
-                {
-                    region.SpreadSkyLight(light);
-                }
-            }
-            catch (InvalidOperationException)
-            {
-                // _regions was modified, need to redo loop.
-                SpreadSkyLight(light);
-            }
-        }
-
-        #region Saving
-
-        private const string WorldDir = "Worlds/";
-        private string _lvlFile;
-        private string _lvlDir;
-
-        public void Save(bool newWorld = true)
-        {
-            // Creates worlds directory
-            
-            if (!Directory.Exists(WorldDir))
-            {
-                Directory.CreateDirectory(WorldDir);
-            }
-
-            // Get level directory
-            string levelName = _level.Name;
-            _lvlDir = WorldDir + levelName;
-            if (Directory.Exists(_lvlDir) && !newWorld)
-            {
-                int dirPostFix = 0;
-                do
-                {
-                    dirPostFix++;
-                    _lvlDir = WorldDir + levelName + dirPostFix;
-                } while (Directory.Exists(_lvlDir));
-            }
-
-            // Create directories
-            Directory.CreateDirectory(_lvlDir);
-            if (_lvlDir[^1] != '/') _lvlDir += '/';
-            string regionDir = _lvlDir + "region/";
-            Directory.CreateDirectory(regionDir);
-
-            // Write session.lock
-            string sessionLockFile = _lvlDir + "session.lock";
-            var sessionLockWriter = File.CreateText(sessionLockFile);
-            sessionLockWriter.Write(DateTime.Now.Ticks);
-            sessionLockWriter.Flush();
-            sessionLockWriter.Close();
-
-            // Write level.dat
-            _lvlFile = _lvlDir + "level.dat";
-            if (Directory.Exists(_lvlFile))
-            {
-                if (File.Exists(_lvlDir + "level.dat_old"))
-                {
-                    File.Delete(_lvlDir + "level.dat_old");
-                }
-
-                File.Copy(_lvlFile, _lvlDir + "level.dat_old");
-            }
-
-            File.Delete(_lvlFile);
-            NbtFile nbtFile = new(new NbtCompound("") {_level.Nbt});
-            nbtFile.SaveToFile(_lvlFile, NbtCompression.GZip);
-
-            // Calculate height maps
             foreach (Region region in _regions.Values)
             {
-                region.CalculateHeightMap();
+                region.SpreadSkyLight(light);
             }
+        }
+        catch (InvalidOperationException)
+        {
+            // _regions was modified, need to redo loop.
+            SpreadSkyLight(light);
+        }
+    }
+
+    #region Saving
+
+    private const string WorldDir = "Worlds/";
+    private string _lvlFile;
+    private string _lvlDir;
+
+    public void Save(bool newWorld = true)
+    {
+        // Creates worlds directory
             
-            // Set sky light
-            AddSkyLight();
+        if (!Directory.Exists(WorldDir))
+        {
+            Directory.CreateDirectory(WorldDir);
+        }
 
-            // Spread sky light
-            for (int i = DefaultSkyLight; i > 1; i--)
+        // Get level directory
+        string levelName = _level.Name;
+        _lvlDir = WorldDir + levelName;
+        if (Directory.Exists(_lvlDir) && !newWorld)
+        {
+            int dirPostFix = 0;
+            do
             {
-                SpreadSkyLight((byte)i);
+                dirPostFix++;
+                _lvlDir = WorldDir + levelName + dirPostFix;
+            } while (Directory.Exists(_lvlDir));
+        }
+
+        // Create directories
+        Directory.CreateDirectory(_lvlDir);
+        if (_lvlDir[^1] != '/') _lvlDir += '/';
+        string regionDir = _lvlDir + "region/";
+        Directory.CreateDirectory(regionDir);
+
+        // Write session.lock
+        string sessionLockFile = _lvlDir + "session.lock";
+        var sessionLockWriter = File.CreateText(sessionLockFile);
+        sessionLockWriter.Write(DateTime.Now.Ticks);
+        sessionLockWriter.Flush();
+        sessionLockWriter.Close();
+
+        // Write level.dat
+        _lvlFile = _lvlDir + "level.dat";
+        if (Directory.Exists(_lvlFile))
+        {
+            if (File.Exists(_lvlDir + "level.dat_old"))
+            {
+                File.Delete(_lvlDir + "level.dat_old");
             }
 
-            // Iterate regions
-            for (int index = 0; index <= _regions.Count - 1; index++)
-            {
-                Point point = _regions.Keys.ToList()[index];
-                Region region = _regions.Values.ToList()[index];
+            File.Copy(_lvlFile, _lvlDir + "level.dat_old");
+        }
 
-                // Save region
-                string regionFile = regionDir +
-                                    "r." + point.X + "." + point.Y + ".mca";
-                region.WriteToFile(regionFile);
-            }
+        File.Delete(_lvlFile);
+        NbtFile nbtFile = new(new NbtCompound("") {_level.Nbt});
+        nbtFile.SaveToFile(_lvlFile, NbtCompression.GZip);
 
-            // Save raids
-            string dataDir = _lvlDir + "data/";
-            if (!Directory.Exists(dataDir))
-                Directory.CreateDirectory(dataDir);
-
-            NbtFile raids = new NbtFile(new NbtCompound("") {RaidList.Tag});
-            string raidFile = dataDir + "raids.dat";
-            if (File.Exists(raidFile)) File.Delete(raidFile);
-            raids.SaveToFile(raidFile, NbtCompression.GZip);
+        // Calculate height maps
+        foreach (Region region in _regions.Values)
+        {
+            region.CalculateHeightMap();
+        }
             
-            // Save datapacks
-            string dataPacksDir = _lvlDir + "datapacks/";
-            if (!Directory.Exists(dataPacksDir))
-                Directory.CreateDirectory(dataPacksDir);
+        // Set sky light
+        AddSkyLight();
 
-            // Save POIs
-            string poiDir = _lvlDir + "poi/";
-            if (!Directory.Exists(poiDir))
-                Directory.CreateDirectory(poiDir);
+        // Spread sky light
+        for (int i = DefaultSkyLight; i > 1; i--)
+        {
+            SpreadSkyLight((byte)i);
+        }
 
-            List<NbtCompound> sections = new();
-            List<Point> points = new();
-            for (int x = 0; x < _regions.Count; x++)
+        // Iterate regions
+        for (int index = 0; index <= _regions.Count - 1; index++)
+        {
+            Point point = _regions.Keys.ToList()[index];
+            Region region = _regions.Values.ToList()[index];
+
+            // Save region
+            string regionFile = regionDir +
+                                "r." + point.X + "." + point.Y + ".mca";
+            region.WriteToFile(regionFile);
+        }
+
+        // Save raids
+        string dataDir = _lvlDir + "data/";
+        if (!Directory.Exists(dataDir))
+            Directory.CreateDirectory(dataDir);
+
+        NbtFile raids = new NbtFile(new NbtCompound("") {RaidList.Tag});
+        string raidFile = dataDir + "raids.dat";
+        if (File.Exists(raidFile)) File.Delete(raidFile);
+        raids.SaveToFile(raidFile, NbtCompression.GZip);
+            
+        // Save datapacks
+        string dataPacksDir = _lvlDir + "datapacks/";
+        if (!Directory.Exists(dataPacksDir))
+            Directory.CreateDirectory(dataPacksDir);
+
+        // Save POIs
+        string poiDir = _lvlDir + "poi/";
+        if (!Directory.Exists(poiDir))
+            Directory.CreateDirectory(poiDir);
+
+        List<NbtCompound> sections = new();
+        List<Point> points = new();
+        for (int x = 0; x < _regions.Count; x++)
+        {
+            Region region = _regions.Values.ToList()[x];
+
+            NbtList records = new("Records", NbtTagType.Compound);
+            foreach (var poi in 
+                     from poi 
+                         in InterestPoints 
+                     from chunk 
+                         in region.Chunks 
+                     where chunk.HasBlocks
+                           && chunk.X == poi.Position.X
+                           && chunk.Z == poi.Position.Z 
+                     select poi)
             {
-                Region region = _regions.Values.ToList()[x];
-
-                NbtList records = new("Records", NbtTagType.Compound);
-                foreach (var poi in 
-                         from poi 
-                             in InterestPoints 
-                         from chunk 
-                             in region.Chunks 
-                         where chunk.HasBlocks
-                             && chunk.X == poi.Position.X
-                             && chunk.Z == poi.Position.Z 
-                         select poi)
-                {
-                    records.Add(poi.Tag);
-                    points.Add(new(poi.Position.X, poi.Position.Z));
-                }
-
-                NbtCompound number = new("4")
-                {
-                    new NbtBoolean("Valid", true),
-                    records
-                };
-
-                sections.Add(number);
+                records.Add(poi.Tag);
+                points.Add(new(poi.Position.X, poi.Position.Z));
             }
 
-            NbtCompound data = new("Data");
-            foreach (NbtCompound section in sections)
+            NbtCompound number = new("4")
             {
-                data.Add(section);
-            }
-
-            NbtCompound root = new()
-            {
-                data,
-                new NbtInt("DataVersion", InterestPoint.DataVersion)
+                new NbtBoolean("Valid", true),
+                records
             };
 
-            foreach (Point point in points)
+            sections.Add(number);
+        }
+
+        NbtCompound data = new("Data");
+        foreach (NbtCompound section in sections)
+        {
+            data.Add(section);
+        }
+
+        NbtCompound root = new()
+        {
+            data,
+            new NbtInt("DataVersion", InterestPoint.DataVersion)
+        };
+
+        foreach (Point point in points)
+        {
+            RegionFile poiFile = new(poiDir + "r." + point.X + "." + point.Y + ".mca");
+            NbtOutputStream output = new(
+                poiFile.GetChunkDataWriterStream(point.X, point.Y).BaseStream, false);
+
+            try
             {
-                RegionFile poiFile = new(poiDir + "r." + point.X + "." + point.Y + ".mca");
-                NbtOutputStream output = new(
-                    poiFile.GetChunkDataWriterStream(point.X, point.Y).BaseStream, false);
-
-                try
-                {
-                    output.WriteTag(root);
-                }
-                finally
-                {
-                    output.Close();
-                }
+                output.WriteTag(root);
             }
-
-            // Save Entities
-            string entityDir = _lvlDir + "entities/";
-            if (!Directory.Exists(entityDir))
-                Directory.CreateDirectory(entityDir);
-
-
-            // Save other dimensions
-            SaveNether();
-            SaveEnd();
-        }
-
-        private void SaveNether()
-        {
-            string dir = _lvlDir + "DIM-1/";
-            if (!Directory.Exists(dir))
-                Directory.CreateDirectory(dir);
-
-            // Create raids
-            string raidDir = _lvlDir + "data/";
-            if (!Directory.Exists(raidDir))
-                Directory.CreateDirectory(raidDir);
-
-            string raidFile = raidDir + "raids.dat";
-            NbtFile raids = new NbtFile(new NbtCompound("") { RaidList.Tag });
-            if (File.Exists(raidFile)) File.Delete(raidFile);
-            raids.SaveToFile(raidFile, NbtCompression.GZip);
-
-
-        }
-
-        private void SaveEnd()
-        {
-            string dir = _lvlDir + "DIM1/";
-        }
-
-        #endregion
-        private void AddSkyLight()
-        {
-            foreach (Region region in _regions.Values)
+            finally
             {
-                region.AddSkyLight();
+                output.Close();
             }
+        }
+
+        // Save Entities
+        string entityDir = _lvlDir + "entities/";
+        if (!Directory.Exists(entityDir))
+            Directory.CreateDirectory(entityDir);
+
+
+        // Save other dimensions
+        SaveNether();
+        SaveEnd();
+    }
+
+    private void SaveNether()
+    {
+        string dir = _lvlDir + "DIM-1/";
+        if (!Directory.Exists(dir))
+            Directory.CreateDirectory(dir);
+
+        // Create raids
+        string raidDir = _lvlDir + "data/";
+        if (!Directory.Exists(raidDir))
+            Directory.CreateDirectory(raidDir);
+
+        string raidFile = raidDir + "raids.dat";
+        NbtFile raids = new NbtFile(new NbtCompound("") { RaidList.Tag });
+        if (File.Exists(raidFile)) File.Delete(raidFile);
+        raids.SaveToFile(raidFile, NbtCompression.GZip);
+
+
+    }
+
+    private void SaveEnd()
+    {
+        string dir = _lvlDir + "DIM1/";
+    }
+
+    #endregion
+    private void AddSkyLight()
+    {
+        foreach (Region region in _regions.Values)
+        {
+            region.AddSkyLight();
         }
     }
 }

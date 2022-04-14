@@ -1356,6 +1356,9 @@
       "MinecraftTypes/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "SmartNbt": "1.1.0"
+        },
         "compile": {
           "bin/placeholder/MinecraftTypes.dll": {}
         },
@@ -4981,11 +4984,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Programming\\rs\\SmartBlocks\\SmartTest\\SmartTest.csproj",
+      "projectUniqueName": "D:\\Programming\\rs\\SmartBlocks\\SmartTest\\SmartTest.csproj",
       "projectName": "SmartTest",
-      "projectPath": "A:\\Programming\\rs\\SmartBlocks\\SmartTest\\SmartTest.csproj",
+      "projectPath": "D:\\Programming\\rs\\SmartBlocks\\SmartTest\\SmartTest.csproj",
       "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-      "outputPath": "A:\\Programming\\rs\\SmartBlocks\\SmartTest\\obj\\",
+      "outputPath": "D:\\Programming\\rs\\SmartBlocks\\SmartTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5002,8 +5005,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj": {
-              "projectPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj"
+            "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj": {
+              "projectPath": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj"
             }
           }
         }

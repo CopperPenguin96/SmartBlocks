@@ -1356,6 +1356,9 @@
       "MinecraftTypes/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "SmartNbt": "1.1.0"
+        },
         "compile": {
           "bin/placeholder/MinecraftTypes.dll": {}
         },
@@ -4963,11 +4966,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
+      "projectUniqueName": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
       "projectName": "SmartBlocks",
-      "projectPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
+      "projectPath": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\SmartBlocks.csproj",
       "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
-      "outputPath": "A:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\obj\\",
+      "outputPath": "D:\\Programming\\rs\\SmartBlocks\\SmartBlocks\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4984,11 +4987,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj": {
-              "projectPath": "A:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj"
+            "D:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj": {
+              "projectPath": "D:\\Programming\\rs\\MinecraftTypes\\MinecraftTypes\\MinecraftTypes.csproj"
             },
-            "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj": {
-              "projectPath": "A:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj"
+            "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj": {
+              "projectPath": "D:\\Programming\\rs\\SmartNbt\\SmartNbt\\SmartNbt\\SmartNbt.csproj"
             }
           }
         }

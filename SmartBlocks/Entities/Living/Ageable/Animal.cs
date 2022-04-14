@@ -1,6 +1,5 @@
-﻿namespace SmartBlocks.Entities.Living.Ageable
+﻿namespace SmartBlocks.Entities.Living.Ageable;
+
+public class Animal : AgeableMob
 {
-    public class Animal : AgeableMob
-    {
-    }
 }

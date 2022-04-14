@@ -1,9 +1,8 @@
 ﻿using SmartNbt.Tags;
 
-namespace SmartBlocks.Worlds
+namespace SmartBlocks.Worlds;
+
+public interface ITagProvider
 {
-    public interface ITagProvider
-    {
-        NbtTag Tag { get; }
-    }
+    NbtTag Tag { get; }
 }

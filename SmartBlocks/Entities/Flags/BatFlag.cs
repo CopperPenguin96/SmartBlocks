@@ -1,7 +1,6 @@
-﻿namespace SmartBlocks.Entities.Flags
+﻿namespace SmartBlocks.Entities.Flags;
+
+public enum BatFlag : byte
 {
-    public enum BatFlag : byte
-    {
-        IsHanging = 0x01
-    }
+    IsHanging = 0x01
 }

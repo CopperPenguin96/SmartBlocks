@@ -1,6 +1,5 @@
-﻿namespace SmartBlocks.Entities.Living.Mobs
+﻿namespace SmartBlocks.Entities.Living.Mobs;
+
+public class PathFinderMob : Mob
 {
-    public class PathFinderMob : Mob
-    {
-    }
 }

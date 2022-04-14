@@ -1,7 +1,6 @@
-﻿namespace SmartBlocks.Entities.Living.Monsters
+﻿namespace SmartBlocks.Entities.Living.Monsters;
+
+public class BasePiglin : Monster
 {
-    public class BasePiglin : Monster
-    {
-        public bool IsZombieImmune { get; set; }
-    }
+    public bool IsZombieImmune { get; set; }
 }

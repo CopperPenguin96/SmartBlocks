@@ -1,13 +1,12 @@
 ﻿using SmartBlocks.Worlds;
 
-namespace SmartBlocks.Generators
+namespace SmartBlocks.Generators;
+
+public interface IGenerator : ITagProvider
 {
-    public interface IGenerator : ITagProvider
-    {
-        GenType Type { get; }
+    GenType Type { get; }
 
-        Dimension Dimension { get; }
+    Dimension Dimension { get; }
 
-        long Seed { get; set; }
-    }
+    long Seed { get; set; }
 }

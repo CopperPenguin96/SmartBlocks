@@ -1,11 +1,10 @@
 ﻿using MinecraftTypes;
 
-namespace SmartBlocks.Entities.Particles
-{
-    public class Dolphin : Particle
-    {
-        public override VarInt Id => 60;
+namespace SmartBlocks.Entities.Particles;
 
-        public override Identifier Name => "dolphin";
-    }
+public class Dolphin : Particle
+{
+    public override VarInt Id => 60;
+
+    public override Identifier Name => "dolphin";
 }
