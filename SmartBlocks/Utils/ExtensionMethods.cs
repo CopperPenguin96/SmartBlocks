@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using java.lang;
 using java.util;
 using SmartNbt.Tags;
 
@@ -6,6 +7,16 @@ namespace SmartBlocks.Utils;
 
 public static class ExtensionMethods
 {
+    public static int[] ToIntArray(this long[] longs)
+    {
+        return longs.Select(Convert.ToInt32).ToArray();
+    }
+
+    public static long[] ToLongArray(this UUID uuid)
+    {
+        return new[] {uuid.getMostSignificantBits(), uuid.getLeastSignificantBits()};
+    }
+
     public static NbtList ToNbtList<T>(this List<T> list, string listName)
     {
         NbtList lst = new(listName);

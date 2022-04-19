@@ -470,6 +470,66 @@ public class LivingEntity : Entity
         Attributes["generic.movement_speed"].Modifiers.Add(mod);
     }
 
+    public void ApplyEffect(Effect effect, int effectLevel)
+    {
+        AttributeModifier mod = null!;
+        double value = 0;
+        string attr = null!;
+
+        switch (effect)
+        {
+            case Effect.MoveSpeed:
+                mod = AttributeModifier.EffectMoveSpeed;
+                value = 0.2 * effectLevel;
+                attr = "generic.movement_speed";
+                break;
+            case Effect.MoveSlowdown:
+                mod = AttributeModifier.EffectMoveSlowdown;
+                value = -0.15 * effectLevel;
+                attr = "generic.movement_speed";
+                break;
+            case Effect.DigSpeed:
+                mod = AttributeModifier.EffectDigSpeed;
+                value = 0.1 * effectLevel;
+                attr = "generic.attack_speed";
+                break;
+            case Effect.DigSlowdown:
+                mod = AttributeModifier.EffectDigSlowDown;
+                value = -0.1 * effectLevel;
+                attr = "generic.attack_speed";
+                break;
+            case Effect.DamageBoost:
+                mod = AttributeModifier.EffectDamageBoost;
+                value = 3 * effectLevel;
+                attr = "generic.attack_damage";
+                break;
+            case Effect.Weakness:
+                mod = AttributeModifier.EffectWeakness;
+                value = -4 * effectLevel;
+                attr = "generic.attack_damage";
+                break;
+            case Effect.HealthBoost:
+                mod = AttributeModifier.EffectHealthBoost;
+                value = 4 * effectLevel;
+                attr = "generic.max_health";
+                break;
+            case Effect.Luck:
+                mod = AttributeModifier.EffectLuck;
+                value = 1 * effectLevel;
+                attr = "generic.luck";
+                break;
+            case Effect.Unluck:
+                mod = AttributeModifier.EffectUnluck;
+                value = -1 * effectLevel;
+                attr = "generic.luck";
+                break;
+        }
+
+        if (mod == null) throw new NullReferenceException();
+        mod.Value = value;
+        Attributes[attr].Modifiers.Add(mod);
+    }
+
     public override void Spawn()
     {
         Attributes.Add(MobAttribute.MaxHealth);

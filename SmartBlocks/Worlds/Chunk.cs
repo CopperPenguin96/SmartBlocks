@@ -1,6 +1,7 @@
 ﻿using MinecraftTypes;
 using SmartBlocks.Blocks;
 using SmartBlocks.Generators;
+using SmartNbt;
 using SmartNbt.Tags;
 
 namespace SmartBlocks.Worlds;

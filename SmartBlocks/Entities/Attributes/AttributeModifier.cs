@@ -1,9 +1,12 @@
 ﻿using java.util;
 using SmartBlocks.Entities.Living.Mobs;
+using SmartBlocks.Utils;
+using SmartNbt;
+using SmartNbt.Tags;
 
 namespace SmartBlocks.Entities.Attributes
 {
-    public class AttributeModifier
+    public class AttributeModifier : ITagProvider
     {
         public ModifierOperation Operation { get; private set; }
 
@@ -18,9 +21,18 @@ namespace SmartBlocks.Entities.Attributes
             Name = name;
             Operation = op;
 
-            if (uId == null) uId = UUID.randomUUID();
+            uId ??= UUID.randomUUID();
             UniqueId = uId;
         }
+
+        public NbtTag Tag =>
+            new NbtCompound
+            {
+                new NbtDouble("Amount", Value),
+                new NbtString("Name", Name),
+                new NbtInt("Operation", (int) Operation),
+                new NbtIntArray("UUID", UniqueId.ToLongArray().ToIntArray())
+            };
 
         public static readonly AttributeModifier RandomSpawnBonusFollowRange = new("Random spawn bonus", ModifierOperation.AddSubtractPercent);
         public static readonly AttributeModifier RandomSpawnBonusKnockback = new("Random spawn bonus", ModifierOperation.AddSubtract);

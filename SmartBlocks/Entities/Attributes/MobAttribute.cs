@@ -1,9 +1,11 @@
 ﻿using MinecraftTypes;
 using SmartBlocks.Entities.Living.Mobs;
+using SmartNbt;
+using SmartNbt.Tags;
 
 namespace SmartBlocks.Entities.Attributes
 {
-    public class MobAttribute
+    public class MobAttribute : ITagProvider
     {
         public Identifier Name { get; private set; }
 
@@ -23,6 +25,27 @@ namespace SmartBlocks.Entities.Attributes
             Base = baseD;
             Min = min;
             Max = max;
+        }
+
+        public NbtTag Tag
+        {
+            get
+            {
+                NbtCompound cmd = new()
+                {
+                    new NbtDouble("Base", Base)
+                };
+
+                NbtList mods = new(NbtTagType.Compound);
+                foreach (var attrMod in Modifiers)
+                {
+                    mods.Add(attrMod.Tag);
+                }
+                cmd.Add(mods);
+
+                cmd.Add(new NbtString("Name", Name.ToString()));
+                return cmd;
+            }
         }
 
         public static readonly MobAttribute MaxHealth = new("generic.max_health", 20.0, 0.0, 1024.0);

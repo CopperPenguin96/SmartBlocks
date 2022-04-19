@@ -4,8 +4,11 @@ using MinecraftTypes;
 using SmartBlocks.Blocks;
 using SmartBlocks.Entities.Attributes;
 using SmartBlocks.Entities.Flags;
+using SmartBlocks.Entities.Living.Mobs.Memories;
 using SmartBlocks.Utils;
 using SmartBlocks.Worlds;
+using SmartNbt;
+using SmartNbt.Tags;
 
 namespace SmartBlocks.Entities.Living.Mobs;
 
@@ -47,7 +50,7 @@ public class Mob : LivingEntity
 
     public List<PotionEffect> PotionEffects { get; set; }
 
-    public List<ArmorDropChance> ArmorDropChances { get; set; }
+    public ArmorDropChance ArmorDropChances { get; set; }
 
     public Slot ArmorFeet { get; set; }
 
@@ -57,12 +60,55 @@ public class Mob : LivingEntity
 
     public Slot ArmorHead { get; set; }
 
+    public Brain Brain { get; set; }
+
     public void ApplySpeedBoost()
     {
         if (IsAggressive) throw new Exception("Cannot be used on non-passive mobs.");
         var mod = AttributeModifier.FleeingSpeedBoost;
         mod.Value = 2;
         Attributes["generic.movement_speed"].Modifiers.Add(mod);
+    }
+
+    public override NbtTag Tag
+    {
+        get
+        {
+            NbtCompound baseTag = (NbtCompound) base.Tag;
+            baseTag.Add(new NbtFloat("AbsorptionAmount", AbsorptionAmount));
+
+            NbtList activeEffects = new NbtList(NbtTagType.Compound);
+            foreach (PotionEffect effect in PotionEffects)
+            {
+                activeEffects.Add((NbtCompound) effect.Tag);
+            }
+            baseTag.Add(activeEffects);
+
+            NbtList armorDropChances = new NbtList(NbtTagType.Float)
+            {
+                new NbtFloat(ArmorDropChances.FeetSlot),
+                new NbtFloat(ArmorDropChances.LegSlot),
+                new NbtFloat(ArmorDropChances.ChestSlot),
+                new NbtFloat(ArmorDropChances.HeadSlot)
+            };
+            baseTag.Add(armorDropChances);
+
+            NbtList armorItems = new NbtList(NbtTagType.Compound)
+            {
+                ArmorFeet.Tag,
+                ArmorLeg.Tag,
+                ArmorChest.Tag,
+                ArmorHead.Tag
+            };
+            baseTag.Add(armorItems);
+
+            NbtList attributes = new NbtList(NbtTagType.Compound);
+
+            foreach (MobAttribute attr in Attributes)
+            {
+
+            }
+        }
     }
 
     #region Id's

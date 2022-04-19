@@ -3,6 +3,7 @@ using Medallion;
 using MinecraftTypes;
 using SmartBlocks.Entities.Attributes;
 using SmartBlocks.Entities.Living.Mobs;
+using Random = System.Random;
 
 namespace SmartBlocks.Entities.Living.Monsters;
 
@@ -46,11 +47,43 @@ public class Zombie : Monster
         }
     }
 
+    public void BoostBabySpeed()
+    {
+        if (!IsBaby) throw new Exception("Can only be used on baby zombie's.");
+        var mod = AttributeModifier.BabySpeedBoost;
+        mod.Value = 0.5;
+        Attributes["generic.movement_speed"].Modifiers.Add(mod);
+    }
+
+    public void SetSpawnBonus()
+    {
+        Random rnd = new Random();
+        var mod = AttributeModifier.RandomSpawnBonusFollowRange;
+        mod.Value = rnd.NextDouble(0.0, 1.5);
+        Attributes["generic.follow_range"].Modifiers.Add(mod);
+
+        mod = AttributeModifier.LeaderZombieBonusSpawnReinfor;
+        mod.Value = rnd.NextDouble(0.5, 0.75);
+        Attributes["zombie.spawn_reinforcements"].Modifiers.Add(mod);
+
+        mod = AttributeModifier.LeaderZombieBonusSpawnMaxHealth;
+        mod.Value = rnd.NextDouble(1.0, 4.0);
+        Attributes["generic.max_health"].Modifiers.Add(mod);
+    }
+
+    public void SetCallerCharge()
+    {
+        var mod = AttributeModifier.ZombieReinforCallerCharge;
+        mod.Value = -0.05;
+        Attributes["zombie.spawn_reinforcements"].Modifiers.Add(mod);
+    }
+
     public override void Spawn()
     {
         base.Spawn();
         Attributes.Add(MobAttribute.ZombieSpawnReinforcements);
 
-        SetKnockbackResistance(new System.Random().NextDouble(0.0, 0.05));
+        SetKnockbackResistance(new Random().NextDouble(0.0, 0.05));
+        SetSpawnBonus();
     }
 }
